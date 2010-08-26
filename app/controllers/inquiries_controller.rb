@@ -20,13 +20,13 @@ class InquiriesController < ApplicationController
     if @inquiry.save
       if @inquiry.ham?
         begin
-          InquiryMailer.deliver_notification(@inquiry, request)
+          InquiryMailer.notification(@inquiry, request).deliver
         rescue
           logger.warn "There was an error delivering an inquiry notification.\n#{$!}\n"
         end
 
         begin
-          InquiryMailer.deliver_confirmation(@inquiry, request)
+          InquiryMailer.confirmation(@inquiry, request).deliver
         rescue
           logger.warn "There was an error delivering an inquiry confirmation:\n#{$!}\n"
         end
