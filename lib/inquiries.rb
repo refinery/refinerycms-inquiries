@@ -4,6 +4,8 @@ module Refinery
   module Inquiries
     class Engine < Rails::Engine
       config.after_initialize do
+        require 'filters_spam'
+        
         Refinery::Plugin.register do |plugin|
           plugin.title = "Inquiries"
           plugin.name = "refinery_inquiries"

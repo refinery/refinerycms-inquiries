@@ -6,6 +6,7 @@ Gem::Specification.new do |s|
   s.version     = '0.9.8'
   s.summary     = 'Inquiry handling functionality for the Refinery CMS project.'
   s.required_ruby_version = '>= 1.8.7'
+  s.authors     = ["Resolve Digital"]
 
   s.files        = Dir['app/**/*', 'config/**/*', 'readme.md', 'license.md', 'lib/**/*']
   s.require_path = 'lib'
@@ -13,5 +14,6 @@ Gem::Specification.new do |s|
 
   s.has_rdoc = true
 
+  s.add_dependency('filters_spam', '~> 0.1')
   #s.add_dependency('refinerycms-core',  '~> 0.9.8') # causes problems
 end
