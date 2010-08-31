@@ -7,7 +7,8 @@ class InquirySetting < ActiveRecord::Base
   end
 
   def self.confirmation_subject
-    RefinerySetting.find_or_set(:inquiry_confirmation_subject, "Thank you for your inquiry")
+    RefinerySetting.find_or_set(:inquiry_confirmation_subject,
+                                "Thank you for your inquiry")
   end
 
   def self.confirmation_subject=(value)
@@ -15,11 +16,13 @@ class InquirySetting < ActiveRecord::Base
   end
 
   def self.notification_recipients
-    RefinerySetting.find_or_set(:inquiry_notification_recipients, (Role[:refinery].users.first.email if defined?(Role)))
+    RefinerySetting.find_or_set(:inquiry_notification_recipients,
+                                (defined?(Role) ? Role[:refinery].users.first.email : '' rescue ''))
   end
 
   def self.notification_subject
-    RefinerySetting.find_or_set(:inquiry_notification_subject, "New inquiry from your website")
+    RefinerySetting.find_or_set(:inquiry_notification_subject,
+                                "New inquiry from your website")
   end
 
 end

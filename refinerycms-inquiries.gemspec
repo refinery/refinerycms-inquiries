@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'refinerycms-inquiries'
-  s.version     = '0.9.8.2'
+  s.version     = '0.9.8.3'
   s.summary     = 'Inquiry handling functionality for the Refinery CMS project.'
   s.required_ruby_version = '>= 1.8.7'
   s.description = "Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend."
