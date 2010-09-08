@@ -12,7 +12,12 @@ class InquirySetting < ActiveRecord::Base
   end
 
   def self.confirmation_subject=(value)
-    RefinerySetting[:inquiry_confirmation_subject] = value
+    # handles a change in Refinery API
+    if RefinerySetting.methods.map(&:to_sym).include?(:set)
+      RefinerySetting.set(:inquiry_confirmation_subject, value)
+    else
+      RefinerySetting[:inquiry_confirmation_subject] = value
+    end
   end
 
   def self.notification_recipients
