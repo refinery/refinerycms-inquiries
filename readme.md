@@ -2,6 +2,19 @@
 
 ![Refinery Inquiries](http://refinerycms.com/system/images/0000/0626/inquiries.png)
 
+### Gem Installation using Bundler (The very best way)
+
+Include the latest [gem](http://rubygems.org/gems/refinerycms-inquiries) into your Refinery CMS application's Gemfile:
+
+    gem "refinerycms-inquiries", '~> 0.9.8.7'
+
+Then type the following at command line inside your Refinery CMS application's root directory:
+
+    bundle install
+
+You don't currently have to do any migrations because Refinery CMS never removed the inquiries tables by default.
+This may change in a future version.
+
 ## About
 
 __Add a simple contact form to Refinery that notifies you and the customer when an inquiry is made.__

@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
-  s.version           = %q{0.9.8.6}
-  s.date              = %q{2010-09-08}
+  s.version           = %q{0.9.8.7}
+  s.date              = %q{2010-09-09}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
@@ -67,6 +67,7 @@ Gem::Specification.new do |s|
     'lib',
     'lib/gemspec.rb',
     'lib/inquiries.rb',
+    'lib/refinerycms-inquiries.rb',
     'license.md',
     'readme.md',
     'refinerycms-inquiries.gemspec'
