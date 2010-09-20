@@ -53,5 +53,5 @@ Feature: Manage Inquiries
     When I go to the list of inquiries
     And I follow "Read the inquiry"
     And I follow "Remove this inquiry forever"
-    Then I should see "'David Jones' was successfully destroyed."
+    Then I should see "'David Jones' was successfully removed."
     And I should have 0 inquiries
