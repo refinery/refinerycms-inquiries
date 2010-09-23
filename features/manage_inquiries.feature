@@ -13,7 +13,7 @@ Feature: Manage Inquiries
     When I go to the list of inquiries
     Then I should see "David Jones said Hello, I really like your website. Was it hard to build ..."
     And I should have 1 inquiries
-    And I should not see "Create"
+    And I should not see "Add"
 
   Scenario: Spam List
     When I go to the list of inquiries
