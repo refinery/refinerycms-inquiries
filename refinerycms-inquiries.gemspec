@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
-  s.version           = %q{0.9.8.8}
-  s.date              = %q{2010-09-20}
+  s.version           = %q{0.9.8.9}
+  s.date              = %q{2010-09-23}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
@@ -49,6 +49,7 @@ Gem::Specification.new do |s|
     'config/locales/es.yml',
     'config/locales/fr.yml',
     'config/locales/it.yml',
+    'config/locales/lolcat.yml',
     'config/locales/lv.yml',
     'config/locales/nb.yml',
     'config/locales/nl.yml',
