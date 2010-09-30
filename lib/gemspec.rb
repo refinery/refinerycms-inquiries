@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-version = '0.9.8.9'
+version = '0.9.8.10'
 raise "Could not get version so gemspec can not be built" if version.nil?
 files = Dir.glob("**/*").flatten.reject do |file|
   file =~ /\.gem$/
