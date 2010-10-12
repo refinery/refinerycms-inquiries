@@ -12,13 +12,13 @@ class Inquiry < ActiveRecord::Base
 
   acts_as_indexed :fields => [:name, :email, :message, :phone]
 
-  scope :newest, :order => 'created_at DESC'
+  default_scope :order => 'created_at DESC' # previously scope :newest
 
   def self.latest(number = 7, include_spam = false)
     unless include_spam
-      ham.find(:all, :limit => number)
+      ham.limit(number)
     else
-      newest.find(:all, :limit => number)
+      limit(number)
     end
   end
 
