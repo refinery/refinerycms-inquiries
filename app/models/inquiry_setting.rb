@@ -22,7 +22,7 @@ class InquirySetting < ActiveRecord::Base
 
   def self.notification_recipients
     RefinerySetting.find_or_set(:inquiry_notification_recipients,
-                                (defined?(Role) ? Role[:refinery].users.first.email : '' rescue ''))
+                                ((Role[:refinery].users.first.email rescue nil) if defined?(Role)).to_s)
   end
 
   def self.notification_subject
