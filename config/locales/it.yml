@@ -33,7 +33,7 @@ it:
         back_to_all_inquiries: Torna a tutte le richieste
         inquiry: Richiesta
       submenu:
-        update_notified: Aggiornamento chi viene notificata
+        update_notified: Aggiornare destinatario notifica
         edit_confirmation_email: Modifica email di conferma
     inquiry_settings:
       update:
@@ -50,9 +50,9 @@ it:
         click_to_edit_subject: Clicca qui per modificare l'oggetto
         explanation: "Ogni volta che qualcuno ti contatti sul tuo sito web, Refinery invia una e-mail alla persona che ti contattato per confermare la richiesta."
         below_edit_email_sent: Qui di seguito è possibile modificare l'e-mail che viene inviata.
-        the_customer_making_inquiry: Il cliente che effettua la richiesta
+        the_customer_making_inquiry: Chi effettua la richiesta
         message: Messaggio
-        note: "Nota: inserire il testo %name% dove desideri che compiaia il nome del cliente nell'email"
+        note: "Nota: inserire nella email il testo %name% dove si vuole che compiaia il nome di chi invia la richiesta"
       subject_form:
         subject_value_name: Oggetto
   inquiry_mailer:
