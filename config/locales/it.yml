@@ -1,67 +1,80 @@
 it:
   plugins:
     refinery_inquiries:
-      title: Richieste di informazioni
-  activerecord:
-    models:
-      inquiry: Inchiesta
-    attributes:
-      inquiry:
-        to: A
-        from: Da
-        click_to_email: Clicca per questo indirizzo e-mail
-        phone: Telefono
-        date: Data
-        message: Messaggio
+      title: Richiesta di informazioni
+      description: Fornisce un modulo di contatto e memorizza le richieste
   inquiries:
     new:
-      header_message: "Un problema si è verificato"
+      header_message: "si è verificato un problema"
       message: "I seguenti problemi devono essere corretti:"
       send: Invia messaggio
       privacy_policy: "Noi diamo valore alla tua privacy"
   admin:
     inquiries:
       inquiry:
-        move_inquiry_to_closed: Spostare questa inchiesta chiusa
-        move_inquiry_to_open: Spostare questa indagine per aprire
-        read_inquiry: Leggi l'inchiesta
+        move_inquiry_to_closed: Spostare questa richiesta in stato chiuso
+        move_inquiry_to_open: Spostare questa richiesta in stato aperto
+        read_inquiry: Leggi la domanda
         remove_inquiry: "Sei sicuro di voler cancellare la richiesta di '%{name}'?"
-        title: Rimuovere questa indagine per sempre.
+        title: Rimuovere per sempre questa richiesta.
       toggle_status:
-        closed: "Inchiesta '%{inquiry}' è chiuso"
-        reopened: "Inchiesta '%{inquiry}' si riapre"
+        closed: "La richiesta '%{inquiry}' è chiusa"
+        reopened: "La richiesta '%{inquiry}' si riapre"
       index:
-        no_inquiries: Non hai ancora ricevuto alcuna richiesta in.
+        no_inquiries: Non hai ancora ricevuto alcuna richiesta.
       show:
         details: Dettagli
-        click_to_email: Clicca per e-mail
+        click_to_email: Clicca per inviare una e-mail a questo indirizzo
         status: Stato
         open: Aperto
         closed: Chiuso
         age: Età
         actions: Azioni
         back_to_all_inquiries: Torna a tutte le richieste
-        inquiry: Inchiesta
+        inquiry: Richiesta
       submenu:
         update_notified: Aggiornamento chi viene notificata
         edit_confirmation_email: Modifica email di conferma
     inquiry_settings:
       update:
-        updated: "'%{setting}' stato aggiornato con successo."
+        updated: "'%{setting}' è stato aggiornato con successo."
       notification_recipients_form:
         inquiry_settings_value_name: Invia a notifiche
-        explanation: "Ogni volta che qualcuno ti contatti sul suo sito web, Refinery invia una mail a dire che c'è una nuova indagine."
-        hint: "Inserisci un indirizzo email di cui sopra. Vuoi la notifica di andare a più di una persona? Inserisci più indirizzi email separati da virgole."
+        explanation: "Ogni volta che qualcuno ti contatta sul tuo sito web, Refinery invia una mail per avvisare che è presente una nuova richiesta."
+        hint: "Inserisci un indirizzo email per l'invio della notifica. Vuoi inviare la notifica a più di una persona? Inserisci più indirizzi email separati da virgole."
         example: "E.g. me@domain.com, friend@msn.com, workmate@work.com"
       confirmation_email_form:
         to: A
         from: Da
-        subject: Soggetto
+        subject: Oggetto
         click_to_edit_subject: Clicca qui per modificare l'oggetto
-        explanation: "Ogni volta che qualcuno ti contatti sul suo sito web, Refinery invia una e-mail per confermare la richiesta con la persona che ha reso."
+        explanation: "Ogni volta che qualcuno ti contatti sul tuo sito web, Refinery invia una e-mail alla persona che ti contattato per confermare la richiesta."
         below_edit_email_sent: Qui di seguito è possibile modificare l'e-mail che viene inviata.
-        the_customer_making_inquiry: Il cliente rendendo l'indagine
+        the_customer_making_inquiry: Il cliente che effettua la richiesta
         message: Messaggio
-        note: "Nota: inserire il testo %name% dove desideri che il nome del cliente a comparire nella e-mail"
+        note: "Nota: inserire il testo %name% dove desideri che compiaia il nome del cliente nell'email"
       subject_form:
-        subject_value_name: Soggetto
+        subject_value_name: Oggetto
+  inquiry_mailer:
+      notification:
+        greeting: Ciao a tutti
+        you_recieved_new_inquiry: Hai appena ricevuto una nuova richiesta sul tuo sito.
+        inquiry_starts: --- inizio della richiesta ---
+        inquiry_ends: --- fine della richiesta ---
+        from: Da
+        email: Email
+        phone: Telefono
+        message: Messaggio
+        closing_line: Saluti
+        ps: P.S. Tutte le richiesta ricevute sono salvate nella sezione "Richieste" di Refinery così da poter esser viste in un secondo momento.
+  activerecord:
+      models:
+        inquiry: Domanda
+      attributes:
+        inquiry:
+          to: A
+          from: Da
+          click_to_email: Clicca per inviare una e-mail a questo indirizzo
+          phone: Telefono
+          date: Data
+          message: Messaggio
