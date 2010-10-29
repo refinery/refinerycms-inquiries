@@ -5,10 +5,10 @@
   </span>
   <span class='actions'>
     <%= link_to refinery_icon_tag('delete.png'), admin_inquiry_url(inquiry),
+              { :method => :delete, 
+                :confirm => t('shared.admin.delete.message', :title => inquiry.name) },
                 :class => "cancel confirm-delete",
-                :title => t('admin.inquiries.delete'),
-                :'data-confirm' => t('shared.admin.delete.message', :title => inquiry.name),
-                :'data-method' => "delete" -%>
+                :title => t('admin.inquiries.delete') -%>
 
     <%= link_to refinery_icon_tag('zoom.png'), admin_inquiry_url(inquiry),
                 :title => t('.read_inquiry') -%>
