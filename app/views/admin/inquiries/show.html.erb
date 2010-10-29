@@ -65,9 +65,7 @@
         <strong><%= t('.message') %></strong>
       </td>
       <td>
-        <p style='margin-top: 0px'>
-          <%= @inquiry.message.gsub("\r\n\r\n", "\r\n").gsub("\r\n", "</p><p>") %>
-        </p>
+        <%= simple_format @inquiry.message, :style => 'margin-top: 0' %>
       </td>
     </tr>
   </table>
