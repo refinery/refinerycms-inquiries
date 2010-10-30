@@ -15,11 +15,7 @@ class Inquiry < ActiveRecord::Base
   default_scope :order => 'created_at DESC' # previously scope :newest
 
   def self.latest(number = 7, include_spam = false)
-    unless include_spam
-      ham.limit(number)
-    else
-      limit(number)
-    end
+    include_spam ? limit(number) : ham.limit(number)
   end
 
 end
