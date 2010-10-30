@@ -5,10 +5,9 @@ class Admin::InquirySettingsController < Admin::BaseController
           :order => 'name ASC',
           :redirect_to_url => "admin_inquiries_url"
 
-  before_filter :redirect_back_to_inquiries?, :only => [:index]
   before_filter :set_url_override?, :only => [:edit, :update]
-  after_filter :save_subject_for_confirmation?, :only => [:create, :update]
-  around_filter :rewrite_flash?, :only => [:create, :update]
+  after_filter :save_subject_for_confirmation?, :only => :update
+  around_filter :rewrite_flash?, :only => :update
 
 protected
   def rewrite_flash?
@@ -19,10 +18,6 @@ protected
 
   def save_subject_for_confirmation?
     InquirySetting.confirmation_subject = params[:subject] if params.keys.include?('subject')
-  end
-
-  def redirect_back_to_inquiries?
-    redirect_to admin_inquiries_url
   end
 
   def set_url_override?

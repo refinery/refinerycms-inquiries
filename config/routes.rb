@@ -1,13 +1,16 @@
 Refinery::Application.routes.draw do
   get '/contact', :to => 'inquiries#new', :as => 'new_inquiry'
-  resources :contact, :as => :inquiries, :controller => 'inquiries' do
+  resources :contact,
+            :only => :create,
+            :as => :inquiries,
+            :controller => 'inquiries' do
     collection do
       get :thank_you
     end
   end
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
-    resources :inquiries do
+    resources :inquiries, :only => [:index, :show, :destroy] do
       collection do
         get :spam
       end
@@ -15,6 +18,6 @@ Refinery::Application.routes.draw do
         get :toggle_spam
       end
     end
-    resources :inquiry_settings
+    resources :inquiry_settings, :only => [:edit, :update]
   end
 end
