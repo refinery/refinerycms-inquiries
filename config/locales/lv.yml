@@ -2,6 +2,7 @@ lv:
   plugins:
     refinery_inquiries:
       title: Pieprasījumi
+      description: Nodrošina kontaktformu un glabā pieprasījumus
   inquiries:
     new:
       send: Sūtīt ziņu
