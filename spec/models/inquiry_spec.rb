@@ -38,7 +38,7 @@ describe Inquiry do
   end
 
   describe ".latest" do
-    it "returs latest 7 nonspan inquiries by default" do
+    it "returns latest 7 nonspan inquiries by default" do
       8.times { Factory(:inquiry) }
       Inquiry.last.toggle!(:spam)
       Inquiry.latest.count.should == 7
