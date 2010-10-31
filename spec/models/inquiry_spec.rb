@@ -5,7 +5,7 @@ Dir[File.expand_path('../../../features/support/factories.rb', __FILE__)].each {
 describe Inquiry do
   describe "validations" do
     before(:each) do
-      @attr = { 
+      @attr = {
         :name => "rspec",
         :email => "rspec@refinery.com",
         :message => "test"
@@ -38,7 +38,7 @@ describe Inquiry do
   end
 
   describe ".latest" do
-    it "returns latest 7 nonspan inquiries by default" do
+    it "returns latest 7 non-spam inquiries by default" do
       8.times { Factory(:inquiry) }
       Inquiry.last.toggle!(:spam)
       Inquiry.latest.count.should == 7
