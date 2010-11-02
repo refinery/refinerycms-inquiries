@@ -18,8 +18,8 @@
                   admin_inquiry_url(@inquiry),
                   :class => 'delete_icon no-tooltip confirm-delete',
                   :title => t('admin.inquiries.delete'),
-                  :'data-confirm' => t('shared.admin.delete.message', :title => @inquiry.name),
-                  :'data-method' => "delete" %>
+                  :confirm => t('shared.admin.delete.message', :title => @inquiry.name),
+                  :method => "delete" %>
     </li>
   </ul>
 </div>
