@@ -8,7 +8,7 @@ it:
       header_message: si è verificato un problema
       message: "I seguenti problemi devono essere corretti:"
       send: Invia messaggio
-      privacy_policy: Noi diamo valore alla tua privacy
+      privacy_policy: "Noi diamo valore alla tua privacy"
   admin:
     inquiries:
       delete: Rimuovi per sempre questa richiesta
@@ -23,17 +23,17 @@ it:
         update_notified: Aggiorna i destinatari della notifica
         edit_confirmation_email: Modifica la mail di conferma
       index:
-        no_inquiries: Non hai ancora ricevuto alcuna richiesta
+        no_inquiries: Non hai ancora ricevuto alcuna richiesta.
       spam:
         no_spam: Evviva! Non hai alcuno spam
       show:
         details: Dettagli
-        age: Age
+        age: Età
         actions: Azioni
         back_to_all_inquiries: Torna a tutte le richieste
         spam: Spam
         spam_yes: 'si'
-        inquiry: Inquiry
+        inquiry: Domanda
         to: A
         from: Da
         click_to_email: Fare click per inviare una email a questo indirizzo
@@ -49,10 +49,10 @@ it:
         to: Da
         from: A
         subject: Oggetto
-        click_to_edit_subject: Fare clic qui per modificare l'ggetto
+        click_to_edit_subject: Fare clic qui per modificare l'oggetto
         explanation: Ogni volta che qualcuno ti contatta attraverso il tuo sito web, Refinery invia una mail per confermare la richiesta alla persona che l'ha fatta
         below_edit_email_sent: Qui di seguito è possibile modificare l'e-mail che viene inviata.
-        the_customer_making_inquiry: Chi effettua l'indagine
+        the_customer_making_inquiry: Chi invia il messaggio
         message: Messaggio
         note: "Nota: inserire nella email il testo %name% dove si vuole che compiaia il nome di chi invia la richiesta"
   inquiry_mailer:
