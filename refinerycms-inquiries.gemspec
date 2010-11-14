@@ -56,6 +56,7 @@ Gem::Specification.new do |s|
     'config/locales/pt-BR.yml',
     'config/locales/ru.yml',
     'config/locales/sl.yml',
+    'config/locales/sv.yml',
     'config/locales/zh-CN.yml',
     'config/routes.rb',
     'features',
