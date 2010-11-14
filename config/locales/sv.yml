@@ -1,0 +1,76 @@
+sv:
+  plugins:
+    refinery_inquiries:
+      title: Förfrågningar
+      description: Tillhandahåller ett formulär och sparar förfrågningar
+  inquiries:
+    new:
+      send: Skicka meddelande
+      privacy_policy: Vi värderar ditt privatliv
+  admin:
+    inquiries:
+      delete: Ta bort den här förfrågningen för alltid
+      inquiry:
+        read_inquiry: Läs förfrågningen
+        said: said
+        mark_as_spam: Märk som skräppost
+        mark_as_ham: Flytta till inkorg
+      submenu:
+        inbox: Inkorg
+        spam: Skräppost
+        update_notified: Redigera vem som får notifikation
+        edit_confirmation_email: Redigera bekräftelse
+      index:
+        no_inquiries: Du har inte fått några förfrågningar ännu.
+      spam:
+        no_spam: Hurra! Du har ingen skräppost.
+      show:
+        details: Detaljer
+        age: Ålder
+        actions: Handlingar
+        back_to_all_inquiries: Tillbaka till alla Förfrågningar
+        spam: Skräppost
+        spam_yes: 'ja'
+        inquiry: Förfrågning
+        to: Till
+        from: Från
+        click_to_email: Klicka för att skicka e-post till den här adressen
+        phone: Telefon
+        date: Datum
+        message: Meddelande
+    inquiry_settings:
+      notification_recipients_form:
+        inquiry_settings_value_name: Skicka notifikationer till
+        hint: När en ny förfrågan skickas in, skickar Refinery en notifikation till dig.
+        example: "Fyll i din/dina e-postadresser så här: jack@work.com, jill@office.com"
+      confirmation_email_form:
+        to: Till
+        from: Från
+        subject: Ämne
+        click_to_edit_subject: Klicka här för att ändra ämne
+        explanation: Varje gång någon kontaktar dig på din webbplats, skickar Refinery ut ett bekräftelsebrev till personen som kontaktade dig.
+        below_edit_email_sent: Nedanför är det brev som skickas ut
+        the_customer_making_inquiry: Besökaren som skickat förfrågan
+        message: Meddelande
+        note: "Notis: placera texten %name% där du vill att besökarens namn ska visas i brevet"
+  inquiry_mailer:
+    notification:
+      greeting: Hej!
+      you_recieved_new_inquiry: Du har just mottagit en ny förfrågan på din webbplats.
+      inquiry_starts: --- förfrågan börjar ---
+      inquiry_ends: --- förfrågan slutar ---
+      from: Från
+      email: E-postadress
+      phone: Telefon
+      message: Meddelande
+      closing_line: Vänliga hälsningar
+      ps: P.S. Alla dina förfrågningar sparas i "Förfrågningar"-sektionen av Refinery. Där kan du visa dem senare.
+  activerecord:
+    models:
+      inquiry: förfrågning
+    attributes:
+      inquiry:
+        name: Namn
+        email: E-postadress
+        phone: Telefon
+        message: Meddelande
