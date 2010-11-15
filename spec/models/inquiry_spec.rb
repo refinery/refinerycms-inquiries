@@ -41,19 +41,19 @@ describe Inquiry do
     it "returns latest 7 non-spam inquiries by default" do
       8.times { Factory(:inquiry) }
       Inquiry.last.toggle!(:spam)
-      Inquiry.latest.count.should == 7
+      Inquiry.latest.length.should == 7
     end
 
     it "returns latest 7 inquiries including spam ones" do
       4.times { Factory(:inquiry) }
       3.times { Factory(:inquiry) }
       Inquiry.all[0..2].each { |inquiry| inquiry.toggle!(:spam) }
-      Inquiry.latest(7, true).count.should == 7
+      Inquiry.latest(7, true).length.should == 7
     end
 
     it "returns latest n inquiries" do
       4.times { Factory(:inquiry) }
-      Inquiry.latest(3).count.should == 3
+      Inquiry.latest(3).length.should == 3
     end
   end
 end
