@@ -38,7 +38,7 @@
                     :class => 'stripped' %>
       </td>
       <td>
-        <%= f.text_area :value,
+        <%= f.text_area :value, :value => f.object.value, # required, we can't use :value
                         :rows => "5",
                         :class => 'widest' %>
         <br/>
