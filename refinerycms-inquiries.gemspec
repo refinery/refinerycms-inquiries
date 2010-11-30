@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
-  s.version           = %q{0.9.9.5}
-  s.date              = %q{2010-11-19}
+  s.version           = %q{0.9.9.6}
+  s.date              = %q{2010-11-30}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
@@ -50,6 +50,7 @@ Gem::Specification.new do |s|
     'config/locales/fr.yml',
     'config/locales/it.yml',
     'config/locales/lolcat.yml',
+    'config/locales/lt.yml',
     'config/locales/lv.yml',
     'config/locales/nb.yml',
     'config/locales/nl.yml',
@@ -59,6 +60,11 @@ Gem::Specification.new do |s|
     'config/locales/sv.yml',
     'config/locales/zh-CN.yml',
     'config/routes.rb',
+    'db',
+    'db/migrate',
+    'db/migrate/create_inquiries.rb',
+    'db/seeds',
+    'db/seeds/inquiries.rb',
     'features',
     'features/create_inquiries.feature',
     'features/manage_inquiries.feature',
@@ -69,6 +75,8 @@ Gem::Specification.new do |s|
     'features/support/paths.rb',
     'lib',
     'lib/gemspec.rb',
+    'lib/generators',
+    'lib/generators/refinerycms_inquiries_generator.rb',
     'lib/inquiries.rb',
     'lib/refinerycms-inquiries.rb',
     'license.md',
