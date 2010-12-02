@@ -1,15 +1,19 @@
 class CreateInquiries < ActiveRecord::Migration
   def self.up
-    create_table ::Inquiry.table_name, :force => true do |t|
-      t.string   "name"
-      t.string   "email"
-      t.string   "phone"
-      t.text     "message"
-      t.integer  "position"
-      t.boolean  "open",       :default => true
-      t.datetime "created_at"
-      t.datetime "updated_at"
-      t.boolean  "spam",       :default => false
+    unless ::Inquiry.table_exists?
+        create_table ::Inquiry.table_name, :force => true do |t|
+        t.string   "name"
+        t.string   "email"
+        t.string   "phone"
+        t.text     "message"
+        t.integer  "position"
+        t.boolean  "open",       :default => true
+        t.datetime "created_at"
+        t.datetime "updated_at"
+        t.boolean  "spam",       :default => false
+      end
+
+      add_index ::Inquiry.table_name, :id
     end
 
     # todo: remove at 1.0
@@ -19,9 +23,7 @@ class CreateInquiries < ActiveRecord::Migration
       t.boolean  "destroyable"
       t.datetime "created_at"
       t.datetime "updated_at"
-    end
-
-    add_index ::Inquiry.table_name, :id
+    end unless ::InquirySetting.table_exists?
   end
 
   def self.down
