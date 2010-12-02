@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
-  s.version           = %q{0.9.9.6}
+  s.version           = %q{0.9.9.7}
   s.date              = %q{2010-12-02}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
