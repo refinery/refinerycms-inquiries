@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
   s.version           = %q{0.9.9.7}
-  s.date              = %q{2010-12-02}
+  s.date              = %q{2010-12-06}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
@@ -65,7 +65,7 @@ Gem::Specification.new do |s|
     'db/migrate',
     'db/migrate/create_inquiries.rb',
     'db/seeds',
-    'db/seeds/inquiries.rb',
+    'db/seeds/pages_for_inquiries.rb',
     'features',
     'features/create_inquiries.feature',
     'features/manage_inquiries.feature',
