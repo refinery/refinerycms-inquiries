@@ -1,7 +1,7 @@
 class CreateInquiries < ActiveRecord::Migration
   def self.up
     unless ::Inquiry.table_exists?
-        create_table ::Inquiry.table_name, :force => true do |t|
+      create_table ::Inquiry.table_name, :force => true do |t|
         t.string   "name"
         t.string   "email"
         t.string   "phone"
