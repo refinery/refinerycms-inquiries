@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
   s.version           = %q{0.9.9.7}
-  s.date              = %q{2010-12-06}
+  s.date              = %q{2010-12-12}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
@@ -59,10 +59,10 @@ Gem::Specification.new do |s|
     'config/locales/ru.yml',
     'config/locales/sl.yml',
     'config/locales/sv.yml',
-    'config/locales/zh-CN.yml',
     'config/routes.rb',
     'db',
     'db/migrate',
+    'db/migrate/20101208082841_remove_position_and_open_from_inquiries.rb',
     'db/migrate/create_inquiries.rb',
     'db/seeds',
     'db/seeds/pages_for_inquiries.rb',
