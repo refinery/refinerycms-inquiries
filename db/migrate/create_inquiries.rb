@@ -29,9 +29,9 @@ class CreateInquiries < ActiveRecord::Migration
   end
 
   def self.down
-     remove_table ::Inquiry.table_name
+     drop_table ::Inquiry.table_name
      # todo: remove at 1.0
-     remove_table ::InquirySetting.table_name
+     drop_table ::InquirySetting.table_name
      Page.delete_all({:link_url => ("/contact" || "/contact/thank_you")})
   end
 end
