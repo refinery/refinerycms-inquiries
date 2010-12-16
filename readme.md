@@ -13,7 +13,17 @@ Then type the following at command line inside your Refinery CMS application's r
     bundle install
 
 You don't currently have to do any migrations because Refinery CMS never removed the inquiries tables by default.
-This may change in a future version.
+This will change in a future version - follow the instructions below if you are running the currently unreleased Refinery 0.9.9.
+
+#### Installation on Refinery 0.9.9
+
+The inquiries table has been removed from the base install of Refinery 0.9.9.  To install the migrations, run:
+
+    rails generate refinerycms_inquiries
+
+Next migrate your database and you're done:
+
+    rake db:migrate
 
 ## About
 
