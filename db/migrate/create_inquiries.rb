@@ -24,11 +24,14 @@ class CreateInquiries < ActiveRecord::Migration
       t.datetime "created_at"
       t.datetime "updated_at"
     end unless ::InquirySetting.table_exists?
+
+    load(Rails.root.join('db', 'seeds', 'pages_for_inquiries.rb').to_s)
   end
 
   def self.down
      remove_table ::Inquiry.table_name
      # todo: remove at 1.0
      remove_table ::InquirySetting.table_name
+     Page.delete_all({:link_url => ("/contact" || "/contact/thank_you")})
   end
 end
