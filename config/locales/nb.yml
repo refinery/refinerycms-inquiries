@@ -40,7 +40,6 @@ nb:
       index:
         search_results_for: Søkeresultater for %{query}
         no_inquiries: Du har ikke mottatt noen forespørsler enda.
-      spam:
         no_spam: Hurra! Du har ikke noen søppelpost.
       show:
         details: Detaljer

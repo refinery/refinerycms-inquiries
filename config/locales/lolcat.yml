@@ -22,7 +22,6 @@ lolcat:
         edit_confirmation_email: EDIT CONFIRMASHUN EMAIL
       index:
         no_inquiries: U HAS NOT RECEIVD ANY INQUIRIEZ YET.
-      spam:
         no_spam: HOORAH! U DOAN HAS ANY SPAM.
       show:
         details: DETAILS

@@ -22,7 +22,6 @@ ru:
         edit_confirmation_email: Редактировать письмо-подтверждение
       index:
         no_inquiries: "Вы еще не получили ни одного запроса."
-      spam:
         no_spam: "Ура, спама нет!"
       show:
         details: Подробности

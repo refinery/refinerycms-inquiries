@@ -24,7 +24,6 @@ it:
         edit_confirmation_email: Modifica la mail di conferma
       index:
         no_inquiries: Non hai ancora ricevuto alcuna richiesta.
-      spam:
         no_spam: Evviva! Non hai alcuno spam
       show:
         details: Dettagli

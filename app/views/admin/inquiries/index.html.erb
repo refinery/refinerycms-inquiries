@@ -3,23 +3,27 @@
   <% if searching? %>
     <h2><%= t('shared.admin.search.results_for', :query => params[:search]) %></h2>
     <% if @inquiries.any? %>
+      <%= will_paginate @inquiries %>
       <ul>
         <%= render :partial => "inquiry", :collection => @inquiries %>
       </ul>
+      <%= will_paginate @inquiries %>
     <% else %>
       <p><%= t('shared.admin.search.no_results') %></p>
     <% end %>
   <% else %>
-    <% if @grouped_inquiries.any? -%>
-      <% @grouped_inquiries.each do |container| %>
+    <% if @inquiries.any? -%>
+      <%= will_paginate @inquiries %>
+      <% group_by_date(@inquiries).each do |container| %>
         <h3><%= l((inquiry_group = container.last).first.created_at, :format => :short) %></h3>
         <ul>
           <%= render :partial => 'inquiry', :collection => inquiry_group %>
         </ul>
       <% end %>
+      <%= will_paginate @inquiries %>
     <% else -%>
       <p>
-        <strong><%= t('.no_inquiries') %></strong>
+        <strong><%= t(".no_#{action_name == 'index' ? 'inquiries' : 'spam'}") %></strong>
       </p>
     <% end -%>
   <% end %>

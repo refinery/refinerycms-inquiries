@@ -22,7 +22,6 @@ pt-BR:
         edit_confirmation_email: Editar email de confirmação
       index:
         no_inquiries: "Não exitem mensagens."
-      spam:
         no_spam: Não existem mensagens de spam.
       show:
         details: Detalhes

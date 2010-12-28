@@ -22,7 +22,6 @@ lt:
         edit_confirmation_email: Redaguoti patvirtinimo laišką
       index:
         no_inquiries: Kol kas nėra jokių užklausų.
-      spam:
         no_spam: Valio! Jūs neturite jokio spamo.
       show:
         details: Smulkesnė informacija

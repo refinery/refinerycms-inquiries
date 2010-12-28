@@ -22,7 +22,6 @@ lv:
         edit_confirmation_email: Labot apstiprinājuma epastu
       index:
         no_inquiries: Nav saņemts neviens pieprasījums.
-      spam:
         no_spam: Urā! Jums nav neviens pieprasījums, kas būtu spams.
       show:
         details: Detaļas

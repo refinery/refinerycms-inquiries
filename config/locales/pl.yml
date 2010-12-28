@@ -23,7 +23,6 @@ pl:
         edit_confirmation_email: Zmień email z potwierdzeniem
       index:
         no_inquiries: Nie ma jeszcze żadnych zapytań.
-      spam:
         no_spam: Hurra! Nie masz żadnego spamu.
       show:
         details: Szczegóły

@@ -22,7 +22,6 @@ sv:
         edit_confirmation_email: Redigera bekräftelse
       index:
         no_inquiries: Du har inte fått några förfrågningar ännu.
-      spam:
         no_spam: Hurra! Du har ingen skräppost.
       show:
         details: Detaljer

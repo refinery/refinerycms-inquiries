@@ -22,7 +22,6 @@ fr:
         edit_confirmation_email: Modifier l'e-mail de confirmation
       index:
         no_inquiries: Vous n'avez reçu aucune requête.
-      spam:
         no_spam: Vous n'avez aucun spam.
       show:
         details: Détails

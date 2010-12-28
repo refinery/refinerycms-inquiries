@@ -21,7 +21,6 @@ nl:
         edit_confirmation_email: Bewerk bevestigings email
       index:
         no_inquiries: Je hebt nog geen vragen ontvangen.
-      spam:
         no_spam: Jeej! Je hebt geen spam.
       show:
         details: Details
