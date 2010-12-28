@@ -3,7 +3,7 @@ class Admin::InquiriesController < Admin::BaseController
   crudify :inquiry, :title_attribute => "name", :order => "created_at DESC"
   helper_method :group_by_date
 
-  before_filter :find_all_ham, :only => [:ham]
+  before_filter :find_all_ham, :only => [:index]
   before_filter :find_all_spam, :only => [:spam]
   before_filter :get_spam_count, :only => [:index, :spam]
 
