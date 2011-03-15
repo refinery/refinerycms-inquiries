@@ -1,0 +1,75 @@
+cs:
+  plugins:
+    refinery_inquiries:
+      title: Dotazy
+      description: Zajišťuje kontaktní formulář a uchovává zaslané dotazy.
+  inquiries:
+    new:
+      send: Odeslat zprávu
+      privacy_policy: Vážíme si Vaše soukromí 
+  admin:
+    inquiries:
+      delete: Odstranit dotaz
+      inquiry:
+        read_inquiry: Zobrazit dotaz
+        said: řekl
+        mark_as_spam: Označiť jako spam
+        mark_as_ham: Přesunout do inbox-u
+      submenu:
+        inbox: Inbox
+        spam: Spam
+        update_notified: Aktualizovat seznam notifikovaných
+        edit_confirmation_email: Upravit potvrzující email
+      index:
+        no_inquiries: Nemáte žádné dotazy.
+        no_spam: Hurá! Nemáte žádný spam.  
+      show:
+        details: Detaily
+        age: Věk 
+        actions: Akce
+        back_to_all_inquiries: Návrat na seznam dotazů
+        spam: Spam
+        spam_yes: 'ano'
+        inquiry: Dotaz
+        to: Pro
+        from: Od
+        click_to_email: Click to email this address
+        phone: Telefon
+        date: Datum
+        message: Zpráva
+    inquiry_settings:
+      notification_recipients_form:
+        inquiry_settings_value_name: Odeslat notifikaci pro 
+        hint: Při posláni nového dotazu, Refinery zašle notifikační zprávu na zadané emaily. 
+        example: "Zadej tvou emailovou adresu(y) jako například: jack@work.com, jill@office.com"
+      confirmation_email_form:
+        to: Pro
+        from: Od
+        subject: Subjekt
+        click_to_edit_subject: Klikni zde pro editaci subjektu
+        explanation: Vždy když tě někdo kontaktuje přes web, Refinery pošle potvrzující email o přijetí dotazu osobě, která jej zadala. 
+        below_edit_email_sent: Níže si můžeš upravit email, který je odesílán. 
+        the_customer_making_inquiry: Klient zaslal dotaz
+        message: Zpráva
+        note: "Poznámka: Vlož text %name% kde chceš aby se nacházelo klientove jméno ve zprávě."
+  inquiry_mailer:
+    notification:
+      greeting: Ahoj
+      you_recieved_new_inquiry: Právě jsi obdržel nový dotaz na webové stránce.
+      inquiry_starts: --- začátek dotazu ---
+      inquiry_ends: --- konec dotazu ---
+      from: Od
+      email: Email
+      phone: Telefon
+      message: Zpráva
+      closing_line: S pozdravem
+      ps: P.S. Všechny dotazy jsou uloženy pod sekcí "Dotazy" v administraci, pokud by je bylo třeba zobrazit později.
+  activerecord:
+    models:
+      inquiry: dotaz
+    attributes:
+      inquiry:
+        name: Jméno
+        email: Email
+        phone: Telefon
+        message: Zpráva
