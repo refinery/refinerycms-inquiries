@@ -2,7 +2,7 @@ nb:
   plugins:
     refinery_inquiries:
       title: Forespørsler
-      description: Provides a contact form and stores inquiries
+      description: Legger til et kontaktskjema og lagrer forespørsler
   inquiries:
     new:
       send: Send melding
