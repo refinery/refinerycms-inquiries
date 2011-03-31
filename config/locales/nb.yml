@@ -2,64 +2,44 @@ nb:
   plugins:
     refinery_inquiries:
       title: Forespørsler
-  activerecord:
-    models:
-      inquiry: Forespørsel
-      inquiry_setting: Innstillinger for Forespørsler
-    attributes:
-      inquiry:
-        to: Til
-        from: Fra
-        click_to_email: Trykk for å sende en e-post til denne adressen
-        phone: Telefon
-        date: Dato
-        message: Melding
+      description: Provides a contact form and stores inquiries
   inquiries:
     new:
-      header_message: "Ooops, det oppsto et lite problem"
-      message: "Følgende problemer må løses:"
       send: Send melding
       privacy_policy: "Vi respekterer ditt privatliv"
   admin:
     inquiries:
+      delete: Fjern denne forespørselen permanent
       inquiry:
-        move_inquiry_to_closed: Flytt denne forespørselen til lukket
-        move_inquiry_to_open: Flytt denne forespørselen til åpen
         read_inquiry: Les forespørselen
-        remove_inquiry: "Er du sikker på at du ønsker å slette denne forespørselen fra '%{name}'?"
-        title: Fjern denne forespørselen permanent.
         said: sa
         mark_as_spam: Merk som søppel
         mark_as_ham: Flytt til innboksen
-      toggle_status:
-        closed: "Forespørselen '%{inquiry}' er lukket"
-        reopened: "Forespørselen '%{inquiry}' er gjenåpnet"
       submenu:
+        inbox: Innboks
+        spam: Søppel
         update_notified: Oppdater hvem som blir informert
         edit_confirmation_email: Rediger bekreftelses e-posten
       index:
-        search_results_for: Søkeresultater for %{query}
         no_inquiries: Du har ikke mottatt noen forespørsler enda.
         no_spam: Hurra! Du har ikke noen søppelpost.
       show:
         details: Detaljer
-        click_to_email: Trykk for å sende e-post
-        status: Status
-        open: Åpen
-        closed: Lukket
         age: Alder
         actions: Handlinger
         back_to_all_inquiries: Tilbake til alle forespørslene
         spam: Søppel
         spam_yes: 'ja'
         inquiry: Forespørsel
-        title: Fjern denne forespørselen permanent
+        to: Til
+        from: Fra
+        click_to_email: Trykk for å sende e-post
+        phone: Telefon
+        date: Dato
+        message: Melding
     inquiry_settings:
-      update:
-        updated: "'%{setting}' ble endret."
       notification_recipients_form:
-        inquiry_settings_value_name: Send oppdateringer til
-        explanation: "Hver gang noen kontakter deg på websiden din, så vil Refinery sende ut en e-post for å si ifra at det er ny forespørsel."
+        inquiry_settings_value_name: Send varslinger til
         hint: "Når en ny forespørsel er lagt inn, så vil Refinery sende deg en e-post for å si i fra."
         example: "Legg inn din(e) e-post adresse(r) slik: jack@jobb.no, jill@kontoret.no"
       confirmation_email_form:
@@ -72,5 +52,24 @@ nb:
         the_customer_making_inquiry: Kunden som skrev forespørselen
         message: Melding
         note: "Merk: plasser teksten %name% der du ønsker at kundens navn skal vises i e-posten"
-      subject_form:
-        subject_value_name: Enme
+  inquiry_mailer:
+    notification:
+      greeting: Hei
+      you_recieved_new_inquiry: Du har mottatt en ny forespørsel på nettsiden din.
+      inquiry_starts: --- Start på forespørsel ---
+      inquiry_ends: --- Slutt på forespørsel ---
+      from: Fra
+      email: Epost
+      phone: Telefon
+      message: Melding
+      closing_line: Vennlig hilsen
+      ps: P.S. Alle dine forespørsler blir lagret i seksjonen "Forespørsel" i Refinery om du vil finne de igjen senere
+  activerecord:
+    models:
+      inquiry: Forespørsel
+    attributes:
+      inquiry:
+        name: Navn
+        email: Epost
+        phone: Telefon
+        message: Melding
