@@ -1,0 +1,75 @@
+zh-CN:
+  plugins:
+    refinery_inquiries:
+      title: 咨询
+      description: 提供一个联系表单与保存咨询
+  inquiries:
+    new:
+      send: 发送消息
+      privacy_policy: 我们珍视您的隐私
+  admin:
+    inquiries:
+      delete: 永久删除此咨询
+      inquiry:
+        read_inquiry: 阅读此咨询
+        said: 说
+        mark_as_spam: 标记为垃圾邮件
+        mark_as_ham: 移到收件箱
+      submenu:
+        inbox: 收件箱
+        spam: 垃圾邮件
+        update_notified: 更新通知名单
+        edit_confirmation_email: 编辑确认email
+      index:
+        no_inquiries: 你还没有收到任何的咨询.
+        no_spam: 垃圾邮件箱为空.
+      show:
+        details: 详细
+        age: 时间
+        actions: 操作
+        back_to_all_inquiries: 返回到所有的咨询
+        spam: 垃圾邮件
+        spam_yes: '是'
+        inquiry: 咨询
+        to: 到
+        from: 从
+        click_to_email: 点击发送到这个地址
+        phone: 电话
+        date: 日期
+        message: 信息
+    inquiry_settings:
+      notification_recipients_form:
+        inquiry_settings_value_name: 发送通知到
+        hint: 当收到新的咨询时，Refinery将会发一封email通知你.
+        example: "输入你的email地址如: jack@work.com, jill@office.com"
+      confirmation_email_form:
+        to: 到
+        from: 从
+        subject: 标题
+        click_to_edit_subject: 点击这里编辑标题
+        explanation: 每当有人在网站上联系你, Refinery发送出一封email去确认发送者的身份.
+        below_edit_email_sent: 你可以在下面编辑你要发出去的email.
+        the_customer_making_inquiry: 客户正在写咨询
+        message: 信息
+        note: "注意: 把你的客户名字在电子邮件出现的位置以文字 %name% 做替换"
+  inquiry_mailer:
+    notification:
+      greeting: 您好
+      you_recieved_new_inquiry: 你刚从你的网站收到一条新的咨询.
+      inquiry_starts: --- 咨询开始处 ---
+      inquiry_ends: --- 咨询结束处 ---
+      from: 表单
+      email: email
+      phone: 电话
+      message: 信息
+      closing_line: 谨致问候
+      ps: 附言 您所有的咨询被保存在“咨询”区域以便于你在日后查看.
+  activerecord:
+    models:
+      inquiry: inquiry
+    attributes:
+      inquiry:
+        name: 姓名
+        email: email
+        phone: 联系电话
+        message: 留言信息
