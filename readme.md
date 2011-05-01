@@ -1,6 +1,6 @@
 # Inquiries
 
-![Refinery Inquiries](http://refinerycms.com/system/images/0000/0626/inquiries.png)
+![Refinery Inquiries](http://refinerycms.com/system/images/BAhbBlsHOgZmSSIqMjAxMS8wNS8wMS8wNF81MF8wMV81MDlfaW5xdWlyaWVzLnBuZwY6BkVU/inquiries.png)
 
 ### Gem Installation using Bundler (The very best way)
 
@@ -35,7 +35,7 @@ In summary you can:
 * Specify who is notified when a new inquiry comes in
 * Customise an auto responder email that is sent to the person making the inquiry
 
-When inquiries come in, you and the customer are notified. The inquiry will now show up as an "open" inquiry. The idea is to deal with the inquiry and then "close" it so you know it's been sorted.
+When inquiries come in, you and the customer are generally notified. As we implemented spam filtering through the [filters_spam plugin](https://github.com/resolve/filters_spam#readme) you will not get notified if an inquiry is marked as 'spam'.
 
 ## How do I get Notified?
 
