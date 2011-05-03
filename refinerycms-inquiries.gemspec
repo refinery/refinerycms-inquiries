@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
-  s.version           = %q{0.9.9.9}
-  s.date              = %q{2010-12-29}
+  s.version           = %q{1.0.0}
+  s.date              = %q{2011-05-03}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
@@ -42,8 +42,10 @@ Gem::Specification.new do |s|
     'app/views/inquiry_mailer/notification.html.erb',
     'config',
     'config/locales',
+    'config/locales/cs.yml',
     'config/locales/da.yml',
     'config/locales/de.yml',
+    'config/locales/en-GB.yml',
     'config/locales/en.yml',
     'config/locales/es.yml',
     'config/locales/fr.yml',
@@ -56,8 +58,10 @@ Gem::Specification.new do |s|
     'config/locales/pl.yml',
     'config/locales/pt-BR.yml',
     'config/locales/ru.yml',
+    'config/locales/sk.yml',
     'config/locales/sl.yml',
     'config/locales/sv.yml',
+    'config/locales/zh-CN.yml',
     'config/routes.rb',
     'db',
     'db/migrate',
