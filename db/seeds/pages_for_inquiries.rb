@@ -1,3 +1,10 @@
+::User.find(:all).each do |user|
+  if user.plugins.where(:name => 'refinery_inquiries').blank?
+    user.plugins.create(:name => "refinery_inquiries",
+                        :position => (user.plugins.maximum(:position) || -1) +1)
+  end
+end if defined?(::User)
+
 if defined?(::Page)
   page_position = (::Page.maximum(:position, :conditions => {:parent_id => nil}) || -1)
 
