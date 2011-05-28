@@ -23,28 +23,30 @@
         <%= "#{RefinerySetting[:site_name]} &lt;no-reply@#{request.domain(RefinerySetting.find_or_set(:tld_length, 1))}&gt;".html_safe %>
       </td>
     </tr>
-    <tr>
-      <td>
-        <label class='stripped'><%= t('.subject') %></label>
-      </td>
-      <td>
-        <%= text_field_tag 'subject', InquirySetting.confirmation_subject,
-                           :class => 'widest' %>
-      </td>
-    </tr>
-    <tr>
-      <td valign='top'>
-        <%= f.label :value, t('.message'),
-                    :class => 'stripped' %>
-      </td>
-      <td>
-        <%= f.text_area :value, :value => f.object.value, # required, we can't use :value
-                        :rows => "5",
-                        :class => 'widest' %>
-        <br/>
-        <em><%= t('.note') %></em>
-      </td>
-    </tr>
+    <% ::Refinery::I18n.frontend_locales.each do |locale| %>
+      <tr>
+        <td>
+          <label class='stripped'><%= t('.subject') %> (<%= locale.to_s %>)</label>
+        </td>
+        <td>
+          <%= text_field_tag "subject[][#{locale.to_s}]", InquirySetting.confirmation_subject(locale),
+                             :class => 'widest' %>
+        </td>
+      </tr>
+      <tr>
+        <td valign='top'>
+          <%= f.label :value, t('.message'),
+                      :class => 'stripped' %> (<%= locale.to_s %>)
+        </td>
+        <td>
+          <%= text_area_tag "message[][#{locale.to_s}]",  InquirySetting.confirmation_message(locale), # required, we can't use :value
+                          :rows => "5",
+                          :class => 'widest' %>
+          <br/>
+          <em><%= t('.note') %></em>
+        </td>
+      </tr>
+    <% end %>
   </table>
 
   <%= render :partial => "/shared/admin/form_actions",
