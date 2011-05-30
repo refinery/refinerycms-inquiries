@@ -1,6 +1,6 @@
 <% content_for :body_content_left do %>
   <div class='inquiries'>
-    <%=raw @page[Page.default_parts.first.to_sym] %>
+    <%=raw @page.content_for(Page.default_parts.first.to_sym) %>
 
     <%= form_for @inquiry do |f| %>
       <%= render :partial => "/shared/admin/error_messages",
