@@ -6,20 +6,28 @@ class InquirySetting < ActiveRecord::Base
     )
   end
 
-  def self.confirmation_subject
-    RefinerySetting.find_or_set(:inquiry_confirmation_subject,
+  def self.confirmation_subject(locale='en')
+    RefinerySetting.find_or_set("inquiry_confirmation_subject_#{locale}".to_sym,
                                 "Thank you for your inquiry")
   end
 
   def self.confirmation_subject=(value)
-    # handles a change in Refinery API
-    if RefinerySetting.methods.map(&:to_sym).include?(:set)
-      RefinerySetting.set(:inquiry_confirmation_subject, value)
-    else
-      RefinerySetting[:inquiry_confirmation_subject] = value
+    value.first.keys.each do |locale|
+      RefinerySetting.set("inquiry_confirmation_subject_#{locale}".to_sym, value.first[locale.to_sym])
     end
   end
+  
+  def self.confirmation_message(locale='en')
+    RefinerySetting.find_or_set("inquiry_confirmation_messeage_#{locale}".to_sym,
+                                RefinerySetting[:inquiry_confirmation_body])
+  end
 
+  def self.confirmation_message=(value)
+    value.first.keys.each do |locale|
+      RefinerySetting.set("inquiry_confirmation_messeage_#{locale}".to_sym, value.first[locale.to_sym])
+    end
+  end
+  
   def self.notification_recipients
     RefinerySetting.find_or_set(:inquiry_notification_recipients,
                                 ((Role[:refinery].users.first.email rescue nil) if defined?(Role)).to_s)
