@@ -9,6 +9,7 @@ module Refinery
 
       config.after_initialize do
         Refinery::Plugin.register do |plugin|
+          plugin.pathname = root
           plugin.name = "refinery_inquiries"
           plugin.directory = "inquiries"
           plugin.menu_match = /(refinery|admin)\/inquir(ies|y_settings)$/
