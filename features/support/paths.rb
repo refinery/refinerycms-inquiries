@@ -13,10 +13,10 @@ module NavigationHelpers
           inquiries_path
 
         when /the list of inquiries/
-          admin_inquiries_path
+          refinery_admin_inquiries_path
 
         when /the list of spam inquiries/
-          spam_admin_inquiries_path
+          spam_refinery_admin_inquiries_path
         else
           nil
         end

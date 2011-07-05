@@ -5,7 +5,7 @@ module Refinery
       crudify :'refinery/setting',
               :title_attribute => "name",
               :order => 'name ASC',
-              :redirect_to_url => main_app.refinery_admin_inquiries_path
+              :redirect_to_url => 'main_app.refinery_admin_inquiries_path'
 
       before_filter :set_url_override?, :only => [:edit, :update]
       after_filter :save_subject_for_confirmation?, :only => :update
