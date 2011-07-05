@@ -1,0 +1,27 @@
+<div id='actions'>
+  <ul>
+    <li>
+      <%= render :partial => "/refinery/admin/search", :locals => {:url => request.path} %>
+    </li>
+    <li <%= "class='selected'" if params[:action] == "index" %>>
+      <%= link_to t('.inbox'), main_app.refinery_admin_inquiries_path, :class => "email_icon" %>
+    </li>
+    <li <%= "class='selected'" if params[:action] == "spam" %>>
+      <% if @spam_count > 0  %>
+        <%= link_to "#{t('.spam')} (#{@spam_count})", main_app.spam_refinery_admin_inquiries_path, :class => "spam_icon" %>
+      <% else %>
+        <%= link_to t('.spam'), main_app.spam_refinery_admin_inquiries_path, :class => "spam_empty_icon" %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to t('.update_notified'),
+                    main_app.edit_refinery_admin_inquiry_setting_path(:inquiry_notification_recipients, :dialog => true, :height => 300),
+                    :class => "user_comment_icon" %>
+    </li>
+    <li>
+      <%= link_to t('.edit_confirmation_email'),
+                  main_app.edit_refinery_admin_inquiry_setting_path(:inquiry_confirmation_body, :dialog => true),
+                  :class => "edit_email_icon" %>
+    </li>
+  </ul>
+</div>

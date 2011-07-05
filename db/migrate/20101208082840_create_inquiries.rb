@@ -1,7 +1,7 @@
 class CreateInquiries < ActiveRecord::Migration
-  def self.up
-    unless ::Inquiry.table_exists?
-      create_table ::Inquiry.table_name, :force => true do |t|
+  def up
+    unless ::Refinery::Inquiry.table_exists?
+      create_table ::Refinery::Inquiry.table_name, :force => true do |t|
         t.string   "name"
         t.string   "email"
         t.string   "phone"
@@ -13,30 +13,30 @@ class CreateInquiries < ActiveRecord::Migration
         t.boolean  "spam",       :default => false
       end
 
-      add_index ::Inquiry.table_name, :id
+      add_index ::Refinery::Inquiry.table_name, :id
     end
 
     # todo: remove at 1.0
-    create_table ::InquirySetting.table_name, :force => true do |t|
+    create_table ::Refinery::InquirySetting.table_name, :force => true do |t|
       t.string   "name"
       t.text     "value"
       t.boolean  "destroyable"
       t.datetime "created_at"
       t.datetime "updated_at"
-    end unless ::InquirySetting.table_exists?
+    end unless ::Refinery::InquirySetting.table_exists?
 
-    ::Page.reset_column_information if defined?(::Page)
+    ::Refinery::Page.reset_column_information if defined?(::Refinery::Page)
 
     load(Rails.root.join('db', 'seeds', 'pages_for_inquiries.rb').to_s)
   end
 
-  def self.down
-     drop_table ::Inquiry.table_name
+  def down
+     drop_table ::Refinery::Inquiry.table_name
      # todo: remove at 1.0
-     drop_table ::InquirySetting.table_name
+     drop_table ::Refinery::InquirySetting.table_name
      
-     ::Page.delete_all({
+     ::Refinery::Page.delete_all({
        :link_url => ("/contact" || "/contact/thank_you")
-     }) if defined?(::Page)
+     }) if defined?(::Refinery::Page)
   end
 end

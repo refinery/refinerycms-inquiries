@@ -1,14 +1,14 @@
-::User.find(:all).each do |user|
+::Refinery::User.find(:all).each do |user|
   if user.plugins.where(:name => 'refinery_inquiries').blank?
     user.plugins.create(:name => "refinery_inquiries",
                         :position => (user.plugins.maximum(:position) || -1) +1)
   end
-end if defined?(::User)
+end if defined?(::Refinery::User)
 
-if defined?(::Page)
-  page_position = (::Page.maximum(:position, :conditions => {:parent_id => nil}) || -1)
+if defined?(::Refinery::Page)
+  page_position = (::Refinery::Page.maximum(:position, :conditions => {:parent_id => nil}) || -1)
 
-  contact_us_page = ::Page.create({
+  contact_us_page = ::Refinery::Page.create({
     :title => "Contact",
     :link_url => "/contact",
     :menu_match => "^/(inquiries|contact).*$",
