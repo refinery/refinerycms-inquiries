@@ -14,7 +14,7 @@ class Inquiry < ActiveRecord::Base
 
   default_scope :order => 'created_at DESC' # previously scope :newest
 
-  attr_accessible :name, :phone, :message, :spam, :email
+  attr_accessible :name, :phone, :message, :email
 
   def self.latest(number = 7, include_spam = false)
     include_spam ? limit(number) : ham.limit(number)
