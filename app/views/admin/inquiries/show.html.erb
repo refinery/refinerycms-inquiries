@@ -65,7 +65,7 @@
         <strong><%= t('.message') %></strong>
       </td>
       <td>
-        <%= simple_format @inquiry.message, :style => 'margin-top: 0' %>
+        <%= simple_format strip_tags(@inquiry.message), :style => 'margin-top: 0' %>
       </td>
     </tr>
   </table>
