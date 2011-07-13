@@ -8,7 +8,7 @@
 <%= t('.email') %>: <%= @inquiry.email %>
 <%= t('.phone') %>: <%= @inquiry.phone %>
 <%= t('.message') %>:
-<%=raw @inquiry.message %>
+<%=simple_format strip_tags(@inquiry.message) %>
 
 <%= t('.inquiry_ends') %>
 
