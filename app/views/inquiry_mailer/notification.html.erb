@@ -8,11 +8,11 @@
 <%= t('.email') %>: <%= @inquiry.email %>
 <%= t('.phone') %>: <%= @inquiry.phone %>
 <%= t('.message') %>:
-<%= @inquiry.message %>
+<%=raw @inquiry.message %>
 
 <%= t('.inquiry_ends') %>
 
 <%= t('.closing_line') %>,
 <%= RefinerySetting[:site_name] %>
 
-<%= t('.ps') %>
+<%=raw t('.ps') %>
