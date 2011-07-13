@@ -63,7 +63,7 @@ en-GB:
       phone: Phone
       message: Message
       closing_line: Kind Regards
-      ps: P.S. All your enquiries are stored in the "Enquiries" section of Refinery should you ever want to view it later there.
+      ps: P.S. All your enquiries are stored in the "Enquiries" section of Refinery should you ever want to view it there later.
   activerecord:
     models:
       inquiry: inquiry
