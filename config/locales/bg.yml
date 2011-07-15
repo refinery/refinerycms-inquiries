@@ -1,0 +1,75 @@
+bg:
+  plugins:
+    refinery_inquiries:
+      title: Запитвания
+      description: Осигурява форма за контакт и съхранение на запитвания
+  inquiries:
+    new:
+      send: Изпращане на съобщение
+      privacy_policy: Високо ценим Вашите лични данни
+  admin:
+    inquiries:
+      delete: Изтриване на това запитване завинаги
+      inquiry:
+        read_inquiry: Прочит на запитването
+        said: написа
+        mark_as_spam: Отбелязване като спам
+        mark_as_ham: 'Преместване във "Входящи"'
+      submenu:
+        inbox: Входящи
+        spam: Спам
+        update_notified: Получатели на уведомления
+        edit_confirmation_email: Е-поща за потвърждение
+      index:
+        no_inquiries: Все още не сте получи запитвания.
+        no_spam: Поздравления! Нямате никакъв спам.
+      show:
+        details: Подробности
+        age: Възраст
+        actions: Действия
+        back_to_all_inquiries: Обратно към всички запитвания
+        spam: Спам
+        spam_yes: 'да'
+        inquiry: Запитване
+        to: До
+        from: От
+        click_to_email: Изпращане на е-поща до този адрес
+        phone: Телефон
+        date: Дата
+        message: Съобщение
+    inquiry_settings:
+      notification_recipients_form:
+        inquiry_settings_value_name: Изпращане на уведомления до
+        hint: При получаване на ново запитване, Refinery, ще Ви уведоми по е-пощата.
+        example: "Въведете адреса(или няколко) на Вашата е-поща. Например: jack@work.com, jill@office.com"
+      confirmation_email_form:
+        to: От
+        from: До
+        subject: Тема
+        click_to_edit_subject: Цъкнете тук за редактиране на темата
+        explanation: Всеки път, когато някой се свържи с Вас през уебсайта Ви, Refinery, ще изпраща е-поща до него за потвърждение.
+        below_edit_email_sent: По-долу можете да редактирате писмото, което ще бъде изпратено.
+        the_customer_making_inquiry: Запитващ
+        message: Съобщение
+        note: 'Забележка: Поставете текста "%name%", където бихте желали да се появи името на запитващия в писмото'
+  inquiry_mailer:
+    notification:
+      greeting: Здравейте
+      you_recieved_new_inquiry: Току що получихте ново запитване през Вашия уебсайт.
+      inquiry_starts: --- Начало на запитването ---
+      inquiry_ends: --- Край на запитването ---
+      from: От
+      email: Е-поща
+      phone: Телефон
+      message: Съобщение
+      closing_line: Поздрави
+      ps: 'П.П. Всички запитвания към Вас се съхраняват от Refinery в секция "Запитвания" и могат да бъдат прегледани по-късно.'
+  activerecord:
+    models:
+      inquiry: запитване
+    attributes:
+      inquiry:
+        name: Име
+        email: Е-поща
+        phone: Телефон
+        message: Съобщение
