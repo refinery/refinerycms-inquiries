@@ -38,4 +38,8 @@ class InquirySetting < ActiveRecord::Base
                                 "New inquiry from your website")
   end
 
+  def self.send_confirmation?
+    RefinerySetting.find_or_set(:inquiry_send_confirmation, true)
+  end
+
 end

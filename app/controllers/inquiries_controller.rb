@@ -25,7 +25,7 @@ class InquiriesController < ApplicationController
           InquiryMailer.confirmation(@inquiry, request).deliver
         rescue
           logger.warn "There was an error delivering an inquiry confirmation:\n#{$!}\n"
-        end
+        end if InquirySetting.send_confirmation?
       end
 
       redirect_to thank_you_inquiries_url
