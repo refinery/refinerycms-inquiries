@@ -29,7 +29,7 @@ module Refinery
           end if Refinery::InquirySetting.send_confirmation?
         end
 
-        redirect_to thank_you_inquiries_url
+        redirect_to main_app.thank_you_inquiries_path
       else
         render :action => 'new'
       end
