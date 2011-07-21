@@ -1,4 +1,4 @@
-::Refinery::User.find(:all).each do |user|
+::Refinery::User.all.each do |user|
   if user.plugins.where(:name => 'refinery_inquiries').blank?
     user.plugins.create(:name => "refinery_inquiries",
                         :position => (user.plugins.maximum(:position) || -1) +1)

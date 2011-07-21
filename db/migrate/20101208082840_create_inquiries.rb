@@ -16,15 +16,6 @@ class CreateInquiries < ActiveRecord::Migration
       add_index ::Refinery::Inquiry.table_name, :id
     end
 
-    # todo: remove at 1.0
-    create_table ::Refinery::InquirySetting.table_name, :force => true do |t|
-      t.string   "name"
-      t.text     "value"
-      t.boolean  "destroyable"
-      t.datetime "created_at"
-      t.datetime "updated_at"
-    end unless ::Refinery::InquirySetting.table_exists?
-
     ::Refinery::Page.reset_column_information if defined?(::Refinery::Page)
 
     load(Rails.root.join('db', 'seeds', 'pages_for_inquiries.rb').to_s)
@@ -32,9 +23,7 @@ class CreateInquiries < ActiveRecord::Migration
 
   def down
      drop_table ::Refinery::Inquiry.table_name
-     # todo: remove at 1.0
-     drop_table ::Refinery::InquirySetting.table_name
-     
+
      ::Refinery::Page.delete_all({
        :link_url => ("/contact" || "/contact/thank_you")
      }) if defined?(::Refinery::Page)

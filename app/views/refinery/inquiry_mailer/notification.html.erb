@@ -1,18 +1,18 @@
-<%= t('.greeting') %>,
+<%=raw t('.greeting') %>,
 
-<%= t('.you_recieved_new_inquiry') %>
+<%=raw t('.you_recieved_new_inquiry') %>
 
-<%= t('.inquiry_starts') %>
+<%=raw t('.inquiry_starts') %>
 
-<%= t('.from') %>: <%= @inquiry.name %>
-<%= t('.email') %>: <%= @inquiry.email %>
-<%= t('.phone') %>: <%= @inquiry.phone %>
-<%= t('.message') %>:
-<%= @inquiry.message %>
+<%=raw t('.from') %>: <%= @inquiry.name %>
+<%=raw t('.email') %>: <%= @inquiry.email %>
+<%=raw t('.phone') %>: <%= @inquiry.phone %>
+<%=raw t('.message') %>:
+<%=simple_format strip_tags(@inquiry.message) %>
 
-<%= t('.inquiry_ends') %>
+<%=raw t('.inquiry_ends') %>
 
-<%= t('.closing_line') %>,
-<%= RefinerySetting[:site_name] %>
+<%=raw t('.closing_line') %>,
+<%=raw RefinerySetting[:site_name] %>
 
-<%= t('.ps') %>
+<%=raw t('.ps') %>

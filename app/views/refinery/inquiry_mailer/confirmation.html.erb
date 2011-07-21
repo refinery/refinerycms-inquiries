@@ -1,1 +1,1 @@
-<%= InquirySetting.confirmation_message(Globalize.locale).gsub("%name%", @inquiry.name) %>
+<%=raw Refinery::InquirySetting.confirmation_message(Globalize.locale).gsub("%name%", @inquiry.name) %>
