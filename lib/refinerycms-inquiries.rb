@@ -1,4 +1,5 @@
 require File.expand_path('../inquiries', __FILE__)
+require File.expand_path('../generators/inquiries_generator', __FILE__)
 
 module Refinery
   module Inquiries
