@@ -29,14 +29,14 @@ module Refinery
       end
 
       def set_url_override?
-        @url_override = admin_inquiry_setting_url(@refinery_setting, :dialog => from_dialog?)
+        @url_override = main_app.refinery_admin_inquiry_setting_path(@setting, :dialog => from_dialog?)
       end
 
-      def find_refinery_setting
+      def find_setting
         # ensure that we're dealing with the name of the setting, not the id.
         begin
           if params[:id].to_i.to_s == params[:id]
-            params[:id] = Refinery::RefinerySetting.find(params[:id]).name.to_s
+            params[:id] = Refinery::Setting.find(params[:id]).name.to_s
           end
         rescue
         end
@@ -45,7 +45,8 @@ module Refinery
         if Refinery::InquirySetting.methods.map(&:to_sym).include?(params[:id].to_s.gsub('inquiry_', '').to_sym)
           Refinery::InquirySetting.send(params[:id].to_s.gsub('inquiry_', '').to_sym)
         end
-        @refinery_setting = Refinery::RefinerySetting.find_by_name(params[:id])
+
+        @setting = Refinery::Setting.find_by_name(params[:id])
       end
 
     end

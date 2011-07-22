@@ -1,4 +1,4 @@
-<%= form_for([:admin, @refinery_setting], :url => (@url_override || @url)) do |f| %>
+<%= form_for @setting, :url => (@url_override || @url) do |f| %>
 
   <p>
     <%= t('.explanation') %>
@@ -20,16 +20,16 @@
         <label class='stripped'><%= t('.from') %></label>
       </td>
       <td>
-        <%= "#{RefinerySetting[:site_name]} &lt;no-reply@#{request.domain(RefinerySetting.find_or_set(:tld_length, 1))}&gt;".html_safe %>
+        <%= "#{Refinery::Setting[:site_name]} &lt;no-reply@#{request.domain(Refinery::Setting.find_or_set(:tld_length, 1))}&gt;".html_safe %>
       </td>
     </tr>
-    <% RefinerySetting.get("i18n_translation_frontend_locales", :scoping => 'refinery').each do |locale| %>
+    <% Refinery::Setting.get("i18n_translation_frontend_locales", :scoping => 'refinery').each do |locale| %>
       <tr>
         <td>
           <label class='stripped'><%= t('.subject') %> (<%= locale.to_s %>)</label>
         </td>
         <td>
-          <%= text_field_tag "subject[][#{locale.to_s}]", InquirySetting.confirmation_subject(locale),
+          <%= text_field_tag "subject[][#{locale.to_s}]", Refinery::InquirySetting.confirmation_subject(locale),
                              :class => 'widest' %>
         </td>
       </tr>
@@ -39,7 +39,7 @@
                       :class => 'stripped' %> (<%= locale.to_s %>)
         </td>
         <td>
-          <%= text_area_tag "message[][#{locale.to_s}]",  InquirySetting.confirmation_message(locale), # required, we can't use :value
+          <%= text_area_tag "message[][#{locale.to_s}]", Refinery::InquirySetting.confirmation_message(locale), # required, we can't use :value
                           :rows => "5",
                           :class => 'widest' %>
           <br/>
@@ -49,11 +49,11 @@
     <% end %>
   </table>
 
-  <%= render :partial => "/shared/admin/form_actions",
+  <%= render :partial => "/refinery/admin/form_actions",
              :locals => {
                :f => f,
                :continue_editing => false,
-               :cancel_url => admin_inquiries_url,
+               :cancel_url => main_app.refinery_admin_inquiries_path,
                :hide_delete => true
              } %>
 <% end %>
