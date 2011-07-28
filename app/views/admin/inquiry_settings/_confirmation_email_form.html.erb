@@ -23,7 +23,7 @@
         <%= "#{RefinerySetting[:site_name]} &lt;no-reply@#{request.domain(RefinerySetting.find_or_set(:tld_length, 1))}&gt;".html_safe %>
       </td>
     </tr>
-    <% RefinerySetting.get("i18n_translation_frontend_locales", :scoping => 'refinery').each do |locale| %>
+    <% (RefinerySetting.get("i18n_translation_frontend_locales", :scoping => 'refinery')||[I18n.locale]).each do |locale| %>
       <tr>
         <td>
           <label class='stripped'><%= t('.subject') %> (<%= locale.to_s %>)</label>
