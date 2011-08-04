@@ -67,12 +67,10 @@ nl:
         ps: P.S. Alle vragen woren opgeslagen in de "vragen" sectie van uw website.All your inquiries are stored in the "Inquiries" section of Refinery.
   activerecord:
     models:
-      refinery:
-        inquiry: Vraag
+      refinery/inquiry: Vraag
     attributes:
-      refinery:
-        inquiry:
-          name: Naam
-          email: 'Email'
-          phone: Telefoon
-          message: Bericht
+      refinery/inquiry:
+        name: Naam
+        email: 'Email'
+        phone: Telefoon
+        message: Bericht

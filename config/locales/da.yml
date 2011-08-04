@@ -58,14 +58,12 @@ da:
           subject_value_name: Emne
   activerecord:
     models:
-      refinery:
-        inquiry: Henvendelse
+      refinery/inquiry: Henvendelse
     attributes:
-      refinery:
-        inquiry:
-          to: Til
-          from: Fra
-          click_to_email: Send en e-mail til adressen
-          phone: Telefon
-          date: Dato
-          message: Besked
+      refinery/inquiry:
+        to: Til
+        from: Fra
+        click_to_email: Send en e-mail til adressen
+        phone: Telefon
+        date: Dato
+        message: Besked

@@ -67,12 +67,10 @@ cs:
         ps: P.S. Všechny dotazy jsou uloženy pod sekcí "Dotazy" v administraci, pokud by je bylo třeba zobrazit později.
   activerecord:
     models:
-      refinery:
-        inquiry: dotaz
+      refinery/inquiry: dotaz
     attributes:
-      refinery:
-        inquiry:
-          name: Jméno
-          email: Email
-          phone: Telefon
-          message: Zpráva
+      refinery/inquiry:
+        name: Jméno
+        email: Email
+        phone: Telefon
+        message: Zpráva

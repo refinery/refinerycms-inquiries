@@ -69,14 +69,12 @@ es:
         ps: P.D. Todas tus consultas se almacenan en la sección "Consultas" de Refinery por si alguna vez quieres verlas más tarde allí.
   activerecord:
     models:
-      refinery:
-        inquiry: Consulta
+      refinery/inquiry: Consulta
     attributes:
-      refinery:
-        inquiry:
-          to: Para
-          from: De
-          phone: Telefono
-          date: Fecha
-          name: Nombre
-          message: Mensaje
+      refinery/inquiry:
+        to: Para
+        from: De
+        phone: Telefono
+        date: Fecha
+        name: Nombre
+        message: Mensaje

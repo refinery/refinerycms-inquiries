@@ -67,12 +67,10 @@ sv:
         ps: P.S. Alla dina förfrågningar sparas i "Förfrågningar"-sektionen av Refinery. Där kan du visa dem senare.
   activerecord:
     models:
-      refinery:
-        inquiry: förfrågning
+      refinery/inquiry: förfrågning
     attributes:
-      refinery:
-        inquiry:
-          name: Namn
-          email: E-postadress
-          phone: Telefon
-          message: Meddelande
+      refinery/inquiry:
+        name: Namn
+        email: E-postadress
+        phone: Telefon
+        message: Meddelande

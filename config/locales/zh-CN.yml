@@ -67,12 +67,10 @@ zh-CN:
         ps: 附言 您所有的咨询被保存在“咨询”区域以便于你在日后查看.
   activerecord:
     models:
-      refinery:
-        inquiry: inquiry
+      refinery/inquiry: inquiry
     attributes:
-      refinery:
-        inquiry:
-          name: 姓名
-          email: email
-          phone: 联系电话
-          message: 留言信息
+      refinery/inquiry:
+        name: 姓名
+        email: email
+        phone: 联系电话
+        message: 留言信息

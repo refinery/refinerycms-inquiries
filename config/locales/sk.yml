@@ -67,12 +67,10 @@ sk:
         ps: P.S. Všetky otázky sú uložené pod sekciou "Otázky" v administrácii web stránky, ak by ich bolo potrebné zobraziť neskôr.
   activerecord:
     models:
-      refinery:
-        inquiry: otázka
+      refinery/inquiry: otázka
     attributes:
-      refinery:
-        inquiry:
-          name: Meno
-          email: Email
-          phone: Telefón
-          message: Správa
+      refinery/inquiry:
+        name: Meno
+        email: Email
+        phone: Telefón
+        message: Správa

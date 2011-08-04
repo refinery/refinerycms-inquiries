@@ -68,12 +68,10 @@ lv:
         ps: P.S. Ja vēlaties skatīt šo un citus pieprasījumus vēlāk, tad tos var atrast zem sadaļas "Pieprasījumi".
   activerecord:
     models:
-      refinery:
-        inquiry: pieprasījums
+      refinery/inquiry: pieprasījums
     attributes:
-      refinery:
-        inquiry:
-          name: Vārds
-          email: Epasts
-          phone: Tālrunis
-          message: Ziņa
+      refinery/inquiry:
+        name: Vārds
+        email: Epasts
+        phone: Tālrunis
+        message: Ziņa

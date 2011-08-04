@@ -67,12 +67,10 @@ sl:
         ps: P.S. Vsa povpraševanja so shranjena pod zavihkom "Povpraševanja" v Refinery.
   activerecord:
     models:
-      refinery:
-        inquiry: Povpraševanje
+      refinery/inquiry: Povpraševanje
     attributes:
-      refinery:
-        inquiry:
-          name: Ime
-          email: Email
-          phone: Telefon
-          message: Sporočilo
+      refinery/inquiry:
+        name: Ime
+        email: Email
+        phone: Telefon
+        message: Sporočilo

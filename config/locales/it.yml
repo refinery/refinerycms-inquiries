@@ -69,12 +69,10 @@ it:
         ps: P.S. Tutte le richiesta ricevute sono salvate nella sezione "Richieste" di Refinery così da poter esser viste in un secondo momento.
   activerecord:
     models:
-      refinery:
-        inquiry: inquiry
+      refinery/inquiry: inquiry
     attributes:
-      refinery:
-        inquiry:
-          name: Nome
-          email: Email
-          phone: Telefono
-          message: Messaggio
+      refinery/inquiry:
+        name: Nome
+        email: Email
+        phone: Telefono
+        message: Messaggio

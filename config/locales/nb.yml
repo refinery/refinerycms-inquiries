@@ -67,12 +67,10 @@ nb:
         ps: P.S. Alle dine forespørsler blir lagret i seksjonen "Forespørsel" i Refinery om du vil finne de igjen senere
   activerecord:
     models:
-      refinery:
-        inquiry: Forespørsel
+      refinery/inquiry: Forespørsel
     attributes:
-      refinery:
-        inquiry:
-          name: Navn
-          email: Epost
-          phone: Telefon
-          message: Melding
+      refinery/inquiry:
+        name: Navn
+        email: Epost
+        phone: Telefon
+        message: Melding
