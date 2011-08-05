@@ -17,12 +17,13 @@ Gem::Specification.new do |s|
   s.authors           = ["Resolve Digital"]
   s.require_paths     = %w(lib)
 
+  s.add_dependency  'refinerycms-core', '~> 1.1.0'
+  s.add_dependency  'filters_spam',     '~> 0.2'
+
   s.files             = [
     '#{files.join("',\n    '")}'
   ]
   s.require_path = 'lib'
-
-  s.add_dependency('filters_spam', '~> 0.2')
 end
 EOF
 

@@ -9,6 +9,9 @@ Gem::Specification.new do |s|
   s.authors           = ["Resolve Digital"]
   s.require_paths     = %w(lib)
 
+  s.add_dependency  'refinerycms-core', '~> 1.1.0'
+  s.add_dependency  'filters_spam',     '~> 0.2'
+
   s.files             = [
     'app',
     'app/controllers',
@@ -85,7 +88,6 @@ Gem::Specification.new do |s|
     'lib/gemspec.rb',
     'lib/generators',
     'lib/generators/inquiries_generator.rb',
-    'lib/inquiries.rb',
     'lib/refinerycms-inquiries.rb',
     'license.md',
     'readme.md',
@@ -101,6 +103,4 @@ Gem::Specification.new do |s|
     'spec/support/refinery/factories.rb'
   ]
   s.require_path = 'lib'
-
-  s.add_dependency('filters_spam', '~> 0.2')
 end
