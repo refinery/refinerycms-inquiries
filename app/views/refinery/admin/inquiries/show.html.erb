@@ -11,14 +11,16 @@
   <h2><%= t('.actions') %></h2>
   <ul>
     <li>
-      <%= link_to t('.back_to_all_inquiries'), {:action => 'index'}, :class => "back_icon" %>
+      <%= link_to t('.back_to_all_inquiries'),
+                  main_app.refinery_admin_inquiries_path,
+                  :class => "back_icon" %>
     </li>
     <li>
-      <%= link_to t('admin.inquiries.delete'),
-                  admin_inquiry_url(@inquiry),
+      <%= link_to t('refinery.admin.inquiries.delete'),
+                  main_app.refinery_admin_inquiry_path(@inquiry),
                   :class => 'delete_icon no-tooltip confirm-delete',
-                  :title => t('admin.inquiries.delete'),
-                  :confirm => t('shared.admin.delete.message', :title => @inquiry.name),
+                  :title => t('refinery.admin.inquiries.delete'),
+                  :confirm => t('refinery.admin.delete.message', :title => @inquiry.name),
                   :method => :delete %>
     </li>
   </ul>
@@ -31,7 +33,7 @@
         <strong><%= t('.to') %></strong>
       </td>
       <td>
-        <%= RefinerySetting[:site_name] %>
+        <%= Refinery::Setting[:site_name] %>
       </td>
     </tr>
     <tr>

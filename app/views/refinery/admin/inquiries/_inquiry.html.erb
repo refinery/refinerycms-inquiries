@@ -4,20 +4,23 @@
     <span class="preview"><%= truncate(strip_tags(inquiry.message), :length => 60) -%></span>
   </span>
   <span class='actions'>
-    <%= link_to refinery_icon_tag('delete.png'), main_app.refinery_admin_inquiry_path(inquiry),
-              { :method => :delete, 
-                :confirm => t('shared.admin.delete.message', :title => inquiry.name) },
+    <%= link_to refinery_icon_tag('delete.png'), 
+                main_app.refinery_admin_inquiry_path(inquiry),
                 :class => "cancel confirm-delete",
-                :title => t('admin.inquiries.delete') -%>
+                :title => t('refinery.admin.inquiries.delete'),
+                :confirm => t('refinery.admin.delete.message', :title => inquiry.name),
+                :method => :delete -%>
 
     <%= link_to refinery_icon_tag('zoom.png'), main_app.refinery_admin_inquiry_path(inquiry),
                 :title => t('.read_inquiry') -%>
 
     <% if inquiry.spam? %>
-      <%= link_to refinery_icon_tag('email.png'), main_app.toggle_spam_refinery_admin_inquiry_path(inquiry),
+      <%= link_to refinery_icon_tag('email.png'),
+                  main_app.toggle_spam_refinery_admin_inquiry_path(inquiry),
                   :title => t('.mark_as_ham') -%>
     <% else %>
-      <%= link_to refinery_icon_tag('bin_closed.png'), main_app.toggle_spam_refinery_admin_inquiry_path(inquiry),
+      <%= link_to refinery_icon_tag('bin_closed.png'),
+                  main_app.toggle_spam_refinery_admin_inquiry_path(inquiry),
                   :title => t('.mark_as_spam') -%>
     <% end %>
   </span>
