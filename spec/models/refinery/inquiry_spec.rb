@@ -1,31 +1,20 @@
 require 'spec_helper'
 
-require File.expand_path('../../../../features/support/factories.rb', __FILE__)
-
 module Refinery
   describe Inquiry do
     describe "validations" do
-      before(:each) do
-        @attr = {
-          :name => "rspec",
-          :email => "rspec@refinery.com",
-          :message => "test"
-        }
+      subject do
+        Factory.build(:inquiry,
+                      :name => "Ugis Ozols",
+                      :email => "ugis.ozols@refinerycms.com",
+                      :message => "Hey, I'm testing!")
       end
 
-      it "rejects empty name" do
-        Refinery::Inquiry.new(@attr.merge(:name => "")).should_not be_valid
-      end
-
-      it "rejects empty message" do
-        Refinery::Inquiry.new(@attr.merge(:message => "")).should_not be_valid
-      end
-
-      it "rejects invalid email format" do
-        ["", "@refinerycms.com", "refinery@cms", "refinery@cms.123"].each do |email|
-          Refinery::Inquiry.new(@attr.merge(:email => email)).should_not be_valid
-        end
-      end
+      it { should be_valid }
+      its(:errors) { should be_empty }
+      its(:name) { should == "Ugis Ozols" }
+      its(:email) { should == "ugis.ozols@refinerycms.com" }
+      its(:message) { should == "Hey, I'm testing!" }
     end
 
     describe "default scope" do
