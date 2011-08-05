@@ -6,17 +6,17 @@
 
 Include the latest [gem](http://rubygems.org/gems/refinerycms-inquiries) into your Refinery CMS application's Gemfile:
 
-    gem 'refinerycms-inquiries', '~> 1.0.0'
+    gem 'refinerycms-inquiries', '~> 2.0.0'
 
 Then type the following at command line inside your Refinery CMS application's root directory:
 
     bundle install
 
-#### Installation on Refinery 0.9.9 or above.
+#### Installation on Refinery 2.0.0 or above.
 
 To install the migrations, run:
 
-    rails generate refinerycms_inquiries
+    rails generate refinery:inquiries
 
 Next migrate your database and you're done:
 
