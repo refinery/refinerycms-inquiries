@@ -2,6 +2,12 @@ module Refinery
   class InquirySetting < ActiveRecord::Base
 
     class << self
+      def confirmation_body
+        Refinery::Setting.find_or_set(:inquiry_confirmation_body,
+          "Thank you for your inquiry %name%,\n\nThis email is a receipt to confirm we have received your inquiry and we'll be in touch shortly.\n\nThanks."
+        )
+      end
+
       def confirmation_subject(locale='en')
         Refinery::Setting.find_or_set("inquiry_confirmation_subject_#{locale}".to_sym,
                                       "Thank you for your inquiry",
@@ -18,8 +24,7 @@ module Refinery
 
       def confirmation_message(locale='en')
         Refinery::Setting.find_or_set("inquiry_confirmation_messeage_#{locale}".to_sym,
-                                      "Thank you for your inquiry %name%,\n\nThis email is a receipt to confirm 
-                                      we have received your inquiry and we'll be in touch shortly.\n\nThanks.",
+                                      Refinery::Setting[:inquiry_confirmation_body],
                                       :scoping => "inquiries")
       end
 
