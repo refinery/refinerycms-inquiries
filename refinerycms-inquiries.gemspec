@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
   s.version           = %q{1.0.1}
-  s.date              = %q{2011-07-21}
+  s.date              = %q{2011-08-05}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
@@ -76,12 +76,10 @@ Gem::Specification.new do |s|
     'db/seeds',
     'db/seeds/pages_for_inquiries.rb',
     'features',
-    'features/create_inquiries.feature',
     'features/manage_inquiries.feature',
     'features/step_definitions',
     'features/step_definitions/inquiry_steps.rb',
     'features/support',
-    'features/support/factories.rb',
     'features/support/paths.rb',
     'lib',
     'lib/gemspec.rb',
@@ -95,7 +93,12 @@ Gem::Specification.new do |s|
     'spec',
     'spec/models',
     'spec/models/refinery',
-    'spec/models/refinery/inquiry_spec.rb'
+    'spec/models/refinery/inquiry_spec.rb',
+    'spec/requests',
+    'spec/requests/create_inquiries_spec.rb',
+    'spec/support',
+    'spec/support/refinery',
+    'spec/support/refinery/factories.rb'
   ]
   s.require_path = 'lib'
 
