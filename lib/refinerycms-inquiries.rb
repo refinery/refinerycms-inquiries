@@ -15,7 +15,7 @@ module Refinery
           plugin.pathname = root
           plugin.name = "refinery_inquiries"
           plugin.directory = "inquiries"
-          plugin.menu_match = /(refinery|admin)\/inquir(ies|y_settings)$/
+          plugin.menu_match = /refinery\/inquir(ies|y_settings)$/
           plugin.url = app.routes.url_helpers.refinery_admin_inquiries_path
           plugin.activity = {
             :class => Refinery::InquirySetting,
