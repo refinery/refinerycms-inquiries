@@ -1,5 +1,7 @@
-Factory.define :inquiry, :class => Refinery::Inquiry do |i|
-  i.name "Refinery"
-  i.email "refinery@cms.com"
-  i.message "Hello..."
+FactoryGirl.define do
+  factory :inquiry, :class => Refinery::Inquiry do
+    name "Refinery"
+    email "refinery@cms.com"
+    message "Hello..."
+  end
 end

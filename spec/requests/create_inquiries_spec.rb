@@ -58,10 +58,12 @@ describe "create inquiry" do
     end
 
     context "when show contact privacy link setting set to true" do
-      before { Refinery::Setting.set(:show_contact_privacy_link, true) }
+      before(:each) do
+        Refinery::Setting.set(:show_contact_privacy_link, 
+                              { :value => true, :scoping => "inquiries" })
+      end
 
-      it "shows the link" do
-        pending "this spec fails ... will fix asap"
+      it "shows the link" do      
         visit new_inquiry_path
 
         page.should have_content("We value your privacy")
