@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
-  s.version           = %q{1.0.1}
-  s.date              = %q{2011-08-05}
+  s.version           = %q{2.0.0}
+  s.date              = %q{2011-08-15}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors           = ["Resolve Digital"]
   s.require_paths     = %w(lib)
 
-  s.add_dependency  'refinerycms-core', '~> 1.1.0'
+  s.add_dependency  'refinerycms-core', '~> 2.0.0'
   s.add_dependency  'filters_spam',     '~> 0.2'
 
   s.files             = [
