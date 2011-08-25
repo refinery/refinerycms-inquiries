@@ -3,24 +3,24 @@
   <% if searching? %>
     <h2><%= t('refinery.admin.search.results_for', :query => params[:search]) %></h2>
     <% if @inquiries.any? %>
-      <%= paginate @inquiries %>
+      <%= will_paginate @inquiries %>
       <ul>
         <%= render :partial => "inquiry", :collection => @inquiries %>
       </ul>
-      <%= paginate @inquiries %>
+      <%= will_paginate @inquiries %>
     <% else %>
       <p><%= t('refinery.admin.search.no_results') %></p>
     <% end %>
   <% else %>
     <% if @inquiries.any? -%>
-      <%= paginate @inquiries %>
+      <%= will_paginate @inquiries %>
       <% group_by_date(@inquiries).each do |container| %>
         <h3><%= l((inquiry_group = container.last).first.created_at, :format => :short) %></h3>
         <ul>
           <%= render :partial => 'inquiry', :collection => inquiry_group %>
         </ul>
       <% end %>
-      <%= paginate @inquiries %>
+      <%= will_paginate @inquiries %>
     <% else -%>
       <p>
         <strong><%= t(".no_#{action_name == 'index' ? 'inquiries' : 'spam'}") %></strong>
