@@ -1,6 +1,6 @@
 module Refinery
   module Admin
-    class InquirySettingsController < ::Admin::BaseController
+    class InquirySettingsController < ::Refinery::AdminController
 
       crudify :'refinery/setting',
               :title_attribute => "name",
