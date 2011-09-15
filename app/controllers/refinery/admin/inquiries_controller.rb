@@ -1,6 +1,6 @@
 module Refinery
   module Admin
-    class InquiriesController < ::Admin::BaseController
+    class InquiriesController < ::Refinery::AdminController
 
       crudify :'refinery/inquiry',
               :title_attribute => "name",
