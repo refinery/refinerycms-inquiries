@@ -1,5 +1,5 @@
 module Refinery
-  class InquirySetting < ActiveRecord::Base
+  class InquirySetting
 
     class << self
       def confirmation_body
