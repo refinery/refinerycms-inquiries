@@ -1,0 +1,21 @@
+.inquiries {
+  form {
+    padding-top: 12px;
+    label {
+      width: 150px;
+      float: left;
+    }
+    input {
+      width: 200px;
+    }
+    .field {
+      margin: 12px 0px;
+    }
+    .actions {
+      margin-left: 150px;
+      input {
+        width: auto;
+      }
+    }
+  }
+}
