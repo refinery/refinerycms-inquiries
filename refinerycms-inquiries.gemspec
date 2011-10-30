@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
   s.version           = %q{2.0.0}
-  s.date              = %q{2011-08-15}
+  s.date              = %q{2011-10-31}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
@@ -14,6 +14,10 @@ Gem::Specification.new do |s|
 
   s.files             = [
     'app',
+    'app/assets',
+    'app/assets/stylesheets',
+    'app/assets/stylesheets/refinery',
+    'app/assets/stylesheets/refinery/inquiries.css.scss',
     'app/controllers',
     'app/controllers/refinery',
     'app/controllers/refinery/admin',
@@ -81,7 +85,8 @@ Gem::Specification.new do |s|
     'lib',
     'lib/gemspec.rb',
     'lib/generators',
-    'lib/generators/inquiries_generator.rb',
+    'lib/generators/refinery',
+    'lib/generators/refinery/inquiries_generator.rb',
     'lib/refinerycms-inquiries.rb',
     'license.md',
     'readme.md',
