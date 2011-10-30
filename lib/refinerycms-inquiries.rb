@@ -1,7 +1,8 @@
 require 'filters_spam'
-require File.expand_path('../generators/inquiries_generator', __FILE__)
 
 module Refinery
+  autoload :InquiriesGenerator, File.expand_path('../generators/inquiries_generator', __FILE__)
+
   module Inquiries
     class Engine < Rails::Engine
       isolate_namespace Refinery
@@ -14,7 +15,7 @@ module Refinery
           plugin.menu_match = /refinery\/inquir(ies|y_settings)$/
           plugin.url = app.routes.url_helpers.refinery_admin_inquiries_path
           plugin.activity = {
-            :class => Refinery::InquirySetting,
+            :class_name => Refinery::InquirySetting,
             :title => 'name'
           }
         end
