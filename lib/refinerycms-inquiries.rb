@@ -15,8 +15,9 @@ module Refinery
           plugin.menu_match = /refinery\/inquir(ies|y_settings)$/
           plugin.url = app.routes.url_helpers.refinery_admin_inquiries_path
           plugin.activity = {
-            :class_name => Refinery::InquirySetting,
-            :title => 'name'
+            :class_name => Refinery::Inquiry,
+            :title => 'name',
+            :url_prefix => nil
           }
         end
       end
