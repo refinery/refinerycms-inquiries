@@ -1,7 +1,7 @@
 require 'filters_spam'
 
 module Refinery
-  autoload :InquiriesGenerator, File.expand_path('../generators/inquiries_generator', __FILE__)
+  autoload :InquiriesGenerator, File.expand_path('../generators/refinery/inquiries_generator', __FILE__)
 
   module Inquiries
     class Engine < Rails::Engine
