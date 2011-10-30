@@ -1,4 +1,4 @@
-Refinery::Application.routes.draw do
+Rails.application.routes.draw do
   scope(:module => 'refinery') do
     get '/contact', :to => 'inquiries#new', :as => 'new_inquiry'
     resources :contact,
