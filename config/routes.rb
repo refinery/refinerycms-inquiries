@@ -5,19 +5,13 @@ Rails.application.routes.draw do
               :only => :create,
               :as => :inquiries,
               :controller => 'inquiries' do
-      collection do
-        get :thank_you
-      end
+      get :thank_you, :on => :collection
     end
 
     scope(:path => 'refinery', :as => 'refinery_admin', :module => 'admin') do
       resources :inquiries, :only => [:index, :show, :destroy] do
-        collection do
-          get :spam
-        end
-        member do
-          get :toggle_spam
-        end
+        get :spam, :on => :collection
+        get :toggle_spam, :on => :member
       end
       resources :inquiry_settings, :only => [:edit, :update]
     end
