@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-version = '2.0.0'
+require File.expand_path('../refinery/inquiries/version', __FILE__)
+version = Refinery::Inquiries::Version.to_s
 raise "Could not get version so gemspec can not be built" if version.nil?
 files = Dir.glob("**/*").flatten.reject do |file|
   file =~ /\.gem$/

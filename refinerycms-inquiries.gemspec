@@ -90,6 +90,7 @@ Gem::Specification.new do |s|
     'lib/refinery',
     'lib/refinery/inquiries',
     'lib/refinery/inquiries/engine.rb',
+    'lib/refinery/inquiries/version.rb',
     'lib/refinery/inquiries.rb',
     'lib/refinerycms-inquiries.rb',
     'license.md',
