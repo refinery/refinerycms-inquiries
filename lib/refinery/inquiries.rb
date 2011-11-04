@@ -2,8 +2,6 @@ require 'refinerycms-core'
 require 'filters_spam'
 
 module Refinery
-  autoload :InquiriesGenerator, 'generators/refinery/inquiries_generator'
-  
   module Inquiries
     require 'refinery/inquiries/engine' if defined?(Rails)
 
