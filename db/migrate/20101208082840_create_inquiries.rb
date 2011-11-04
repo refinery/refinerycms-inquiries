@@ -15,10 +15,6 @@ class CreateInquiries < ActiveRecord::Migration
 
       add_index ::Refinery::Inquiry.table_name, :id
     end
-
-    ::Refinery::Page.reset_column_information if defined?(::Refinery::Page)
-
-    load(Rails.root.join('db', 'seeds', 'pages_for_inquiries.rb').to_s)
   end
 
   def down
