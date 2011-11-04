@@ -14,6 +14,8 @@ class CreateInquiries < ActiveRecord::Migration
 
       add_index ::Refinery::Inquiry.table_name, :id
     end
+
+    Refinery::Inquiries::Engine.load_seed
   end
 
   def down
