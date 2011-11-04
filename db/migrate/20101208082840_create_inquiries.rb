@@ -2,15 +2,14 @@ class CreateInquiries < ActiveRecord::Migration
   def up
     unless ::Refinery::Inquiry.table_exists?
       create_table ::Refinery::Inquiry.table_name, :force => true do |t|
-        t.string   "name"
-        t.string   "email"
-        t.string   "phone"
-        t.text     "message"
-        t.integer  "position"
-        t.boolean  "open",       :default => true
-        t.datetime "created_at"
-        t.datetime "updated_at"
-        t.boolean  "spam",       :default => false
+        t.string   :name
+        t.string   :email
+        t.string   :phone
+        t.text     :message
+        t.integer  :position
+        t.boolean  :spam,     :default => false
+        t.boolean  :open,     :default => true
+        t.timestamps
       end
 
       add_index ::Refinery::Inquiry.table_name, :id
