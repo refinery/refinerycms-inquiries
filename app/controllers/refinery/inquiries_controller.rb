@@ -4,7 +4,7 @@ module Refinery
     before_filter :find_page, :only => [:create, :new]
 
     def thank_you
-      @page = Refinery::Page.find_by_link_url("/contact/thank_you", :include => [:parts, :slugs])
+      @page = Refinery::Page.find_by_link_url("/contact/thank_you")
     end
 
     def new
@@ -38,7 +38,7 @@ module Refinery
     protected
 
     def find_page
-      @page = Refinery::Page.find_by_link_url('/contact', :include => [:parts, :slugs])
+      @page = Refinery::Page.find_by_link_url("/contact")
     end
 
   end
