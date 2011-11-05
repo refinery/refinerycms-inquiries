@@ -38,8 +38,7 @@ module Refinery
   protected
 
     def find_page
-      @page = ::Refinery::Page.first
-      #@page = ::Refinery::Page.find_by_link_url('/contact', :include => [:parts, :slugs])
+      @page = ::Refinery::Page.find_by_link_url('/contact', :include => [:parts, :slugs])
     end
 
   end
