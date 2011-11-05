@@ -22,9 +22,5 @@ Rails.application.routes.draw do
       end
       resources :inquiry_settings, :only => [:edit, :update]
     end
-  end 
-
-  scope(:module => 'admin', :path => 'refinery', :as => 'admin') do
-    resources :inquiry_settings, :only => [:edit, :update]
   end
 end
