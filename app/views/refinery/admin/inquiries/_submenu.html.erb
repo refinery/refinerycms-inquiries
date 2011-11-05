@@ -15,12 +15,12 @@
     </li>
     <li>
       <%= link_to t('.update_notified'),
-                    main_app.edit_refinery_admin_inquiry_setting_url(22, :dialog => true, :height => 300),
+                    main_app.edit_refinery_admin_inquiry_setting_url(@inquiry_notification_recipients.id, :dialog => true, :height => 300),
                     :class => "user_comment_icon" %>
     </li>
     <li>
       <%= link_to t('.edit_confirmation_email'),
-                  main_app.edit_refinery_admin_inquiry_setting_url(:inquiry_confirmation_body, :dialog => true),
+                  main_app.edit_refinery_admin_inquiry_setting_url(@inquiry_confirmation_body.id, :dialog => true),
                   :class => "edit_email_icon" %>
     </li>
   </ul>

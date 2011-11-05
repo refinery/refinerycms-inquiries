@@ -5,7 +5,8 @@ module ::Refinery
       crudify :'refinery/setting',
               :order => "name ASC",
               :redirect_to_url => :redirect_to_where?,
-              :xhr_paging => true
+              :xhr_paging => true,
+              :redirect_to_url => :'main_app.refinery_admin_inquiry_settings_path'
           
           
       before_filter :set_url_override?, :only => [:edit, :update]
@@ -30,7 +31,7 @@ module ::Refinery
       end
 
       def set_url_override?
-        @url_override = admin_inquiry_setting_url(@refinery_setting, :dialog => from_dialog?)
+        @url_override = main_app.refinery_admin_inquiry_setting_url(@setting, :dialog => from_dialog?)
       end
 
       def find_refinery_setting

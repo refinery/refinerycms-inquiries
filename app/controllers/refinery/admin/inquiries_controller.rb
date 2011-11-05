@@ -16,6 +16,8 @@ module ::Refinery
       def index
         @inquiries = @inquiries.with_query(params[:search]) if searching?
         @inquiries = @inquiries.paginate({:page => params[:page]})
+        @inquiry_notification_recipients = ::Refinery::Setting.find_by_name('inquiry_notification_recipients')
+        @inquiry_confirmation_body = ::Refinery::Setting.find_by_name('inquiry_confirmation_body')
       end
 
       def spam

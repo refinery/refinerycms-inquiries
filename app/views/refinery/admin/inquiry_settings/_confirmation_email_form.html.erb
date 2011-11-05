@@ -1,4 +1,4 @@
-<%= form_for([:admin, @refinery_setting], :url => (@url_override || @url)) do |f| %>
+<%= form_for([:admin, @setting], :url => (@url_override || @url)) do |f| %>
 
   <p>
     <%= t('.explanation') %>
@@ -29,7 +29,7 @@
           <label class='stripped'><%= t('.subject') %> (<%= locale.to_s %>)</label>
         </td>
         <td>
-          <%= text_field_tag "subject[][#{locale.to_s}]", InquirySetting.confirmation_subject(locale),
+          <%= text_field_tag "subject[][#{locale.to_s}]", ::Refinery::InquirySetting.confirmation_subject(locale),
                              :class => 'widest' %>
         </td>
       </tr>
@@ -39,7 +39,7 @@
                       :class => 'stripped' %> (<%= locale.to_s %>)
         </td>
         <td>
-          <%= text_area_tag "message[][#{locale.to_s}]",  InquirySetting.confirmation_message(locale), # required, we can't use :value
+          <%= text_area_tag "message[][#{locale.to_s}]",  ::Refinery::InquirySetting.confirmation_message(locale), # required, we can't use :value
                           :rows => "5",
                           :class => 'widest' %>
           <br/>
@@ -49,11 +49,11 @@
     <% end %>
   </table>
 
-  <%= render :partial => "/shared/admin/form_actions",
+  <%= render :partial => "/refinery/admin/form_actions",
              :locals => {
                :f => f,
                :continue_editing => false,
-               :cancel_url => admin_inquiries_url,
+               :cancel_url => main_app.refinery_admin_inquiries_url,
                :hide_delete => true
              } %>
 <% end %>
