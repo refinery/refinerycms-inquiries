@@ -31,10 +31,10 @@ module ::Refinery
       end
 
       def set_url_override?
-        @url_override = main_app.refinery_admin_inquiry_setting_url(@setting, :dialog => from_dialog?)
+        @url_override = main_app.refinery_admin_inquiry_setting_url(@refinery_setting, :dialog => from_dialog?)
       end
 
-      def find_refinery_setting
+      def find_setting
         # ensure that we're dealing with the name of the setting, not the id.
         begin
           if params[:id].to_i.to_s == params[:id]
