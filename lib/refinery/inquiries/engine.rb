@@ -1,5 +1,4 @@
 require 'refinerycms-inquiries'
-require 'rails'
 
 module Refinery
   module Inquiries
