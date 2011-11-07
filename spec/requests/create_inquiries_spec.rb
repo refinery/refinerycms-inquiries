@@ -5,7 +5,7 @@ describe "create inquiry" do
     Factory(:refinery_user)
 
     # load in seeds we use in migration
-    load File.expand_path("../../../db/seeds/pages_for_inquiries.rb", __FILE__)
+    Refinery::Inquiries::Engine.load_seed
   end
 
   context "when valid data" do
