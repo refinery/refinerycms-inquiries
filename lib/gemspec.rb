@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require File.expand_path('../refinery/inquiries/version', __FILE__)
-version = Refinery::Inquiries::Version.to_s
-raise "Could not get version so gemspec can not be built" if version.nil?
+
 files = Dir.glob("**/*").flatten.reject do |file|
   file =~ /\.gem$/
 end
@@ -9,7 +8,7 @@ end
 gemspec = <<EOF
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
-  s.version           = %q{#{version}}
+  s.version           = %q{#{Refinery::Inquiries::VERSION}}
   s.date              = %q{#{Time.now.strftime('%Y-%m-%d')}}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
