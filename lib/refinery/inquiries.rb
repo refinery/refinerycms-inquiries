@@ -11,7 +11,7 @@ module Refinery
       attr_writer :root
 
       def root
-        @root ||= Pathname.new(File.expand_path('../../', __FILE__))
+        @root ||= Pathname.new(File.expand_path('../../../', __FILE__))
       end
 
       def version
