@@ -86,8 +86,6 @@ Gem::Specification.new do |s|
     'lib/generators',
     'lib/generators/refinerycms_inquiries_generator.rb',
     'lib/inquiries.rb',
-    'lib/refinery',
-    'lib/refinery/inquiries',
     'lib/refinerycms-inquiries.rb',
     'license.md',
     'readme.md',
