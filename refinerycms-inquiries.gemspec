@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
   s.version           = %q{1.0.1}
-  s.date              = %q{2011-11-06}
+  s.date              = %q{2011-11-07}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
@@ -72,8 +72,7 @@ Gem::Specification.new do |s|
     'db/migrate/20101208082840_create_inquiries.rb',
     'db/migrate/20101208082841_remove_position_and_open_from_inquiries.rb',
     'db/migrate/20110719082646_drop_inquiry_settings_table.rb',
-    'db/seeds',
-    'db/seeds/pages_for_inquiries.rb',
+    'db/seeds.rb',
     'features',
     'features/create_inquiries.feature',
     'features/manage_inquiries.feature',
@@ -87,6 +86,8 @@ Gem::Specification.new do |s|
     'lib/generators',
     'lib/generators/refinerycms_inquiries_generator.rb',
     'lib/inquiries.rb',
+    'lib/refinery',
+    'lib/refinery/inquiries',
     'lib/refinerycms-inquiries.rb',
     'license.md',
     'readme.md',

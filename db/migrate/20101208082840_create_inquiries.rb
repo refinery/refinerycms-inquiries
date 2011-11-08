@@ -15,10 +15,10 @@ class CreateInquiries < ActiveRecord::Migration
 
       add_index ::Refinery::Inquiry.table_name, :id
     end
-
-    ::Refinery::Page.reset_column_information if defined?(::Refinery::Page)
-
-    load(Rails.root.join('db', 'seeds', 'pages_for_inquiries.rb').to_s)
+    
+    unless Refinery::Page.where(:link_url => '/contact').any?
+      say_with_time("Seeding inquiries") { Refinery::Inquiries::Engine.load_seed }
+    end
   end
 
   def self.down
