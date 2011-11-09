@@ -12,9 +12,10 @@ module Refinery
           plugin.pathname = root
           plugin.name = "refinery_inquiries"
           plugin.directory = "inquiries"
+          plugin.url = '/refinery/inquiries'
           plugin.menu_match = /(refinery|admin)\/inquir(ies|y_settings)$/
           plugin.activity = {
-            :class => InquirySetting,
+            :class_name => 'refinery/inquiries',
             :title => 'name'
           }
         end

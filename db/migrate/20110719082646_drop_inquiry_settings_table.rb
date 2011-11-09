@@ -1,7 +1,7 @@
 class DropInquirySettingsTable < ActiveRecord::Migration
   def self.up
-    if ::InquirySetting.table_exists?
-      drop_table ::InquirySetting.table_name
+    if ::Refinery::InquirySetting.table_exists?
+      drop_table ::Refinery::InquirySetting.table_name
     end
   end
 

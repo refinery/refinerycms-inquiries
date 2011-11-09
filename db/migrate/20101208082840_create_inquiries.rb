@@ -1,7 +1,7 @@
 class CreateInquiries < ActiveRecord::Migration
   def self.up
-    unless ::Inquiry.table_exists?
-      create_table ::Inquiry.table_name, :force => true do |t|
+    unless ::Refinery::Inquiry.table_exists?
+      create_table ::Refinery::Inquiry.table_name, :force => true do |t|
         t.string   "name"
         t.string   "email"
         t.string   "phone"
@@ -13,19 +13,19 @@ class CreateInquiries < ActiveRecord::Migration
         t.boolean  "spam",       :default => false
       end
 
-      add_index ::Inquiry.table_name, :id
+      add_index ::Refinery::Inquiry.table_name, :id
     end
-
-    ::Page.reset_column_information if defined?(::Page)
-
-    load(Rails.root.join('db', 'seeds', 'pages_for_inquiries.rb').to_s)
+    
+    unless Refinery::Page.where(:link_url => '/contact').any?
+      say_with_time("Seeding inquiries") { Refinery::Inquiries::Engine.load_seed }
+    end
   end
 
   def self.down
-     drop_table ::Inquiry.table_name
+     drop_table ::Refinery::Inquiry.table_name
 
-     ::Page.delete_all({
+     ::Refinery::Page.delete_all({
        :link_url => ("/contact" || "/contact/thank_you")
-     }) if defined?(::Page)
+     }) if defined?(::Refinery::Page)
   end
 end
