@@ -17,7 +17,8 @@ module Refinery
           plugin.activity = {
             :class_name => :'refinery/inquiry',
             :title => 'name',
-            :url_prefix => nil
+            :url_prefix => nil,
+            :url => 'refinery_admin_inquiries_path'
           }
         end
       end
