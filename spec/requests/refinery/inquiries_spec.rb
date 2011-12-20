@@ -60,8 +60,7 @@ module Refinery
 
       context "when show contact privacy link setting set to true" do
         before(:each) do
-          Refinery::Setting.set(:show_contact_privacy_link, 
-                                { :value => true, :scoping => "inquiries" })
+          Refinery::Inquiries.config.stub(:show_contact_privacy_link).and_return(true)
         end
 
         it "shows the link" do

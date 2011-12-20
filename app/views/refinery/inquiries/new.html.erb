@@ -26,7 +26,7 @@
       </div>
       <div class="actions">
         <%= f.submit t('.send') %>
-        <%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Setting.find_or_set(:show_contact_privacy_link, false, :scoping => "inquiries") %>
+        <%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.config.show_contact_privacy_link %>
       </div>
     <% end %>
   </div>

@@ -6,6 +6,7 @@ module Refinery
 
   module Inquiries
     require 'refinery/inquiries/engine' if defined?(Rails)
+    require 'refinery/inquiries/configuration'
 
     class << self
       attr_writer :root
