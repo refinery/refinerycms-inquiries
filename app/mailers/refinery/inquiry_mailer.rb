@@ -5,7 +5,7 @@ module Refinery
       @inquiry = inquiry
       mail :subject   => Refinery::InquirySetting.confirmation_subject(Globalize.locale),
            :to        => inquiry.email,
-           :from      => "\"#{Refinery::Setting[:site_name]}\" <no-reply@#{request.domain}>",
+           :from      => "\"#{Refinery::Core.config.site_name}\" <no-reply@#{request.domain}>",
            :reply_to  => Refinery::InquirySetting.notification_recipients.split(',').first
     end
 
@@ -13,7 +13,7 @@ module Refinery
       @inquiry = inquiry
       mail :subject => Refinery::InquirySetting.notification_subject,
            :to      => Refinery::InquirySetting.notification_recipients,
-           :from    => "\"#{Refinery::Setting[:site_name]}\" <no-reply@#{request.domain}>"
+           :from    => "\"#{Refinery::Core.config.site_name}\" <no-reply@#{request.domain}>"
     end
 
   end
