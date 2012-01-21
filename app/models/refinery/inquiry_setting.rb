@@ -17,7 +17,7 @@ module Refinery
       def confirmation_subject=(value)
         value.first.keys.each do |locale|
           Refinery::Setting.set("inquiry_confirmation_subject_#{locale}".to_sym,
-                                value.first[locale.to_sym],
+                                :value => value.first[locale.to_sym],
                                 :scoping => "inquiries")
         end
       end
@@ -31,7 +31,7 @@ module Refinery
       def confirmation_message=(value)
         value.first.keys.each do |locale|
           Refinery::Setting.set("inquiry_confirmation_messeage_#{locale}".to_sym,
-                                value.first[locale.to_sym],
+                                :value => value.first[locale.to_sym],
                                 :scoping => "inquiries")
         end
       end
@@ -47,9 +47,9 @@ module Refinery
                                       "New inquiry from your website",
                                       :scoping => "inquiries")
       end
-      
+
       def send_confirmation?
-        Refinery::Setting.find_or_set(:inquiry_send_confirmation, 
+        Refinery::Setting.find_or_set(:inquiry_send_confirmation,
                                       true,
                                       :scoping => "inquiries")
       end
