@@ -12,7 +12,7 @@ module Refinery
         Refinery::Plugin.register do |plugin|
           plugin.pathname = root
           plugin.name = "refinery_inquiries"
-          plugin.url = {:controller => 'refinery/admin/inquiries'}
+          plugin.url = {:controller => '/refinery/admin/inquiries'}
           plugin.menu_match = %r{refinery/inquir(ies|y_settings)(/.+?)?$}
           plugin.activity = {
             :class_name => :'refinery/inquiry',
