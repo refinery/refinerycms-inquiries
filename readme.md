@@ -45,3 +45,5 @@ Go into your 'Inquiries' tab in the Refinery admin area and click on "Edit confi
 ## How do I change the from address from no-reply@com.au to no-reply@<mydomain>.com.au
 
 Simply change the Refinery setting 'Tld Length' in the admin section from 1 to 2 and your domain name will be added.
+
+Note: This only affects top level domains that are two deep (ie: not .com or .org, but does affect .com.au etc).
