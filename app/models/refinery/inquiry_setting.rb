@@ -23,14 +23,14 @@ module Refinery
       end
 
       def confirmation_message(locale='en')
-        Refinery::Setting.find_or_set("inquiry_confirmation_messeage_#{locale}".to_sym,
+        Refinery::Setting.find_or_set("inquiry_confirmation_message_#{locale}".to_sym,
                                       Refinery::Setting[:inquiry_confirmation_body],
                                       :scoping => "inquiries")
       end
 
       def confirmation_message=(value)
         value.first.keys.each do |locale|
-          Refinery::Setting.set("inquiry_confirmation_messeage_#{locale}".to_sym,
+          Refinery::Setting.set("inquiry_confirmation_message_#{locale}".to_sym,
                                 value.first[locale.to_sym],
                                 :scoping => "inquiries")
         end
