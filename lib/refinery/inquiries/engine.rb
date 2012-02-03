@@ -1,24 +1,21 @@
-require 'refinerycms-inquiries'
-
 module Refinery
   module Inquiries
     class Engine < Rails::Engine
       include Refinery::Engine
 
-      isolate_namespace Refinery
-      engine_name :refinery_inquiries
+      isolate_namespace Refinery::Inquiries
 
-      initializer "register refinerycms_inquiries plugin", :after => :set_routes_reloader do |app|
+      initializer "init plugin" do
         Refinery::Plugin.register do |plugin|
           plugin.pathname = root
           plugin.name = "refinery_inquiries"
-          plugin.url = {:controller => '/refinery/admin/inquiries'}
-          plugin.menu_match = %r{refinery/inquir(ies|y_settings)(/.+?)?$}
+          plugin.url = {:controller => 'refinery/inquiries/admin/inquiries'}
+          plugin.menu_match = %r{/refinery/inquiries(/.+?)?$}
           plugin.activity = {
-            :class_name => :'refinery/inquiry',
+            :class_name => :'refinery/inquiries/inquiry',
             :title => 'name',
             :url_prefix => nil,
-            :url => 'refinery_admin_inquiries_path'
+            :url => 'refinery.inquiries_admin_inquiries_path'
           }
         end
       end

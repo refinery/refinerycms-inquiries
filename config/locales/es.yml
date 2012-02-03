@@ -4,69 +4,70 @@ es:
       refinery_inquiries:
         title: Consultas
     inquiries:
-      new:
-        send: Enviar mensaje
-        privacy_policy: "Nosotros valoramos tu privacidad"
-    admin:
       inquiries:
-        delete: Borrar esta consulta para siempre
-        inquiry:
-          read_inquiry: Leer esta consulta
-          said: dijo
-          mark_as_spam: Marcar como spam
-          mark_as_ham: Mover a la bandeja de entrada
-        submenu:
-          inbox: Bandeja de entrada
-          spam: Spam
-          update_notified: Actualizar a quien se notifica
-          edit_confirmation_email: Editar correo de confirmación
-        toggle_status:
-          closed: "La consulta '%{inquiry}' esta cerrada"
-          reopened: "La consulta '%{inquiry}' esta abierta"
-        index:
-          no_inquiries: No has recibido ninguna consulta aun.
-          no_spam: No tienes nada de spam.
-        show:
-          details: Detalles
-          click_to_email: Pulsa para responder
-          age: Edad
-          actions: Acciones
-          back_to_all_inquiries: Regresar a todas las consultas
-          inquiry: Consulta
-          spam: spam
-          spam_yes: 'sí'
-          to: Para
+        new:
+          send: Enviar mensaje
+          privacy_policy: "Nosotros valoramos tu privacidad"
+      admin:
+        inquiries:
+          delete: Borrar esta consulta para siempre
+          inquiry:
+            read_inquiry: Leer esta consulta
+            said: dijo
+            mark_as_spam: Marcar como spam
+            mark_as_ham: Mover a la bandeja de entrada
+          submenu:
+            inbox: Bandeja de entrada
+            spam: Spam
+            update_notified: Actualizar a quien se notifica
+            edit_confirmation_email: Editar correo de confirmación
+          toggle_status:
+            closed: "La consulta '%{inquiry}' esta cerrada"
+            reopened: "La consulta '%{inquiry}' esta abierta"
+          index:
+            no_inquiries: No has recibido ninguna consulta aun.
+            no_spam: No tienes nada de spam.
+          show:
+            details: Detalles
+            click_to_email: Pulsa para responder
+            age: Edad
+            actions: Acciones
+            back_to_all_inquiries: Regresar a todas las consultas
+            inquiry: Consulta
+            spam: spam
+            spam_yes: 'sí'
+            to: Para
+            from: De
+            phone: Teléfono
+            date: Fecha
+            message: Mensaje
+        inquiry_settings:
+          notification_recipients_form:
+            inquiry_settings_value_name: Mandar notificaciones a
+            hint: "Cada vez que alguien envíe una consulta, Refinery enviara un correo electrónico notificándolo. Ingrese la dirección de correo de las persona que vaya a ser notificada, si quiere que varias personas sean notificadas ingrese las direcciones de correo separadas por comas."
+            example: "Introduzca una dirección de correo como: me@domain.com, friend@msn.com, workmate@work.com"
+          confirmation_email_form:
+            to: Para
+            from: De
+            subject: Asunto
+            click_to_edit_subject: Pulse aquí para modificar el asunto
+            explanation: "Cada vez que alguien se comunique con usted en su sitio web, Refinery enviara un correo electrónico para confirmar la consulta con la persona que la hizo."
+            below_edit_email_sent: "Abajo usted puede editar el correo que se enviará."
+            the_customer_making_inquiry: El cliente haciendo la consulta
+            message: Mensaje
+            note: "Nota: ingrese el texto %name% donde quiera que el nombre del cliente aparezca en el email"
+      inquiry_mailer:
+        notification:
+          greeting: Hola
+          you_recieved_new_inquiry: Has recibido una nueva consulta en tu web.
+          inquiry_starts: --- comienzo de la consulta ---
+          inquiry_ends: --- fin de la consulta ---
           from: De
+          email: Correo
           phone: Teléfono
-          date: Fecha
           message: Mensaje
-      inquiry_settings:
-        notification_recipients_form:
-          inquiry_settings_value_name: Mandar notificaciones a
-          hint: "Cada vez que alguien envíe una consulta, Refinery enviara un correo electrónico notificándolo. Ingrese la dirección de correo de las persona que vaya a ser notificada, si quiere que varias personas sean notificadas ingrese las direcciones de correo separadas por comas."
-          example: "Introduzca una dirección de correo como: me@domain.com, friend@msn.com, workmate@work.com"
-        confirmation_email_form:
-          to: Para
-          from: De
-          subject: Asunto
-          click_to_edit_subject: Pulse aquí para modificar el asunto
-          explanation: "Cada vez que alguien se comunique con usted en su sitio web, Refinery enviara un correo electrónico para confirmar la consulta con la persona que la hizo."
-          below_edit_email_sent: "Abajo usted puede editar el correo que se enviará."
-          the_customer_making_inquiry: El cliente haciendo la consulta
-          message: Mensaje
-          note: "Nota: ingrese el texto %name% donde quiera que el nombre del cliente aparezca en el email"
-    inquiry_mailer:
-      notification:
-        greeting: Hola
-        you_recieved_new_inquiry: Has recibido una nueva consulta en tu web.
-        inquiry_starts: --- comienzo de la consulta ---
-        inquiry_ends: --- fin de la consulta ---
-        from: De
-        email: Correo
-        phone: Teléfono
-        message: Mensaje
-        closing_line: Saludos
-        ps: P.D. Todas tus consultas se almacenan en la sección "Consultas" de Refinery por si alguna vez quieres verlas más tarde allí.
+          closing_line: Saludos
+          ps: P.D. Todas tus consultas se almacenan en la sección "Consultas" de Refinery por si alguna vez quieres verlas más tarde allí.
   activerecord:
     models:
       refinery/inquiry: Consulta

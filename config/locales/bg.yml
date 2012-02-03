@@ -5,33 +5,34 @@ bg:
         title: Запитвания
         description: Осигурява форма за контакт и съхранение на запитвания
     inquiries:
-      new:
-        send: Изпращане на съобщение
-        privacy_policy: Високо ценим Вашите лични данни
-    admin:
       inquiries:
-        delete: Изтриване на това запитване завинаги
-        inquiry:
-          read_inquiry: Прочит на запитването
-          said: написа
-          mark_as_spam: Отбелязване като спам
-          mark_as_ham: 'Преместване във "Входящи"'
-        submenu:
-          inbox: Входящи
-          spam: Спам
-          update_notified: Получатели на уведомления
-          edit_confirmation_email: Е-поща за потвърждение
-        index:
-          no_inquiries: Все още не сте получи запитвания.
-          no_spam: Поздравления! Нямате никакъв спам.
-        show:
-          details: Подробности
-          age: Възраст
-          actions: Действия
-          back_to_all_inquiries: Обратно към всички запитвания
-          spam: Спам
-          spam_yes: 'да'
-          inquiry: Запитване
+        new:
+          send: Изпращане на съобщение
+          privacy_policy: Високо ценим Вашите лични данни
+      admin:
+        inquiries:
+          delete: Изтриване на това запитване завинаги
+          inquiry:
+            read_inquiry: Прочит на запитването
+            said: написа
+            mark_as_spam: Отбелязване като спам
+            mark_as_ham: 'Преместване във "Входящи"'
+          submenu:
+            inbox: Входящи
+            spam: Спам
+            update_notified: Получатели на уведомления
+            edit_confirmation_email: Е-поща за потвърждение
+          index:
+            no_inquiries: Все още не сте получи запитвания.
+            no_spam: Поздравления! Нямате никакъв спам.
+          show:
+            details: Подробности
+            age: Възраст
+            actions: Действия
+            back_to_all_inquiries: Обратно към всички запитвания
+            spam: Спам
+            spam_yes: 'да'
+            inquiry: Запитване
           to: До
           from: От
           click_to_email: Изпращане на е-поща до този адрес
