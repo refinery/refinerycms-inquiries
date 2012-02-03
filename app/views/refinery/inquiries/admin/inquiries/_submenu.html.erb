@@ -4,11 +4,11 @@
       <%= render :partial => "/refinery/admin/search", :locals => {:url => request.path} %>
     </li>
     <li <%= "class='selected'" if params[:action] == "index" %>>
-      <%= link_to t('.inbox'), refinery.admin_inquiries_path, :class => "email_icon" %>
+      <%= link_to t('.inbox'), refinery.inquiries_admin_inquiries_path, :class => "email_icon" %>
     </li>
     <li <%= "class='selected'" if params[:action] == "spam" %>>
       <% if @spam_count > 0  %>
-        <%= link_to "#{t('.spam')} (#{@spam_count})", refinery.spam_refinery_admin_inquiries_path, :class => "spam_icon" %>
+        <%= link_to "#{t('.spam')} (#{@spam_count})", refinery.spam_inquiries_admin_inquiries_path, :class => "spam_icon" %>
       <% else %>
         <%= link_to t('.spam'), refinery.spam_inquiries_admin_inquiries_path, :class => "spam_empty_icon" %>
       <% end %>

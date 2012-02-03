@@ -16,10 +16,10 @@
                   :class => "back_icon" %>
     </li>
     <li>
-      <%= link_to t('refinery.admin.inquiries.delete'),
+      <%= link_to t('refinery.inquiries.admin.inquiries.delete'),
                   refinery.inquiries_admin_inquiry_path(@inquiry),
                   :class => 'delete_icon no-tooltip confirm-delete',
-                  :title => t('refinery.admin.inquiries.delete'),
+                  :title => t('refinery.inquiries.admin.inquiries.delete'),
                   :confirm => t('refinery.admin.delete.message', :title => @inquiry.name),
                   :method => :delete %>
     </li>

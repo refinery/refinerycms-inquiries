@@ -1,7 +1,7 @@
 lv:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Pieprasījumi
         description: Nodrošina kontaktformu un glabā pieprasījumus
     inquiries:

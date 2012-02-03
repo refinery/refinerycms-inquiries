@@ -1,7 +1,7 @@
 fr:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Requêtes
         description: Fournit un formulaire de contact et gère les demandes de contacts.
     inquiries:

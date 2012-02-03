@@ -1,7 +1,7 @@
 bg:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Запитвания
         description: Осигурява форма за контакт и съхранение на запитвания
     inquiries:

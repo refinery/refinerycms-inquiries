@@ -7,7 +7,7 @@
     <%= link_to refinery_icon_tag('delete.png'), 
                 refinery.inquiries_admin_inquiry_path(inquiry),
                 :class => "cancel confirm-delete",
-                :title => t('refinery.admin.inquiries.delete'),
+                :title => t('refinery.inquiries.admin.inquiries.delete'),
                 :confirm => t('refinery.admin.delete.message', :title => inquiry.name),
                 :method => :delete -%>
 
@@ -16,11 +16,11 @@
 
     <% if inquiry.spam? %>
       <%= link_to refinery_icon_tag('email.png'),
-                  refinery.inquiries_toggle_spam_admin_inquiry_path(inquiry),
+                  refinery.toggle_spam_inquiries_admin_inquiry_path(inquiry),
                   :title => t('.mark_as_ham') -%>
     <% else %>
       <%= link_to refinery_icon_tag('bin_closed.png'),
-                  refinery.inquiries_toggle_spam_admin_inquiry_path(inquiry),
+                  refinery.toggle_spam_inquiries_admin_inquiry_path(inquiry),
                   :title => t('.mark_as_spam') -%>
     <% end %>
   </span>

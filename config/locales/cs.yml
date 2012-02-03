@@ -1,7 +1,7 @@
 cs:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Dotazy
         description: Zajišťuje kontaktní formulář a uchovává zaslané dotazy.
     inquiries:

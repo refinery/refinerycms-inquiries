@@ -1,7 +1,7 @@
 sk:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Otázky
         description: Zabezpečuje kontaktný formulár a uchováva zaslané otázky.
     inquiries:

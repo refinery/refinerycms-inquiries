@@ -1,7 +1,7 @@
 it:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Richieste
         description: Fornisce un modulo di contatto e memorizza le richieste
     inquiries:

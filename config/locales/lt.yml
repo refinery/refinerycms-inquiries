@@ -1,7 +1,7 @@
 lt:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Užklausos
         description: Suteikia kontaktų formą ir saugo užklausas
     inquiries:

@@ -1,7 +1,7 @@
 pt-BR:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Contatos
         description: Gerenciar contatos
     inquiries:

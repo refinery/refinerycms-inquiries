@@ -25,7 +25,7 @@ module Refinery
 
           context "spam inquiries" do
             it "shows message" do
-              visit refinery.inquiries_spam_admin_inquiries_path
+              visit refinery.spam_inquiries_admin_inquiries_path
 
               page.should have_content("Hooray! You don't have any spam.")
             end
@@ -66,6 +66,7 @@ module Refinery
             page.should have_content("From David Jones [dave@refinerycms.com]")
             page.should have_content("Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
             within "#actions" do
+              save_and_open_page
               page.should have_content("Age")
               page.should have_content("Back to all Inquiries")
               page.should have_selector("a[href='/refinery/inquiries']")

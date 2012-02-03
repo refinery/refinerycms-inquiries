@@ -1,7 +1,7 @@
 en:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Inquiries
         description: Provides a contact form and stores inquiries
     inquiries:

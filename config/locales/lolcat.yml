@@ -1,7 +1,7 @@
 lolcat:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: INQUIRIEZ
         description: PROVIDEZ CONTACT FORM AN STOREZ INQUIRIEZ
     inquiries:

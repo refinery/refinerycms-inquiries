@@ -1,7 +1,7 @@
 es:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Consultas
     inquiries:
       inquiries:

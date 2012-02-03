@@ -1,7 +1,7 @@
 nl:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Contact aanvragen
     inquiries:
       inquiries:

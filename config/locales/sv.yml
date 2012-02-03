@@ -1,7 +1,7 @@
 sv:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Förfrågningar
         description: Tillhandahåller ett formulär och sparar förfrågningar
     inquiries:
