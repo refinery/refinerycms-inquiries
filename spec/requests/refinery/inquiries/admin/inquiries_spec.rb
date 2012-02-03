@@ -3,7 +3,7 @@ require "spec_helper"
 module Refinery
   module Inquiries
     module Admin
-      describe "inquiries" do
+      describe Inquiry do
         login_refinery_user
 
         let!(:inquiry) do

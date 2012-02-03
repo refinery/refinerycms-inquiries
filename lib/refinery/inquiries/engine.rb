@@ -8,8 +8,8 @@ module Refinery
       initializer "init plugin" do
         Refinery::Plugin.register do |plugin|
           plugin.pathname = root
-          plugin.name = "refinery_inquiries"
-          plugin.url = {:controller => 'refinery/inquiries/admin/inquiries'}
+          plugin.name = "refinerycms_inquiries"
+          plugin.url = {:controller => '/refinery/inquiries/admin/inquiries'}
           plugin.menu_match = %r{/refinery/inquiries(/.+?)?$}
           plugin.activity = {
             :class_name => :'refinery/inquiries/inquiry',

@@ -30,7 +30,7 @@ module Refinery
             end if ::Refinery::Inquiries::InquirySetting.send_confirmation?
           end
 
-          redirect_to refinery.inquiries_thank_you_inquiries_path
+          redirect_to refinery.thank_you_inquiries_inquiries_path
         else
           render :action => 'new'
         end

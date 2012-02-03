@@ -11,16 +11,15 @@ module Refinery
       end
 
       context "when valid data" do
-        it "is successful", :focus => true do
+        it "is successful" do
           visit refinery.inquiries_new_inquiry_path
 
           fill_in "Name", :with => "Ugis Ozols"
           fill_in "Email", :with => "ugis.ozols@refinerycms.com"
           fill_in "Message", :with => "Hey, I'm testing!"
-          save_and_open_page
           click_button "Send message"
 
-          page.current_path.should == inquiries_thank_you_inquiries_path
+          page.current_path.should == refinery.thank_you_inquiries_inquiries_path
           page.should have_content("Thank You")
 
           within "#body_content_left" do
@@ -39,7 +38,7 @@ module Refinery
 
           click_button "Send message"
 
-          page.current_path.should == inquiries_new_inquiry_path
+          page.current_path.should == refinery.inquiries_new_inquiry_path
           page.should have_content("There were problems with the following fields")
           page.should have_content("Name can't be blank")
           page.should have_content("Email is invalid")
@@ -52,6 +51,10 @@ module Refinery
 
       describe "privacy" do
         context "when show contact privacy link setting set to false" do
+          before(:each) do
+            Refinery::Inquiries.stub(:show_contact_privacy_link).and_return(false)
+          end
+
           it "won't show link" do
             visit refinery.inquiries_new_inquiry_path
 
