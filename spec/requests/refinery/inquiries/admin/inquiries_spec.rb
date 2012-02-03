@@ -66,7 +66,6 @@ module Refinery
             page.should have_content("From David Jones [dave@refinerycms.com]")
             page.should have_content("Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
             within "#actions" do
-              save_and_open_page
               page.should have_content("Age")
               page.should have_content("Back to all Inquiries")
               page.should have_selector("a[href='/refinery/inquiries']")
