@@ -39,7 +39,7 @@ de:
             phone: Telefon
             date: Datum
             message: Nachricht
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Schicke Benachrichtigungen an
             explanation: Jedesmal wenn jemand Sie auf Ihrer Webseite kontaktiert, wird eine E-Mail mit einem Hinweis zu einer neuen Kontaktanfrage versendet.

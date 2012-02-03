@@ -39,7 +39,7 @@ sv:
             phone: Telefon
             date: Datum
             message: Meddelande
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Skicka notifikationer till
             hint: När en ny förfrågan skickas in, skickar Refinery en notifikation till dig.

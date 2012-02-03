@@ -20,16 +20,16 @@
         <label class='stripped'><%= t('.from') %></label>
       </td>
       <td>
-        <%= "#{Refinery::Core.config.site_name} &lt;no-reply@#{request.domain}&gt;".html_safe %>
+        <%= "#{Refinery::Core.site_name} &lt;no-reply@#{request.domain}&gt;".html_safe %>
       </td>
     </tr>
-    <% (Refinery::I18n.config.frontend_locales || [::I18n.locale]).each do |locale| %>
+    <% (Refinery::I18n.frontend_locales || [::I18n.locale]).each do |locale| %>
       <tr>
         <td>
           <label class='stripped'><%= t('.subject') %> (<%= locale.to_s %>)</label>
         </td>
         <td>
-          <%= text_field_tag "subject[][#{locale.to_s}]", Refinery::InquirySetting.confirmation_subject(locale),
+          <%= text_field_tag "subject[][#{locale.to_s}]", Refinery::Inquiries::Setting.confirmation_subject(locale),
                              :class => 'widest' %>
         </td>
       </tr>
@@ -39,7 +39,7 @@
                       :class => 'stripped' %> (<%= locale.to_s %>)
         </td>
         <td>
-          <%= text_area_tag "message[][#{locale.to_s}]", Refinery::InquirySetting.confirmation_message(locale), # required, we can't use :value
+          <%= text_area_tag "message[][#{locale.to_s}]", Refinery::Inquiries::Setting.confirmation_message(locale), # required, we can't use :value
                           :rows => "5",
                           :class => 'widest' %>
           <br/>

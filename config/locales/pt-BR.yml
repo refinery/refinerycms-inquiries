@@ -39,7 +39,7 @@ pt-BR:
             phone: Telefone
             date: Data
             message: Mensagem
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Enviar notificações para
             explanation: "Toda vez que alguém contactar você no seu website, enviamos um email para notificar a essa pessoa o recebimento de uma mensagem."

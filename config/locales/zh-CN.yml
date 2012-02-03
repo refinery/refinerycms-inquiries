@@ -39,7 +39,7 @@ zh-CN:
             phone: 电话
             date: 日期
             message: 信息
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: 发送通知到
             hint: 当收到新的咨询时，Refinery将会发一封email通知你.

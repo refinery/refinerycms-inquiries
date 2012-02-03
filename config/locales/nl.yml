@@ -38,7 +38,7 @@ nl:
             phone: Telefoonnummer
             date: Datum
             message: Bericht
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Stuur notificaties naar
             explanation: "Iedere keer wanneer iemand het vraag formulier invult op uw website, stuurt Refinery een email waarin staat dat er een nieuwe vraag ontvangen is."

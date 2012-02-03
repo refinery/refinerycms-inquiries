@@ -39,7 +39,7 @@ sk:
             phone: Telefón
             date: Dátum
             message: Správa
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Odoslať notifikáciu pre
             hint: Pri poslaní novej otázky, Refinery pošle notifikáčnú správu na zadané emaily.

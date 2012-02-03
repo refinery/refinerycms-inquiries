@@ -39,7 +39,7 @@ sl:
             phone: Telefon
             date: Datum
             message: Sporočilo
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Pošlji obvestilo na
             hint: "V zgornje polje vnesite email naslov. Želite da obvestila prejme več oseb? Vnesite več email naslovov ločenih z vejicami."

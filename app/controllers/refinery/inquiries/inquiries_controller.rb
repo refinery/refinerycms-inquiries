@@ -27,7 +27,7 @@ module Refinery
               ::Refinery::Inquiries::InquiryMailer.confirmation(@inquiry, request).deliver
             rescue
               logger.warn "There was an error delivering an inquiry confirmation:\n#{$!}\n"
-            end if ::Refinery::Inquiries::InquirySetting.send_confirmation?
+            end if ::Refinery::Inquiries::Setting.send_confirmation?
           end
 
           redirect_to refinery.thank_you_inquiries_inquiries_path

@@ -1,6 +1,6 @@
 module Refinery
   module Inquiries
-    class InquirySetting
+    class Setting
 
       class << self
         def confirmation_body

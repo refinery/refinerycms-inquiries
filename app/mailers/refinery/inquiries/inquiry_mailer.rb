@@ -4,17 +4,17 @@ module Refinery
 
       def confirmation(inquiry, request)
         @inquiry = inquiry
-        mail :subject   => Refinery::InquirySetting.confirmation_subject(Globalize.locale),
+        mail :subject   => Refinery::Inquiries::Setting.confirmation_subject(Globalize.locale),
              :to        => inquiry.email,
-             :from      => "\"#{Refinery::Core.config.site_name}\" <no-reply@#{request.domain}>",
-             :reply_to  => Refinery::InquirySetting.notification_recipients.split(',').first
+             :from      => "\"#{Refinery::Core.site_name}\" <no-reply@#{request.domain}>",
+             :reply_to  => Refinery::Inquiries::Setting.notification_recipients.split(',').first
       end
 
       def notification(inquiry, request)
         @inquiry = inquiry
-        mail :subject => Refinery::InquirySetting.notification_subject,
-             :to      => Refinery::InquirySetting.notification_recipients,
-             :from    => "\"#{Refinery::Core.config.site_name}\" <no-reply@#{request.domain}>"
+        mail :subject => Refinery::Inquiries::Setting.notification_subject,
+             :to      => Refinery::Inquiries::Setting.notification_recipients,
+             :from    => "\"#{Refinery::Core.site_name}\" <no-reply@#{request.domain}>"
       end
 
     end

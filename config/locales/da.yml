@@ -37,7 +37,7 @@ da:
           submenu:
             update_notified: Opdatér, hvem der får besked
             edit_confirmation_email: Redigér e-mailbekræftelse
-        inquiry_settings:
+        settings:
           update:
             updated: "'%{setting}' er opdateret."
           notification_recipients_form:

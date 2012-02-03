@@ -39,7 +39,7 @@ fr:
             phone: Téléphone
             date: Date
             message: Message
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Envoyer une notification à
             explanation: Chaque fois qu'une demande de contact est rédigée sur votre site, Refinery envoie un e-mail pour le signaler.

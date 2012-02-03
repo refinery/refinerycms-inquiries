@@ -41,7 +41,7 @@ it:
             phone: Telefono
             date: Data
             message: Messaggio
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Inviare notifiche a
             hint: Quando una nuova richiesta viene inviata, Refinery ti invierà una email di notifica.

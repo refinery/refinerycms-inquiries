@@ -39,7 +39,7 @@ lolcat:
             phone: FONE
             date: DATE
             message: MESAGE
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: SEND NOTIFICASHUNS 2
             explanation: EVRY TIEM SOMEONE CONTACTS U ON UR WEBSIET, REFINERY SENDZ OUT AN EMAIL 2 SAY THAR IZ NEW INQUIRY.

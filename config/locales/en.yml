@@ -39,7 +39,7 @@ en:
             phone: Phone
             date: Date
             message: Message
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Send notifications to
             hint: When a new inquiry is submitted, Refinery will send an email notification to you.

@@ -39,7 +39,7 @@ bg:
           phone: Телефон
           date: Дата
           message: Съобщение
-      inquiry_settings:
+      settings:
         notification_recipients_form:
           inquiry_settings_value_name: Изпращане на уведомления до
           hint: При получаване на ново запитване, Refinery, ще Ви уведоми по е-пощата.

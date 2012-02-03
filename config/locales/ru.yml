@@ -39,7 +39,7 @@ ru:
             phone: Телефон
             date: Дата
             message: Сообщение
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Отправлять уведомления
             hint: "Когда поступит новый запрос, Refinery CMS отправит вам уведомление на электронную почту."

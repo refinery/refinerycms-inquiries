@@ -39,7 +39,7 @@ lt:
             phone: Telefonas
             date: Data
             message: Žinutė
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Siųsti pranešimus į
             hint: Kai užpildoma nauja užklausa, Refinery jums atsiųs pranešimą.

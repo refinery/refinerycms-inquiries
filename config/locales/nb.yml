@@ -39,7 +39,7 @@ nb:
             phone: Telefon
             date: Dato
             message: Melding
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Send varslinger til
             hint: "Når en ny forespørsel er lagt inn, så vil Refinery sende deg en e-post for å si i fra."

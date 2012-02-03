@@ -39,7 +39,7 @@ lv:
             phone: Tālrunis
             date: Datums
             message: Ziņa
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Sūtīt paziņojumu uz
             explanation: Katru reizi, kad kāds ar tevi sazinās izmantojot kontaktformu, Refinery nosūta epastu par to, ka ir jauns pieprasījums.

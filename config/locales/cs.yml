@@ -39,7 +39,7 @@ cs:
             phone: Telefon
             date: Datum
             message: Zpráva
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Odeslat notifikaci pro
             hint: Při posláni nového dotazu, Refinery zašle notifikační zprávu na zadané emaily.

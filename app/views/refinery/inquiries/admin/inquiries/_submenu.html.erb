@@ -15,12 +15,12 @@
     </li>
     <li>
       <%= link_to t('.update_notified'),
-                    refinery.edit_inquiries_admin_inquiry_setting_path(:inquiry_notification_recipients, :dialog => true, :height => 300),
+                    refinery.edit_inquiries_admin_setting_path(:inquiry_notification_recipients, :dialog => true, :height => 300),
                     :class => "user_comment_icon" %>
     </li>
     <li>
       <%= link_to t('.edit_confirmation_email'),
-                  refinery.edit_inquiries_admin_inquiry_setting_path(:inquiry_confirmation_body, :dialog => true),
+                  refinery.edit_inquiries_admin_setting_path(:inquiry_confirmation_body, :dialog => true),
                   :class => "edit_email_icon" %>
     </li>
   </ul>

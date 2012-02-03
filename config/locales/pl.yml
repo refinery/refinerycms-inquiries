@@ -40,7 +40,7 @@ pl:
             phone: Telefon
             date: Data
             message: Wiadomość
-        inquiry_settings:
+        settings:
           notification_recipients_form:
             inquiry_settings_value_name: Wysyłaj powiadomienia do
             hint: Kiedy dostarczone zostanie nowe zapytanie, Refinery wyśle do Ciebie wiadomość e-mail.
