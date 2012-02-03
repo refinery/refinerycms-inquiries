@@ -22,7 +22,7 @@ if defined?(::Refinery::Page)
   })
   contact_us_page.parts.create({
     :title => "Side Body",
-    :body => "<p>163 Evergreen Terrace<br/>Happyville<br/>USA.<br/>Phone: 1-800 CALLUSNOW</p>",
+    :body => "",
     :position => 1
   })
   contact_us_page_position = -1

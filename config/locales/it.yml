@@ -1,71 +1,72 @@
 it:
   refinery:
     plugins:
-      refinery_inquiries:
+      refinerycms_inquiries:
         title: Richieste
         description: Fornisce un modulo di contatto e memorizza le richieste
     inquiries:
-      new:
-        header_message: si è verificato un problema
-        message: "I seguenti problemi devono essere corretti:"
-        send: Invia messaggio
-        privacy_policy: "Noi diamo valore alla tua privacy"
-    admin:
       inquiries:
-        delete: Rimuovi per sempre questa richiesta
-        inquiry:
-          read_inquiry: Leggi la richiesta
-          said: dice
-          mark_as_spam: Segnala come spam
-          mark_as_ham: Sposta nella inbox
-        submenu:
-          inbox: Inbox
-          spam: Spam
-          update_notified: Aggiorna i destinatari della notifica
-          edit_confirmation_email: Modifica la mail di conferma
-        index:
-          no_inquiries: Non hai ancora ricevuto alcuna richiesta.
-          no_spam: Evviva! Non hai alcuno spam
-        show:
-          details: Dettagli
-          age: Età
-          actions: Azioni
-          back_to_all_inquiries: Torna a tutte le richieste
-          spam: Spam
-          spam_yes: 'si'
-          inquiry: Domanda
-          to: A
+        new:
+          header_message: si è verificato un problema
+          message: "I seguenti problemi devono essere corretti:"
+          send: Invia messaggio
+          privacy_policy: "Noi diamo valore alla tua privacy"
+      admin:
+        inquiries:
+          delete: Rimuovi per sempre questa richiesta
+          inquiry:
+            read_inquiry: Leggi la richiesta
+            said: dice
+            mark_as_spam: Segnala come spam
+            mark_as_ham: Sposta nella inbox
+          submenu:
+            inbox: Inbox
+            spam: Spam
+            update_notified: Aggiorna i destinatari della notifica
+            edit_confirmation_email: Modifica la mail di conferma
+          index:
+            no_inquiries: Non hai ancora ricevuto alcuna richiesta.
+            no_spam: Evviva! Non hai alcuno spam
+          show:
+            details: Dettagli
+            age: Età
+            actions: Azioni
+            back_to_all_inquiries: Torna a tutte le richieste
+            spam: Spam
+            spam_yes: 'si'
+            inquiry: Domanda
+            to: A
+            from: Da
+            click_to_email: Fare click per inviare una email a questo indirizzo
+            phone: Telefono
+            date: Data
+            message: Messaggio
+        settings:
+          notification_recipients_form:
+            inquiry_settings_value_name: Inviare notifiche a
+            hint: Quando una nuova richiesta viene inviata, Refinery ti invierà una email di notifica.
+            example: "Inserisci i tuoi indirizzi email come: jack@work.com, jill@office.com"
+          confirmation_email_form:
+            to: Da
+            from: A
+            subject: Oggetto
+            click_to_edit_subject: Fare clic qui per modificare l'oggetto
+            explanation: Ogni volta che qualcuno ti contatta attraverso il tuo sito web, Refinery invia una mail per confermare la richiesta alla persona che l'ha fatta
+            below_edit_email_sent: Qui di seguito è possibile modificare l'e-mail che viene inviata.
+            the_customer_making_inquiry: Chi invia il messaggio
+            message: Messaggio
+            note: "Nota: inserire nella email il testo %name% dove si vuole che compiaia il nome di chi invia la richiesta"
+      inquiry_mailer:
+        notification:
+          greeting: Ciao a tutti
+          you_recieved_new_inquiry: Hai appena ricevuto una nuova richiesta sul tuo sito.
+          inquiry_starts: --- inizio del messaggio ---
+          inquiry_ends: --- fine del messaggio ---
           from: Da
-          click_to_email: Fare click per inviare una email a questo indirizzo
+          email: Email
           phone: Telefono
-          date: Data
           message: Messaggio
-      inquiry_settings:
-        notification_recipients_form:
-          inquiry_settings_value_name: Inviare notifiche a
-          hint: Quando una nuova richiesta viene inviata, Refinery ti invierà una email di notifica.
-          example: "Inserisci i tuoi indirizzi email come: jack@work.com, jill@office.com"
-        confirmation_email_form:
-          to: Da
-          from: A
-          subject: Oggetto
-          click_to_edit_subject: Fare clic qui per modificare l'oggetto
-          explanation: Ogni volta che qualcuno ti contatta attraverso il tuo sito web, Refinery invia una mail per confermare la richiesta alla persona che l'ha fatta
-          below_edit_email_sent: Qui di seguito è possibile modificare l'e-mail che viene inviata.
-          the_customer_making_inquiry: Chi invia il messaggio
-          message: Messaggio
-          note: "Nota: inserire nella email il testo %name% dove si vuole che compiaia il nome di chi invia la richiesta"
-    inquiry_mailer:
-      notification:
-        greeting: Ciao a tutti
-        you_recieved_new_inquiry: Hai appena ricevuto una nuova richiesta sul tuo sito.
-        inquiry_starts: --- inizio del messaggio ---
-        inquiry_ends: --- fine del messaggio ---
-        from: Da
-        email: Email
-        phone: Telefono
-        message: Messaggio
-        closing_line: Saluti
+          closing_line: Saluti
         ps: P.S. Tutte le richiesta ricevute sono salvate nella sezione "Richieste" di Refinery così da poter esser viste in un secondo momento.
   activerecord:
     models:

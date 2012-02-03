@@ -1,8 +1,8 @@
 <% content_for :body_content_left do %>
   <div class='inquiries'>
-    <%=raw @page.content_for(Refinery::Pages.config.default_parts.first.to_sym) %>
+    <%=raw @page.content_for(::Refinery::Pages.config.default_parts.first.to_sym) %>
 
-    <%= form_for [main_app, @inquiry] do |f| %>
+    <%= form_for [refinery, :inquiries, @inquiry] do |f| %>
       <%= render :partial => "/refinery/admin/error_messages",
                  :locals => {
                    :object => @inquiry,
@@ -26,7 +26,7 @@
       </div>
       <div class="actions">
         <%= f.submit t('.send') %>
-        <%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.config.show_contact_privacy_link %>
+        <%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %>
       </div>
     <% end %>
   </div>
