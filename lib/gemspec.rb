@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-require File.expand_path('../refinery/inquiries/version', __FILE__)
-
 files = Dir.glob("**/*").flatten.reject do |file|
   file =~ /\.gem$/
 end
@@ -8,7 +6,7 @@ end
 gemspec = <<EOF
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
-  s.version           = %q{#{Refinery::Inquiries::VERSION}}
+  s.version           = %q{2.0.0}
   s.date              = %q{#{Time.now.strftime('%Y-%m-%d')}}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
