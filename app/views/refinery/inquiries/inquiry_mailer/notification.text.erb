@@ -1,0 +1,18 @@
+<%=raw t('.greeting') %>,
+
+<%=raw t('.you_recieved_new_inquiry') %>
+
+<%=raw t('.inquiry_starts') %>
+
+<%=raw t('.from') %>: <%= @inquiry.name %>
+<%=raw t('.email') %>: <%= @inquiry.email %>
+<%=raw t('.phone') %>: <%= @inquiry.phone %>
+<%=raw t('.message') %>:
+<%=strip_tags(@inquiry.message) %>
+
+<%=raw t('.inquiry_ends') %>
+
+<%=raw t('.closing_line') %>,
+<%=raw Refinery::Core.site_name %>
+
+<%=raw t('.ps') %>
