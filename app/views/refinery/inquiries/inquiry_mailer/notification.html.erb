@@ -1,18 +1,18 @@
-<%=raw t('.greeting') %>,
-
-<%=raw t('.you_recieved_new_inquiry') %>
-
-<%=raw t('.inquiry_starts') %>
-
-<%=raw t('.from') %>: <%= @inquiry.name %>
-<%=raw t('.email') %>: <%= @inquiry.email %>
-<%=raw t('.phone') %>: <%= @inquiry.phone %>
+<%=raw t('.greeting') %>,<br/>
+<br/>
+<%=raw t('.you_recieved_new_inquiry') %><br/>
+<br/>
+<%=raw t('.inquiry_starts') %><br/>
+<br/>
+<%=raw t('.from') %>: <%= @inquiry.name %><br/>
+<%=raw t('.email') %>: <%= @inquiry.email %><br/>
+<%=raw t('.phone') %>: <%= @inquiry.phone %><br/>
 <%=raw t('.message') %>:
-<%=simple_format strip_tags(@inquiry.message) %>
+<%= simple_format(strip_tags(@inquiry.message)) %>
 
-<%=raw t('.inquiry_ends') %>
-
-<%=raw t('.closing_line') %>,
-<%=raw Refinery::Core.config.site_name %>
-
+<%=raw t('.inquiry_ends') %><br/>
+<br/>
+<%=raw t('.closing_line') %>,<br/>
+<%=raw Refinery::Core.config.site_name %><br/>
+<br/>
 <%=raw t('.ps') %>

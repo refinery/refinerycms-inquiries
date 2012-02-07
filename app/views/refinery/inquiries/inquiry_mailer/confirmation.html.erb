@@ -1,1 +1,1 @@
-<%=raw Refinery::InquirySetting.confirmation_message(Globalize.locale).gsub("%name%", @inquiry.name) %>
+<%=simple_format(strip_tags(Refinery::InquirySetting.confirmation_message(Globalize.locale).gsub("%name%", @inquiry.name))) %>
