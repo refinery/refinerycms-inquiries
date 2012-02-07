@@ -41,3 +41,11 @@ Go into your 'Inquiries' tab in the Refinery admin area and click on "Update who
 ## How do I Edit the Automatic Confirmation Email
 
 Go into your 'Inquiries' tab in the Refinery admin area and click on "Edit confirmation email"
+
+## Help! How do I send emails from no-reply@domain.com.au instead of no-reply@com.au?
+
+Simply set the following in an initializer:
+
+```ruby
+ActionDispatch::Http::URL.tld_length = 2
+```
