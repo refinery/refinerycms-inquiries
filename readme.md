@@ -44,8 +44,8 @@ Go into your 'Inquiries' tab in the Refinery admin area and click on "Edit confi
 
 ## Help! How do I send emails from no-reply@domain.com.au instead of no-reply@com.au?
 
-Simply set the following in an initializer:
+Simply set the following in config/application.rb:
 
 ```ruby
-ActionDispatch::Http::URL.tld_length = 2
+config.action_dispatch.tld_length = 2
 ```
