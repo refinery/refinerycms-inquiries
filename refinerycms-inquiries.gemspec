@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
   s.version           = %q{2.0.0}
-  s.date              = %q{2012-02-06}
+  s.date              = %q{2012-02-17}
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
@@ -105,6 +105,8 @@ Gem::Specification.new do |s|
     'readme.md',
     'refinerycms-inquiries.gemspec',
     'spec',
+    'spec/factories',
+    'spec/factories/inquiry.rb',
     'spec/models',
     'spec/models/refinery',
     'spec/models/refinery/inquiries',
@@ -116,9 +118,6 @@ Gem::Specification.new do |s|
     'spec/requests/refinery/inquiries/admin/inquiries_spec.rb',
     'spec/requests/refinery/inquiries/inquiries_spec.rb',
     'spec/spec_helper.rb',
-    'spec/support',
-    'spec/support/refinery',
-    'spec/support/refinery/factories.rb',
     'tasks',
     'tasks/rspec.rake'
   ]
