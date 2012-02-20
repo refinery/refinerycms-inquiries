@@ -1,6 +1,6 @@
 module Refinery
   module Inquiries
-    class Inquiry < ActiveRecord::Base
+    class Inquiry < Refinery::Core::BaseModel
 
       filters_spam :message_field => :message,
                    :email_field => :email,
