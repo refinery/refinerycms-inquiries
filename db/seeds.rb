@@ -45,7 +45,7 @@ if defined?(::Refinery::Page)
     })
   end
 
-  unless Refinery::Page.where(:link_url => '/privacy-policy').any?
+  unless Refinery::Page.by_title('Privacy Policy').any?
     privacy_policy_page = contact_us_page.children.create({
       :title => "Privacy Policy",
       :deletable => true,
