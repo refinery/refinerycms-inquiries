@@ -8,7 +8,7 @@ end if defined?(::Refinery::User)
 if defined?(::Refinery::Page)
   page_position = (::Refinery::Page.maximum(:position, :conditions => {:parent_id => nil}) || -1)
 
-  unless Refinery::Page.by_title("Contact").any?
+  unless Refinery::Page.where(:link_url => '/contact').any?
     contact_us_page = ::Refinery::Page.create({
       :title => "Contact",
       :link_url => "/contact",
@@ -29,7 +29,7 @@ if defined?(::Refinery::Page)
     contact_us_page_position = -1
   end
 
-  unless Refinery::Page.by_title("Thank You").any?
+  unless Refinery::Page.where(:link_url => '/contact/thank_you').any?
     thank_you_page = contact_us_page.children.create({
       :title => "Thank You",
       :link_url => "/contact/thank_you",
@@ -45,7 +45,7 @@ if defined?(::Refinery::Page)
     })
   end
 
-  unless Refinery::Page.by_title("Privacy Policy").any?
+  unless Refinery::Page.where(:link_url => '/privacy-policy').any?
     privacy_policy_page = contact_us_page.children.create({
       :title => "Privacy Policy",
       :deletable => true,
