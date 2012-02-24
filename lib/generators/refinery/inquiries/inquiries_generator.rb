@@ -2,6 +2,7 @@ module Refinery
   class InquiriesGenerator < Rails::Generators::Base
     def rake_db
       rake("refinery_inquiries:install:migrations")
+      rake("refinery_settings:install:migrations")
     end
 
     def append_load_seed_data
