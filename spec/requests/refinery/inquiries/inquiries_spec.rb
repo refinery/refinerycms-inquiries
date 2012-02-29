@@ -22,7 +22,7 @@ module Refinery
           page.current_path.should == refinery.thank_you_inquiries_inquiries_path
           page.should have_content("Thank You")
 
-          within "#body_content_left" do
+          within "#body_content" do
             page.should have_content("We've received your inquiry and will get back to you with a response shortly.")
             page.should have_content("Return to the home page")
             page.should have_selector("a[href='/']")
