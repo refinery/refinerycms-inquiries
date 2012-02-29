@@ -15,7 +15,9 @@ Refinery::Core::Engine.routes.draw do
         get :toggle_spam, :on => :member
       end
 
-      resources :settings, :only => [:edit, :update]
+      scope :path => 'inquiries' do
+        resources :settings, :only => [:edit, :update]
+      end
     end
   end
 end
