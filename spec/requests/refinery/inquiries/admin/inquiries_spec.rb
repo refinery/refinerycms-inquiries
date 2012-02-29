@@ -42,9 +42,9 @@ module Refinery
               page.should have_content("Spam")
               page.should have_selector("a[href='/refinery/inquiries/spam']")
               page.should have_content("Update who gets notified")
-              page.should have_selector("a[href*='/refinery/settings/inquiry_notification_recipients/edit']")
+              page.should have_selector("a[href*='/refinery/inquiries/settings/inquiry_notification_recipients/edit']")
               page.should have_content("Edit confirmation email")
-              page.should have_selector("a[href*='/refinery/settings/inquiry_confirmation_body/edit']")
+              page.should have_selector("a[href*='/refinery/inquiries/settings/inquiry_confirmation_body/edit']")
             end
           end
         end
