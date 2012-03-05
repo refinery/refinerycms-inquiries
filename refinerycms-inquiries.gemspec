@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
   s.email             = %q{info@refinerycms.com}
-  s.authors           = ["Resolve Digital"]
+  s.authors           = ['Philip Arndt', 'Uģis Ozols', 'David Jones']
   s.require_paths     = %w(lib)
 
   s.files             = `git ls-files`.split("\n")
