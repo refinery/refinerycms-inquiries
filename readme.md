@@ -17,10 +17,11 @@ Then type the following at command line inside your Refinery CMS application's r
 To install the migrations, run:
 
     rails generate refinery:inquiries
-
-Next migrate your database and you're done:
-
     rake db:migrate
+    
+Add pages to the database and you're done:
+
+    rake db:seed
 
 ## About
 
