@@ -2,7 +2,8 @@ nl:
   refinery:
     plugins:
       refinerycms_inquiries:
-        title: Contact aanvragen
+        title: Contactaanvragen
+        description: Contactformulier en beheer van vragen
     inquiries:
       inquiries:
         new:
@@ -20,10 +21,10 @@ nl:
             inbox: Inbox
             spam: Spam
             update_notified: Wijzig wie op de hoogte wordt gesteld van vragen
-            edit_confirmation_email: Bewerk bevestigings email
+            edit_confirmation_email: Bewerk bevestigings-e-mail
           index:
             no_inquiries: Je hebt nog geen vragen ontvangen.
-            no_spam: Jeej! Je hebt geen spam.
+            no_spam: Hoera! Je hebt geen spam.
           show:
             details: Details
             age: Leeftijd
@@ -34,44 +35,43 @@ nl:
             inquiry: Vraag
             to: Aan
             from: Van
-            click_to_email: Klik hier om een e-mail te sturen
+            click_to_email: Klik hier om een e-mail te sturen naar dit adres
             phone: Telefoonnummer
             date: Datum
             message: Bericht
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Stuur notificaties naar
-            explanation: "Iedere keer wanneer iemand het vraag formulier invult op uw website, stuurt Refinery een email waarin staat dat er een nieuwe vraag ontvangen is."
-            hint: "Vul hierboven een email adres in. Wilt u naar meerdere adressen notificaties sturen? Vul dan meerdere email adressen in gescheiden door comma's"
+            hint: "Wilt u naar meerdere adressen notificaties sturen? Vul dan meerdere e-mailadressen in gescheiden door komma's"
             example: "Bijvoorbeeld: ik@domein.com, vrienden@msn.com, collegas@werk.com"
           confirmation_email_form:
             to: Aan
             from: Van
             subject: Onderwerp
             click_to_edit_subject: Klik hier om het onderwerp bewerken
-            explanation: "Iedere keer wanneer iemand het vraag formulier invult op uw website, stuurt Refinery een email naar die persoon waarin staat dat de vraag ontvangen is."
-            below_edit_email_sent: Hieronder kun je de email die verzonden wordt bewerken.
+            explanation: "Telkens wanneer iemand het contactformulier invult op je website, stuurt Refinery een bevestiging naar de verzender."
+            below_edit_email_sent: Hieronder kun je de e-mail die verzonden wordt bewerken.
             the_customer_making_inquiry: De persoon die de heeft vraag gesteld
             message: Bericht
-            note: "Notitie: plaats de tekst %name% overal in je email waar je de naam van de vragende persoon wilt invoegen"
+            note: "N.B.: plaats de tekst %name% overal in de e-mail waar je de naam van de vragende persoon wilt invoegen"
       inquiry_mailer:
         notification:
           greeting: Hallo
-          you_recieved_new_inquiry: Je hebt een nieuwe vraag via de website ontvangen.
-          inquiry_starts: --- begin van de vraag---
-          inquiry_ends: --- einde van de vraag---
+          you_recieved_new_inquiry: Je hebt een nieuwe vraag ontvangen via je website.
+          inquiry_starts: --- begin van de vraag ---
+          inquiry_ends: --- einde van de vraag ---
           from: Van
-          email: Email
+          email: E-mail
           phone: Telefoon
           message: Bericht
-          closing_line: Vriendelijke groeten,
-          ps: P.S. Alle vragen woren opgeslagen in de "vragen" sectie van uw website.All your inquiries are stored in the "Inquiries" section of Refinery.
-    activerecord:
+          closing_line: Met vriendelijk groet,
+          ps: P.S. Alle vragen woren opgeslagen in de sectie "Contactaanvragen" van Refinery.
+  activerecord:
     models:
       refinery/inquiry: Vraag
     attributes:
       refinery/inquiry:
         name: Naam
-        email: 'Email'
+        email: 'E-mail'
         phone: Telefoon
         message: Bericht
