@@ -1,3 +1,5 @@
+# Encoding: UTF-8
+
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
   s.version           = %q{2.0.0}
