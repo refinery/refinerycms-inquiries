@@ -14,11 +14,13 @@ if defined?(::Refinery::Page)
     })
     contact_us_page.parts.create({
       :title => "Body",
-      :body => "<p>Get in touch with us. Just use the form below and we'll get back to you as soon as we can.</p>"
+      :body => "<p>Get in touch with us. Just use the form below and we'll get back to you as soon as we can.</p>",
+      :position => 0
     })
     contact_us_page.parts.create({
       :title => "Side Body",
-      :body => ""
+      :body => "",
+      :position => 1
     })
   end
 
