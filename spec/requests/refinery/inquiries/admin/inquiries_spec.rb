@@ -101,37 +101,47 @@ module Refinery
           end
         end
 
-=begin
-      describe "update who gets notified" do
-        it "sets receiver", :js => true do
-          visit refinery.inquiries_admin_inquiries_path
-
-          click_link "Update who gets notified"
-
-          within_frame "dialog_iframe" do
-            fill_in "Send notifications to", :with => "phil@refinerycms.com"
-            click_button "Save"
+        describe "update who gets notified" do
+          before do
+            Rails.cache.clear
+            Refinery::Inquiries::Setting.notification_recipients
           end
 
-          page.should have_content("'Notification Recipients' was successfully updated.")
+          it "sets receiver", :js => true do
+            visit refinery.inquiries_admin_inquiries_path
+
+            click_link "Update who gets notified"
+
+            within_frame "dialog_iframe" do
+              fill_in "setting_value", :with => "phil@refinerycms.com"
+              click_button "submit_button"
+            end
+
+            page.should have_content("Notification Recipients was successfully updated.")
+          end
         end
-      end
 
-      describe "updating confirmation email copy" do
-        it "sets message", :js => true do
-          visit refinery.inquiries_admin_inquiries_path
-
-          click_link "Edit confirmation email"
-
-          within_frame "dialog_iframe" do
-            fill_in "Message", :with => "Thanks %name%! We'll never get back to you!"
-            click_button "Save"
+        describe "updating confirmation email copy" do
+          before do
+            Rails.cache.clear
+            Refinery::Inquiries::Setting.confirmation_body
           end
 
-          page.should have_content("'Confirmation Body' was successfully updated.")
+          it "sets message", :js => true do
+            visit refinery.inquiries_admin_inquiries_path
+
+            click_link "Edit confirmation email"
+
+            within_frame "dialog_iframe" do
+              fill_in "subject__en", :with => "subject"
+              fill_in "message__en", :with => "message"
+              click_button "Save"
+            end
+
+            page.should have_content("Confirmation Body was successfully updated.")
+          end
         end
-      end
-=end
+
       end
     end
   end
