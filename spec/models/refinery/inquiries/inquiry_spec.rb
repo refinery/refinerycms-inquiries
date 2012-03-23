@@ -36,8 +36,7 @@ module Refinery
         end
 
         it "returns latest 7 inquiries including spam ones" do
-          4.times { Factory(:inquiry) }
-          3.times { Factory(:inquiry) }
+          7.times { Factory(:inquiry) }
           Refinery::Inquiries::Inquiry.all[0..2].each { |inquiry| inquiry.toggle!(:spam) }
           Refinery::Inquiries::Inquiry.latest(7, true).length.should == 7
         end
