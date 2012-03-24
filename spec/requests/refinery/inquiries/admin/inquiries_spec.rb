@@ -4,7 +4,7 @@ module Refinery
   module Inquiries
     module Admin
       describe Inquiry do
-        login_refinery_user
+        refinery_login_with :refinery_user
 
         let!(:inquiry) do
           Factory(:inquiry, :name => "David Jones",
