@@ -68,9 +68,9 @@ en:
           ps: P.S. All your inquiries are stored in the "Inquiries" section of Refinery should you ever want to view it later there.
   activerecord:
     models:
-      refinery/inquiry: inquiry
+      refinery/inquiries/inquiry: inquiry
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Name
         email: Email
         phone: Phone

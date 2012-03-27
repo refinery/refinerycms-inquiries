@@ -68,9 +68,9 @@ bg:
         ps: 'П.П. Всички запитвания към Вас се съхраняват от Refinery в секция "Запитвания" и могат да бъдат прегледани по-късно.'
   activerecord:
     models:
-      refinery/inquiry: запитване
+      refinery/inquiries/inquiry: запитване
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Име
         email: Е-поща
         phone: Телефон

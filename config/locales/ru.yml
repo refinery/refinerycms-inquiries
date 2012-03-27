@@ -68,9 +68,9 @@ ru:
           ps: Все запросы вы можете увидеть в соответствующем разделе Refinery.
     activerecord:
     models:
-      refinery/inquiry: Запрос
+      refinery/inquiries/inquiry: Запрос
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Имя
         email: Эл. почта
         phone: Телефон

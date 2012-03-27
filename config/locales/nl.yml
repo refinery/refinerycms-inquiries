@@ -68,9 +68,9 @@ nl:
           ps: P.S. Alle vragen woren opgeslagen in de sectie "Contactaanvragen" van Refinery.
   activerecord:
     models:
-      refinery/inquiry: Vraag
+      refinery/inquiries/inquiry: Vraag
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Naam
         email: 'E-mail'
         phone: Telefoon
