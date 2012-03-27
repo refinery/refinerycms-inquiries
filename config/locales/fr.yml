@@ -69,9 +69,9 @@ fr:
           ps: P.S. Toutes les requêtes sont stockées dans la section 'Requêtes' afin que vous puissiez les consulter ultérieurement.
   activerecord:
     models:
-      refinery/inquiry: requête
+      refinery/inquiries/inquiry: requête
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Nom
         email: E-mail
         phone: Téléphone

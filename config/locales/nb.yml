@@ -68,9 +68,9 @@ nb:
           ps: P.S. Alle dine forespørsler blir lagret i seksjonen "Forespørsel" i Refinery om du vil finne de igjen senere
     activerecord:
     models:
-      refinery/inquiry: Forespørsel
+      refinery/inquiries/inquiry: Forespørsel
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Navn
         email: Epost
         phone: Telefon

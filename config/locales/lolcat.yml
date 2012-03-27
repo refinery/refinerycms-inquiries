@@ -69,9 +69,9 @@ lolcat:
           ps: P.S. ALL UR INQUIRIEZ R STORD IN DA "INQUIRIEZ" SECSHUN OV REFINERY SHUD U EVR WANTS 2 VIEW IT LATR THAR.
   activerecord:
     models:
-      refinery/inquiry: INQUIRY
+      refinery/inquiries/inquiry: INQUIRY
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: NAYM
         email: EMAIL
         phone: FONE
