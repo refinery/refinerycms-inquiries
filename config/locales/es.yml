@@ -70,9 +70,9 @@ es:
           ps: P.D. Todas tus consultas se almacenan en la sección "Consultas" de Refinery por si alguna vez quieres verlas más tarde allí.
   activerecord:
     models:
-      refinery/inquiry: Consulta
+      refinery/inquiries/inquiry: Consulta
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         to: Para
         from: De
         phone: Telefono
