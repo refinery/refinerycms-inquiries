@@ -69,9 +69,9 @@ pl:
           ps: P.S. Wszystkie Twoje zapytania są przechowywane pod zakładką "Zapytania" w Refinery, więc możesz do nich wrócić jeżeli będzie to potrzebne.
   activerecord:
     models:
-      refinery/inquiry: zapytanie
+      refinery/inquiries/inquiry: zapytanie
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Imię
         email: E-mail
         phone: Telefon

@@ -69,9 +69,9 @@ lt:
           ps: P.S. Visos užklausos yra saugomos skiltyje "Užklausos", jei kada vėliau norėsite jas peržiūrėti.
   activerecord:
     models:
-      refinery/inquiry: užklausa
+      refinery/inquiries/inquiry: užklausa
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Vardas
         email: El. paštas
         phone: Telefonas

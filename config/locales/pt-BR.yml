@@ -69,9 +69,9 @@ pt-BR:
           ps: OBS. Todos os contatos são armazenados na seção "Contatos" do website.
   activerecord:
     models:
-      refinery/inquiry: Contato
+      refinery/inquiries/inquiry: Contato
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Nome
         email: Email
         phone: Telefone

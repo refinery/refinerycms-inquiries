@@ -69,9 +69,9 @@ de:
           ps: P.S. All Ihre Kontaktanfragen werden im Bereich "Kontaktanfragen" von Refinery gespeichert, sollten Sie diese zu einem späteren Zeitpunkt wieder ansehen wollen.
   activerecord:
     models:
-      refinery/inquiry: Kontaktanfrage
+      refinery/inquiries/inquiry: Kontaktanfrage
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Name
         email: E-Mail
         phone: Telefon
