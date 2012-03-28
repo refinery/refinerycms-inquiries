@@ -57,7 +57,7 @@ lv:
             note: "Piezīme: ievieto šo tektstu %name% tur, kur tu epastā vēlies norādīt klienta vārdu"
       inquiry_mailer:
         notification:
-          greeting: Sveicināts(-a)
+          greeting: Sveiki
           you_recieved_new_inquiry: Jūs nupat saņēmāt jaunu pieprasījumu savā mājaslapā.
           inquiry_starts: --- pieprasījuma sākums ---
           inquiry_ends: --- pieprasījuma beigas ---
