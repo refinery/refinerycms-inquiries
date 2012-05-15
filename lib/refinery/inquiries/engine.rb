@@ -10,7 +10,7 @@ module Refinery
           plugin.pathname = root
           plugin.name = "refinerycms_inquiries"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.inquiries_admin_inquiries_path }
-          plugin.menu_match = %r{/refinery/inquiries(/.+?)?$}
+          plugin.menu_match = %r{refinery/inquiries(/.+?)?$}
           plugin.activity = {
             :class_name => :'refinery/inquiries/inquiry',
             :title => 'name',
