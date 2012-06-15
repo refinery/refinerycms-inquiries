@@ -20,7 +20,9 @@
                   refinery.inquiries_admin_inquiry_path(@inquiry),
                   :class => 'delete_icon no-tooltip confirm-delete',
                   :title => t('refinery.inquiries.admin.inquiries.delete'),
-                  :confirm => t('refinery.admin.delete.message', :title => @inquiry.name),
+                  :data => {
+                    :confirm => t('refinery.admin.delete.message', :title => @inquiry.name)
+                  },
                   :method => :delete %>
     </li>
   </ul>
