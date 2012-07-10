@@ -33,6 +33,10 @@ module Refinery
       end
 
       context "when invalid data" do
+        let(:name_error_message) { "Name can't be blank" }
+        let(:email_error_message) { "Email is invalid" }
+        let(:message_error_message) { "Message can't be blank" }
+
         it "is not successful" do
           visit refinery.inquiries_new_inquiry_path
 
@@ -40,12 +44,20 @@ module Refinery
 
           page.current_path.should == refinery.inquiries_new_inquiry_path
           page.should have_content("There were problems with the following fields")
-          page.should have_content("Name can't be blank")
-          page.should have_content("Email is invalid")
-          page.should have_content("Message can't be blank")
+          page.should have_content(name_error_message)
+          page.should have_content(email_error_message)
+          page.should have_content(message_error_message)
           page.should have_no_content("Phone can't be blank")
 
           Refinery::Inquiries::Inquiry.count.should == 0
+        end
+
+        it "displays the error messages in the same order as the fields" do
+          visit refinery.inquiries_new_inquiry_path
+
+          click_button "Send message"
+
+          page.body.should match /#{name_error_message}.+#{email_error_message}.+#{message_error_message}/m
         end
       end
 
