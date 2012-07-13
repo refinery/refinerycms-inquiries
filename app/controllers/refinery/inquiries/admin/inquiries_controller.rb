@@ -41,7 +41,7 @@ module Refinery
         end
 
         def get_spam_count
-          @spam_count = Refinery::Inquiries::Inquiry.count(:conditions => {:spam => true})
+          @spam_count = Refinery::Inquiries::Inquiry.where(:spam => true).count
         end
 
       end
