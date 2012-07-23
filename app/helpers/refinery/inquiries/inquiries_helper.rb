@@ -1,6 +1,6 @@
 module Refinery
   module Inquiries
-  	module InquiriesHelper
-  	end
+    module InquiriesHelper
+    end
   end
 end
