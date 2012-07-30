@@ -9,6 +9,7 @@ gem 'refinerycms-i18n', :git => 'git://github.com/parndt/refinerycms-i18n.git'
 group :development, :test do
   gem 'refinerycms-testing', :git => 'git://github.com/resolve/refinerycms.git'
   gem 'guard-rspec', '~> 0.6.0'
+  gem "capybara-email", "~> 0.1.2"
 
   platforms :jruby do
     gem 'activerecord-jdbcsqlite3-adapter'
