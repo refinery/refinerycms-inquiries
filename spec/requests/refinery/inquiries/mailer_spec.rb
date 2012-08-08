@@ -5,6 +5,8 @@ module Refinery
   module Inquiries
     describe "mailer" do
       before do
+        FactoryGirl.create(:page, :link_url => "/contact")
+
         Refinery::Inquiries::Setting.stub(:notification_recipients).and_return("rspec@refinerycms.com")
 
         clear_emails
