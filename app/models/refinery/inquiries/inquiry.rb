@@ -1,3 +1,7 @@
+require 'refinery/core/base_model'
+require 'filters_spam'
+require 'acts_as_indexed'
+
 module Refinery
   module Inquiries
     class Inquiry < Refinery::Core::BaseModel
