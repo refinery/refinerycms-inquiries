@@ -1,4 +1,7 @@
 <% content_for :body do %>
+  
+  <%=raw @page.content_for(:body) %>
+  
   <div class='inquiries'>
     <%= form_for [refinery, :inquiries, @inquiry] do |f| %>
       <%= render :partial => "/refinery/admin/error_messages",
