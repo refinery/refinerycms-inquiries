@@ -1,0 +1,35 @@
+<%
+ form_html_config = { :'data-type' => 'json' }
+ form_html_config.merge!(form_config) if local_assigns.has_key? :form_config
+ local_assigns
+%>
+<%= form_for [refinery, :inquiries, @inquiry],
+    :remote => true, :html => form_html_config do |f| %>
+  <%= render :partial => '/refinery/admin/error_messages',
+             :locals => {
+               :object => @inquiry,
+               :include_object_name => true
+             } %>
+  <div class="field">
+    <%= f.required_label :name, :class => 'placeholder-fallback' %>
+    <%= f.text_field :name, :class => 'text', :required => 'required',
+    :placeholder => t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+  </div>
+  <div class="field">
+    <%= f.required_label :email, :class => 'placeholder-fallback' %>
+    <%= f.email_field :email, :class => 'text email', :required => 'required', :placeholder => t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+  </div>
+  <div class="field">
+    <%= f.label :phone, :class => 'placeholder-fallback' %>
+    <%= f.text_field :phone, :class => 'text phone', :placeholder => t('phone', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+  </div>
+  <div class="field message_field">
+    <%= f.required_label :message, :class => 'placeholder-fallback' %>
+    <%= f.text_area :message, :rows => 8, :required => 'required', :placeholder => t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+  </div>
+  <div class="actions">
+    <%= hidden_field_tag :form_holder_id, @form_holder_config[:id] if @form_holder_config.present? %>
+    <%= f.submit t('.send'), :disable_with => t('.sending_please_wait') %>
+    <%= link_to t('.privacy_policy'), '/pages/privacy-policy', :id => 'privacy_link' if Refinery::Inquiries.show_contact_privacy_link %>
+  </div>
+<% end %>

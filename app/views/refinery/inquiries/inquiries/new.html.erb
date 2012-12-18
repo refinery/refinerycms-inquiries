@@ -1,34 +1,9 @@
+<% form_config = @form_config || { }  %>
 <% content_for :body do %>
-  <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
-  
-  <div class='inquiries'>
-    <%= form_for [refinery, :inquiries, @inquiry] do |f| %>
-      <%= render :partial => "/refinery/admin/error_messages",
-                 :locals => {
-                   :object => @inquiry,
-                   :include_object_name => true
-                 } %>
-      <div class="field">
-        <%= f.required_label :name, :class => 'placeholder-fallback' %>
-        <%= f.text_field :name, :class => 'text', :required => 'required', :placeholder => t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
-      </div>
-      <div class="field">
-        <%= f.required_label :email, :class => 'placeholder-fallback' %>
-        <%= f.email_field :email, :class => 'text email', :required => 'required', :placeholder => t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
-      </div>
-      <div class="field">
-        <%= f.label :phone, :class => 'placeholder-fallback' %>
-        <%= f.text_field :phone, :class => 'text phone', :placeholder => t('phone', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
-      </div>
-      <div class='field message_field'>
-        <%= f.required_label :message, :class => 'placeholder-fallback' %>
-        <%= f.text_area :message, :rows => 8, :required => 'required', :placeholder => t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
-      </div>
-      <div class="actions">
-        <%= f.submit t('.send') %>
-        <%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %>
-      </div>
-    <% end %>
-  </div>
+  <%= raw @page.content_for(:body) if Refinery::Pages.default_parts.any? %>
+  <%= content_tag(:div, @form_holder_config) do %>
+    <%= render :partial => 'form', :locals => {:form_config => form_config} %>
+  <% end %>
 <% end %>
-<%= render "/refinery/content_page" %>
+<%= render :partial => 'javascripts', :locals => {:config => form_config.merge({:holder => @form_holder_config })} %>
+<%= render '/refinery/content_page' %>
