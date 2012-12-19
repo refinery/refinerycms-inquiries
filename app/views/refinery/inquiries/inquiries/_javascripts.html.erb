@@ -1,0 +1,12 @@
+<%
+	initialize_onload = (local_assigns.has_key?(:initialize_onload) ? initialize_onload : true)
+	config ||= nil
+%>
+<% content_for :javascripts, javascript_include_tag('refinery/inquiries/inquiry.js') %>
+<% content_for :javascripts do %>
+<script>
+	$(function() {
+		new refinery.Inquiry(<%= config.to_json.html_safe if config %>);
+	});
+</script>
+<% end if initialize_onload %>
