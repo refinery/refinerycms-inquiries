@@ -114,6 +114,34 @@ module Refinery
           end
         end
       end
+
+      describe "phone number" do
+        context "when show phone numbers setting set to false" do
+          before(:each) do
+            Refinery::Inquiries.config.stub(:show_phone_number_field).and_return(false)
+          end
+
+          it "won't show phone number" do
+            visit refinery.inquiries_new_inquiry_path
+
+            page.should have_no_selector("label", :text => 'Phone')
+            page.should have_no_selector("#inquiry_phone")
+          end
+        end
+
+        context "when show phone numbers setting set to true" do
+          before(:each) do
+            Refinery::Inquiries.config.stub(:show_phone_number_field).and_return(true)
+          end
+
+          it "shows the phone number" do
+            visit refinery.inquiries_new_inquiry_path
+
+            page.should have_selector("label", :text => 'Phone')
+            page.should have_selector("#inquiry_phone")
+          end
+        end
+      end
     end
   end
 end
