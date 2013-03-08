@@ -64,7 +64,7 @@ module Refinery
       describe "privacy" do
         context "when show contact privacy link setting set to false" do
           before(:each) do
-            Refinery::Inquiries.stub(:show_contact_privacy_link).and_return(false)
+            Refinery::Inquiries.config.stub(:show_contact_privacy_link).and_return(false)
           end
 
           it "won't show link" do
@@ -85,6 +85,32 @@ module Refinery
 
             page.should have_content("We value your privacy")
             page.should have_selector("a[href='/pages/privacy-policy']")
+          end
+        end
+      end
+
+      describe "palceholders" do
+        context "when show placeholders setting set to false" do
+          before(:each) do
+            Refinery::Inquiries.config.stub(:show_placeholders).and_return(false)
+          end
+
+          it "won't show placeholders" do
+            visit refinery.inquiries_new_inquiry_path
+
+            page.should have_no_selector("input[placeholder]")
+          end
+        end
+
+        context "when show placeholders setting set to true" do
+          before(:each) do
+            Refinery::Inquiries.config.stub(:show_placeholders).and_return(true)
+          end
+
+          it "shows the placeholders" do
+            visit refinery.inquiries_new_inquiry_path
+
+            page.should have_selector("input[placeholder]")
           end
         end
       end
