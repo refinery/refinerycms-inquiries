@@ -8,12 +8,12 @@ sv:
       inquiries:
         new:
           send: Skicka meddelande
-          privacy_policy: Vi värderar ditt privatliv
+          privacy_policy: Vi respekterar ditt privatliv
       admin:
         inquiries:
-          delete: Ta bort den här förfrågningen för alltid
+          delete: Ta bort den här förfrågan för alltid
           inquiry:
-            read_inquiry: Läs förfrågningen
+            read_inquiry: Läs förfrågan
             said: said
             mark_as_spam: Märk som skräppost
             mark_as_ham: Flytta till inkorg
@@ -29,10 +29,10 @@ sv:
             details: Detaljer
             age: Ålder
             actions: Handlingar
-            back_to_all_inquiries: Tillbaka till alla Förfrågningar
+            back_to_all_inquiries: Tillbaka till alla förfrågningar
             spam: Skräppost
             spam_yes: 'ja'
-            inquiry: Förfrågning
+            inquiry: Förfrågan
             to: Till
             from: Från
             click_to_email: Klicka för att skicka e-post till den här adressen
@@ -65,7 +65,7 @@ sv:
           phone: Telefon
           message: Meddelande
           closing_line: Vänliga hälsningar
-          ps: P.S. Alla dina förfrågningar sparas i "Förfrågningar"-sektionen av Refinery. Där kan du visa dem senare.
+          ps: P.S. Alla dina förfrågningar sparas i sektionen "Förfrågningar" av Refinery. Där kan du visa dem senare.
   activerecord:
     models:
       refinery/inquiries/inquiry: förfrågning
