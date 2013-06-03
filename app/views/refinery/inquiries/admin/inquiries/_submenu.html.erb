@@ -1,7 +1,7 @@
 <div id='actions'>
   <ul>
     <li>
-      <%= render "/refinery/admin/search", :url => request.path.gsub("//", "/") %>
+      <%= render "/refinery/admin/search", :url => request.path.gsub("//", "/") if defined?(Refinery::ActsAsIndexed::Engine) %>
     </li>
     <li <%= "class='selected'" if params[:action] == "index" %>>
       <%= link_to t('.inbox'), refinery.inquiries_admin_inquiries_path, :class => "email_icon" %>

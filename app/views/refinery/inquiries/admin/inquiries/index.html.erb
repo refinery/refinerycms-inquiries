@@ -1,7 +1,7 @@
 <%= render "submenu" %>
 <div id='records'>
   <% if searching? %>
-    <h2><%= t('refinery.admin.search.results_for', :query => params[:search]) %></h2>
+    <%= render 'refinery/admin/search_header', :url => request.path.gsub("//", "/") %>
     <% if @inquiries.any? %>
       <%= will_paginate @inquiries %>
       <ul>
