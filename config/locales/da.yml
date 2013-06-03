@@ -22,7 +22,6 @@ da:
             closed: "Henvendelsen '%{inquiry}' er lukket"
             reopened: "Henvendelsen '%{inquiry}' er genåbnet"
           index:
-            search_results_for: "Søgeresultat for '%{query}'"
             no_inquiries: Du har endnu ikke modtaget nogen henvendelser.
           show:
             details: Detaljer
