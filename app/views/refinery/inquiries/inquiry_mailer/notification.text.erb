@@ -1,3 +1,5 @@
+<% # encoding: utf-8 %>
+
 <%=raw t('.greeting') %>,
 
 <%=raw t('.you_recieved_new_inquiry') %>
@@ -8,7 +10,7 @@
 <%=raw t('.email') %>: <%= @inquiry.email %>
 <%=raw t('.phone') %>: <%= @inquiry.phone %>
 <%=raw t('.message') %>:
-<%=strip_tags(@inquiry.message) %>
+<%=raw strip_tags(@inquiry.message) %>
 
 <%=raw t('.inquiry_ends') %>
 
