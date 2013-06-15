@@ -18,7 +18,7 @@ To install the migrations, run:
 
     rails generate refinery:inquiries
     rake db:migrate
-    
+
 Add pages to the database and you're done:
 
     rake db:seed
@@ -34,6 +34,10 @@ In summary you can:
 * Customise an auto responder email that is sent to the person making the inquiry
 
 When inquiries come in, you and the customer are generally notified. As we implemented spam filtering through the [filters_spam plugin](https://github.com/resolve/filters_spam#readme) you will not get notified if an inquiry is marked as 'spam'.
+
+## How do I setup email to be sent from GMail, SendGrid or other service?
+
+Inquiries uses `actionmailer` under the hood so you can refer to [Rails Action Mailer guide](http://guides.rubyonrails.org/action_mailer_basics.html). For example to use GMail see [Action Mailer Configuration for GMail](http://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration-for-gmail) guide.
 
 ## How do I get Notified?
 
