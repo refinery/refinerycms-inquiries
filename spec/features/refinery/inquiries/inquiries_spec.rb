@@ -4,8 +4,6 @@ module Refinery
   module Inquiries
     describe "inquiries" do
       before(:each) do
-        Factory(:refinery_user)
-
         # load in seeds we use in migration
         Refinery::Inquiries::Engine.load_seed
       end
@@ -57,7 +55,7 @@ module Refinery
 
           click_button "Send message"
 
-          page.body.should match /#{name_error_message}.+#{email_error_message}.+#{message_error_message}/m
+          page.should have_content(/#{name_error_message}.+#{email_error_message}.+#{message_error_message}/m)
         end
       end
 

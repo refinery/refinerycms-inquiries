@@ -7,9 +7,10 @@ module Refinery
         refinery_login_with :refinery_user
 
         let!(:inquiry) do
-          Factory(:inquiry, :name => "David Jones",
-                            :email => "dave@refinerycms.com",
-                            :message => "Hello, I really like your website.  Was it hard to build and maintain or could anyone do it?")
+          FactoryGirl.create(:inquiry,
+            :name => "David Jones",
+            :email => "dave@refinerycms.com",
+            :message => "Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
         end
 
         context "when no" do
@@ -53,7 +54,7 @@ module Refinery
           it "shows inquiry list" do
             visit refinery.inquiries_admin_inquiries_path
 
-            page.should have_content("David Jones said Hello, I really like your website. Was it hard to build ...")
+            page.should have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
           end
         end
 
@@ -97,7 +98,7 @@ module Refinery
               click_link "Spam (1)"
             end
 
-            page.should have_content("David Jones said Hello, I really like your website. Was it hard to build ...")
+            page.should have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
           end
         end
 

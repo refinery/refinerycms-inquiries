@@ -10,7 +10,7 @@ gem 'refinerycms-acts-as-indexed', :git => 'git://github.com/refinery/refinerycm
 group :development, :test do
   gem 'refinerycms-testing', :git => 'git://github.com/refinery/refinerycms.git'
   gem 'guard-rspec', '~> 0.6.0'
-  gem "capybara-email", "~> 0.1.2"
+  gem "capybara-email", "~> 2.1.2"
 
   platforms :jruby do
     gem 'activerecord-jdbcsqlite3-adapter'

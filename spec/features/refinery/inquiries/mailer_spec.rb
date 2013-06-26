@@ -25,7 +25,7 @@ module Refinery
         current_email.from.should eq("Ugis Ozols [#{Refinery::Core.site_name}] <no-reply@example.com>")
         current_email.to.should eq(["ugis.ozols@refinerycms.com"])
         current_email.subject.should eq("Thank you for your inquiry")
-        current_email.body.should eq("Thank you for your inquiry Ugis Ozols,\r\n\r\nThis email is a receipt to confirm we have received your inquiry and we'll be in touch shortly.\r\n\r\nThanks.")
+        current_email.body.should eq("Thank you for your inquiry Ugis Ozols,\n\nThis email is a receipt to confirm we have received your inquiry and we'll be in touch shortly.\n\nThanks.")
       end
 
       it "sends notification email" do
@@ -34,7 +34,7 @@ module Refinery
         current_email.from.should eq("Ugis Ozols [#{Refinery::Core.site_name}] <no-reply@example.com>")
         current_email.to.should eq(["rspec@refinerycms.com"])
         current_email.subject.should eq("New inquiry from your website")
-        current_email.body.should eq("Hi there,\r\n\r\nYou just received a new inquiry on your website.\r\n\r\n--- inquiry starts ---\r\n\r\nFrom: Ugis Ozols\r\nEmail: ugis.ozols@refinerycms.com\r\nPhone: \r\nMessage:\r\nHey, I'm testing!\r\n\r\n--- inquiry ends ---\r\n\r\nKind Regards,\r\nCompany Name\r\n\r\nP.S. All your inquiries are stored in the \"Inquiries\" section of Refinery should you ever want to view it later there.")
+        current_email.body.should eq("Hi there,\n\nYou just received a new inquiry on your website.\n\n--- inquiry starts ---\n\nFrom: Ugis Ozols\nEmail: ugis.ozols@refinerycms.com\nPhone: \nMessage:\nHey, I'm testing!\n\n--- inquiry ends ---\n\nKind Regards,\nCompany Name\n\nP.S. All your inquiries are stored in the \"Inquiries\" section of Refinery should you ever want to view it later there.")
       end
     end
   end

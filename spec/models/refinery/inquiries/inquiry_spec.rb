@@ -5,10 +5,10 @@ module Refinery
     describe Inquiry do
       describe "validations" do
         subject do
-          Factory.build(:inquiry,
-                        :name => "Ugis Ozols",
-                        :email => "ugis.ozols@refinerycms.com",
-                        :message => "Hey, I'm testing!")
+          FactoryGirl.build(:inquiry,
+                            :name => "Ugis Ozols",
+                            :email => "ugis.ozols@refinerycms.com",
+                            :message => "Hey, I'm testing!")
         end
 
         it { should be_valid }
@@ -20,8 +20,8 @@ module Refinery
 
       describe "default scope" do
         it "orders by created_at in desc" do
-          inquiry1 = Factory(:inquiry, :created_at => 1.hour.ago)
-          inquiry2 = Factory(:inquiry, :created_at => 2.hours.ago)
+          inquiry1 = FactoryGirl.create(:inquiry, :created_at => 1.hour.ago)
+          inquiry2 = FactoryGirl.create(:inquiry, :created_at => 2.hours.ago)
           inquiries = Refinery::Inquiries::Inquiry.all
           inquiries.first.should == inquiry1
           inquiries.second.should == inquiry2
@@ -30,19 +30,19 @@ module Refinery
 
       describe ".latest" do
         it "returns latest 7 non-spam inquiries by default" do
-          8.times { Factory(:inquiry) }
+          8.times { FactoryGirl.create(:inquiry) }
           Refinery::Inquiries::Inquiry.last.toggle!(:spam)
           Refinery::Inquiries::Inquiry.latest.length.should == 7
         end
 
         it "returns latest 7 inquiries including spam ones" do
-          7.times { Factory(:inquiry) }
+          7.times { FactoryGirl.create(:inquiry) }
           Refinery::Inquiries::Inquiry.all[0..2].each { |inquiry| inquiry.toggle!(:spam) }
           Refinery::Inquiries::Inquiry.latest(7, true).length.should == 7
         end
 
         it "returns latest n inquiries" do
-          4.times { Factory(:inquiry) }
+          4.times { FactoryGirl.create(:inquiry) }
           Refinery::Inquiries::Inquiry.latest(3).length.should == 3
         end
       end
