@@ -7,4 +7,7 @@ Refinery::Inquiries.configure do |config|
 
   # Configure whether to show form field placeholders
   # config.show_placeholders = <%= Refinery::Inquiries.show_placeholders.inspect %>
+
+  # Configure whether inquiries marked as spam should also send a notification mail
+  # config.send_notifications_for_inquiries_marked_as_spam = <%= Refinery::Inquiries.send_notifications_for_inquiries_marked_as_spam.inspect %>
 end
