@@ -67,7 +67,7 @@ it:
           phone: Telefono
           message: Messaggio
           closing_line: Saluti
-        ps: P.S. Tutte le richiesta ricevute sono salvate nella sezione "Richieste" di Refinery così da poter esser viste in un secondo momento.
+          ps: P.S. Tutte le richiesta ricevute sono salvate nella sezione "Richieste" di Refinery così da poter esser viste in un secondo momento.
   activerecord:
     models:
       refinery/inquiries/inquiry: inquiry
