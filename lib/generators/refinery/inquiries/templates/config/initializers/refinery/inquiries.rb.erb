@@ -10,4 +10,7 @@ Refinery::Inquiries.configure do |config|
 
   # Configure whether inquiries marked as spam should also send a notification mail
   # config.send_notifications_for_inquiries_marked_as_spam = <%= Refinery::Inquiries.send_notifications_for_inquiries_marked_as_spam.inspect %>
+
+  # Configure name in 'from' email address
+  # config.from_name = <%= Refinery::Inquiries.from_name.inspect %>
 end
