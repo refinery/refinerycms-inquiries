@@ -1,10 +1,8 @@
 # Encoding: UTF-8
-require 'date'
 
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-inquiries}
   s.version           = %q{2.1.0.dev}
-  s.date              = Date.today.strftime("%Y-%m-%d")
   s.summary           = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description       = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage          = %q{http://refinerycms.com}
