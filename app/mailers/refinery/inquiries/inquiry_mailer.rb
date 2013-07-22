@@ -9,7 +9,7 @@ module Refinery
              :from      => ::I18n.t('from_name',
                                     :scope => 'refinery.inquiries.config',
                                     :site_name => Refinery::Core.site_name,
-                                    :name => @inquiry.name) + " <no-reply@#{request.domain}>",
+                                    :name => @inquiry.name) + " <#{Refinery::Inquiries.from_name}@#{request.domain}>",
              :reply_to  => Refinery::Inquiries::Setting.notification_recipients.split(',').first
       end
 
@@ -20,7 +20,7 @@ module Refinery
              :from      => ::I18n.t('from_name',
                                     :scope => 'refinery.inquiries.config',
                                     :site_name => Refinery::Core.site_name,
-                                    :name => @inquiry.name) + " <no-reply@#{request.domain}>",
+                                    :name => @inquiry.name) + " <#{Refinery::Inquiries.from_name}@#{request.domain}>",
              :reply_to  => inquiry.email
       end
 
