@@ -5,6 +5,8 @@ sl:
         title: Povpraševanja
         description: Priskrbi kontaktni obrazec in shrani povpraševanja
     inquiries:
+      config:
+        from_name: "%{name} [%{site_name}]"
       inquiries:
         new:
           send: Pošlji sporočilo

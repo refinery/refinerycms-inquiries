@@ -5,6 +5,8 @@ de:
         title: Kontaktanfragen
         description: Stellt ein Kontaktformular zur Verfügung und speichert Kontaktanfragen
     inquiries:
+      config:
+        from_name: "%{name} [%{site_name}]"
       inquiries:
         new:
           send: Nachricht senden

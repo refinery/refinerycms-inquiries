@@ -5,6 +5,8 @@ cs:
         title: Dotazy
         description: Zajišťuje kontaktní formulář a uchovává zaslané dotazy.
     inquiries:
+      config:
+        from_name: "%{name} [%{site_name}]"
       inquiries:
         new:
           send: Odeslat zprávu
