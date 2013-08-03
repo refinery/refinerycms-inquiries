@@ -19,11 +19,11 @@ module Refinery
       end
 
       def from_info
-        "\"#{from_name}\" <#{from_mail}>"
+        "#{from_name} <#{from_mail}>"
       end
 
       def from_name
-        :I18n.t('from_name',
+        ::I18n.t('from_name',
                 :scope => 'refinery.inquiries.config',
                 :site_name => Refinery::Core.site_name,
                 :name => @inquiry.name)
