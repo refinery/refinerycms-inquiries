@@ -2,9 +2,8 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'refinerycms', :github => 'refinery/refinerycms'
+gem 'refinerycms', '~> 2.1.0'
 gem 'refinerycms-settings', :github => 'refinery/refinerycms-settings'
-gem 'refinerycms-i18n', '~> 2.1.0'
 gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 
 group :test do
