@@ -9,6 +9,9 @@ gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 group :test do
   gem 'refinerycms-testing', '~> 2.1.0'
   gem 'capybara-email', '~> 2.1.2'
+  gem 'poltergeist'
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 # Database Configuration

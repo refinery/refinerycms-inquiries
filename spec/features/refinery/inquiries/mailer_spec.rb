@@ -7,19 +7,20 @@ module Refinery
       before do
         FactoryGirl.create(:page, :link_url => "/contact")
 
-        Refinery::Inquiries::Setting.stub(:notification_recipients).and_return("rspec@refinerycms.com")
+        Refinery::Inquiries::Setting.stub(:notification_recipients)
+          .and_return("rspec@refinerycms.com")
 
         clear_emails
 
         visit refinery.inquiries_new_inquiry_path
 
-        fill_in "Name", :with => "Ugis Ozols"
-        fill_in "Email", :with => "ugis.ozols@refinerycms.com"
-        fill_in "Message", :with => "Hey, I'm testing!"
+        fill_in "Name", with: "Ugis Ozols"
+        fill_in "Email", with: "ugis.ozols@refinerycms.com"
+        fill_in "Message", with: "Hey, I'm testing!"
         click_button "Send message"
       end
 
-      it "sends confirmation email" do
+      it "sends confirmation email", :focus do
         open_email("ugis.ozols@refinerycms.com")
 
         current_email.from.should eq("Ugis Ozols [#{Refinery::Core.site_name}] <#{Refinery::Inquiries.from_name}@example.com>")
