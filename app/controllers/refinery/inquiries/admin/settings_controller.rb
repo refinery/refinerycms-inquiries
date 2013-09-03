@@ -3,16 +3,13 @@ module Refinery
     module Admin
       class SettingsController < Refinery::AdminController
 
-        before_filter :check_setting, :only => [:edit, :update]
+        before_filter :find_setting, :only => [:edit, :update]
         after_filter :save_subject_for_confirmation, :save_message_for_confirmation, :only => :update
 
         def edit
-          @setting = Refinery::Setting.find(params[:id])
         end
 
         def update
-          @setting = Refinery::Setting.find(params[:id])
-
           if @setting.update_attributes(params[:setting])
             flash[:notice] = t('refinery.crudify.updated', :what => @setting.name.gsub("inquiry_", "").titleize)
 
@@ -26,18 +23,26 @@ module Refinery
 
       protected
 
-        def check_setting
+        def find_setting
           setting = params[:id].gsub("inquiry_", "")
 
-          Refinery::Inquiries::Setting.send(setting) if Refinery::Inquiries::Setting.respond_to?(setting)
+          if Refinery::Inquiries::Setting.respond_to?(setting)
+            Refinery::Inquiries::Setting.send(setting)
+          end
+
+          @setting = Refinery::Setting.friendly.find(params[:id])
         end
 
         def save_subject_for_confirmation
-          Refinery::Inquiries::Setting.confirmation_subject = params[:subject] if params.keys.include?('subject')
+          if params.keys.include?('subject')
+            Refinery::Inquiries::Setting.confirmation_subject = params[:subject]
+          end
         end
 
         def save_message_for_confirmation
-          Refinery::Inquiries::Setting.confirmation_message = params[:message] if params.keys.include?('message')
+          if params.keys.include?('message')
+            Refinery::Inquiries::Setting.confirmation_message = params[:message]
+          end
         end
 
       end
