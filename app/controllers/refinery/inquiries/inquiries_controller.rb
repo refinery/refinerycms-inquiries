@@ -2,32 +2,34 @@ module Refinery
   module Inquiries
     class InquiriesController < ::ApplicationController
 
-      before_filter :find_page, :only => [:create, :new]
+      before_filter :find_page, only: [:create, :new]
+      before_filter :find_thank_you_page, only: :thank_you
 
       def thank_you
-        @page = ::Refinery::Page.find_by_link_url("/contact/thank_you")
       end
 
       def new
-        @inquiry = ::Refinery::Inquiries::Inquiry.new
+        @inquiry = Inquiry.new
       end
 
       def create
-        @inquiry = ::Refinery::Inquiries::Inquiry.new(params[:inquiry])
+        @inquiry = Inquiry.new(params[:inquiry])
 
         if @inquiry.save
-          if @inquiry.ham? || Refinery::Inquiries.send_notifications_for_inquiries_marked_as_spam
+          if @inquiry.ham? || Inquiries.send_notifications_for_inquiries_marked_as_spam
             begin
-              ::Refinery::Inquiries::InquiryMailer.notification(@inquiry, request).deliver
+              InquiryMailer.notification(@inquiry, request).deliver
             rescue
               logger.warn "There was an error delivering an inquiry notification.\n#{$!}\n"
             end
 
-            begin
-              ::Refinery::Inquiries::InquiryMailer.confirmation(@inquiry, request).deliver
-            rescue
-              logger.warn "There was an error delivering an inquiry confirmation:\n#{$!}\n"
-            end if ::Refinery::Inquiries::Setting.send_confirmation?
+            if Setting.send_confirmation?
+              begin
+                InquiryMailer.confirmation(@inquiry, request).deliver
+              rescue
+                logger.warn "There was an error delivering an inquiry confirmation:\n#{$!}\n"
+              end
+            end
           end
 
           redirect_to refinery.thank_you_inquiries_inquiries_path
@@ -39,7 +41,11 @@ module Refinery
       protected
 
       def find_page
-        @page = ::Refinery::Page.find_by_link_url("/contact")
+        @page = Page.where(link_url: '/contact').first
+      end
+
+      def find_thank_you_page
+        @page = Page.where(link_url: '/contact/thank_you').first
       end
 
     end
