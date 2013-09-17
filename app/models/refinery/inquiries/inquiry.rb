@@ -15,7 +15,7 @@ module Refinery
       validates :email, :format=> { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
       validates :message, :presence => true
 
-      default_scope :order => 'created_at DESC'
+      default_scope lambda { order("refinery_inquiries_inquiries.created_at DESC") }
 
       attr_accessible :name, :phone, :message, :email
 
