@@ -6,7 +6,7 @@ it:
         description: Fornisce un modulo di contatto e memorizza le richieste
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} (%{site_name})"
       inquiries:
         new:
           header_message: si è verificato un problema
