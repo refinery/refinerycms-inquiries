@@ -20,7 +20,7 @@ module Refinery
         click_button "Send message"
       end
 
-      it "sends confirmation email", :focus do
+      it "sends confirmation email" do
         open_email("ugis.ozols@refinerycms.com")
 
         current_email.from.should eq("Ugis Ozols [#{Refinery::Core.site_name}] <#{Refinery::Inquiries.from_name}@example.com>")

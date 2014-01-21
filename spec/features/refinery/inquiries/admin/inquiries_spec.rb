@@ -103,11 +103,6 @@ module Refinery
         end
 
         describe "update who gets notified" do
-          before do
-            Rails.cache.clear
-            Refinery::Inquiries::Setting.notification_recipients
-          end
-
           it "sets receiver", :js => true do
             visit refinery.inquiries_admin_inquiries_path
 
@@ -123,19 +118,14 @@ module Refinery
         end
 
         describe "updating confirmation email copy" do
-          before do
-            Rails.cache.clear
-            Refinery::Inquiries::Setting.confirmation_body
-          end
-
           it "sets message", :js => true do
             visit refinery.inquiries_admin_inquiries_path
 
             click_link "Edit confirmation email"
 
             within_frame "dialog_iframe" do
-              fill_in "subject__en", :with => "subject"
-              fill_in "message__en", :with => "message"
+              fill_in "setting[subject[en]]", :with => "subject"
+              fill_in "setting[message[en]]", :with => "message"
               click_button "Save"
             end
 

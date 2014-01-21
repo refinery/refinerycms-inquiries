@@ -18,10 +18,10 @@ module Refinery
           )
         end
 
-        def confirmation_subject=(value)
-          value.first.keys.each do |locale|
+        def confirmation_subject=(locales_subjects)
+          locales_subjects.each do |locale, subject|
             set(:"inquiry_confirmation_subject_#{locale}", {
-              value: value.first[locale.to_sym],
+              value: subject,
               scoping: "inquiries"
             })
           end
@@ -31,10 +31,10 @@ module Refinery
           find_or_set(:"inquiry_confirmation_message_#{locale}", confirmation_body, scoping: "inquiries")
         end
 
-        def confirmation_message=(value)
-          value.first.keys.each do |locale|
+        def confirmation_message=(locales_messages)
+          locales_messages.each do |locale, message|
             set(:"inquiry_confirmation_message_#{locale}", {
-              value: value.first[locale.to_sym],
+              value: message,
               scoping: "inquiries"
             })
           end
@@ -43,6 +43,13 @@ module Refinery
         def notification_recipients
           recipients = ((Role[:refinery].users.first.email rescue nil) if defined?(Role)).to_s
           find_or_set(:inquiry_notification_recipients, recipients, scoping: "inquiries")
+        end
+
+        def notification_recipients=(recipients)
+          set(:inquiry_notification_recipients, {
+            value: recipients,
+            scoping: "inquiries"
+          })
         end
 
         def notification_subject
