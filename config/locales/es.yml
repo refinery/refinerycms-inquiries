@@ -5,7 +5,7 @@ es:
         title: Consultas
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} (%{site_name})"
       inquiries:
         new:
           send: Enviar mensaje
