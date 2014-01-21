@@ -18,8 +18,10 @@ module Refinery
              :reply_to  => inquiry.email
       end
 
+      private
+
       def from_info
-        "#{from_name} <#{from_mail}>"
+        "\"#{from_name}\" <#{from_mail}>"
       end
 
       def from_name
