@@ -2,17 +2,15 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'refinerycms', github: 'refinery/refinerycms', branch: 'rails4'
-gem 'refinerycms-i18n', github: 'refinery/refinerycms-i18n', branch: 'master'
-gem 'refinerycms-settings', github: 'refinery/refinerycms-settings', branch: 'master'
+gem 'refinerycms', github: 'refinery/refinerycms'
+gem 'refinerycms-i18n', github: 'refinery/refinerycms-i18n'
+gem 'refinerycms-settings', github: 'refinery/refinerycms-settings'
 
-gem 'friendly_id-globalize', github: 'norman/friendly_id-globalize', branch: 'master'
-gem 'globalize3', github: 'svenfuchs/globalize3', branch: 'rails4'
-gem 'paper_trail', github: 'airblade/paper_trail', branch: 'master'
-gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set', branch: 'master'
+gem "mime-types", "~> 1.25"
 
 group :test do
-  gem 'refinerycms-testing', github: 'refinery/refinerycms', branch: 'rails4'
+  gem 'refinerycms-testing', github: 'refinery/refinerycms'
+  gem 'capybara-email', '~> 2.1.2'
   gem 'poltergeist'
   gem 'pry'
   gem 'pry-nav'
