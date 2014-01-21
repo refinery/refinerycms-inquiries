@@ -22,7 +22,7 @@ module Refinery
 
       it "sends confirmation email" do
         open_email("ugis.ozols@refinerycms.com")
-binding.pry
+
         current_email.from.should eq(["#{Refinery::Inquiries.from_name}@example.com"])
         current_email.to.should eq(["ugis.ozols@refinerycms.com"])
         current_email.subject.should eq("Thank you for your inquiry")
