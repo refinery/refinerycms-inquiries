@@ -44,6 +44,12 @@ module Refinery
           @spam_count = Refinery::Inquiries::Inquiry.where(:spam => true).count
         end
 
+        private
+
+        def inquiry_params
+          params.require(:inquiry).permit(:name, :phone, :message, :email)
+        end
+
       end
     end
   end
