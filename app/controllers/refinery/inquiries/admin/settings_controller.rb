@@ -10,7 +10,7 @@ module Refinery
         end
 
         def update
-          if @setting.update_attributes(params[:setting])
+          if @setting.update_attributes(setting_params)
             flash[:notice] = t('refinery.crudify.updated', :what => @setting.name.gsub("inquiry_", "").titleize)
 
             unless request.xhr? or from_dialog?
@@ -43,6 +43,13 @@ module Refinery
           if params.keys.include?('message')
             Refinery::Inquiries::Setting.confirmation_message = params[:message]
           end
+        end
+
+      private
+
+        def setting_params
+          params.require(:setting).permit(:title, :name, :value, :destroyable,
+                                            :scoping, :restricted, :form_value_type)
         end
 
       end

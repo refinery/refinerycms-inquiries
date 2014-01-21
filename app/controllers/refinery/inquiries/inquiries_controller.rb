@@ -13,7 +13,7 @@ module Refinery
       end
 
       def create
-        @inquiry = Inquiry.new(params[:inquiry])
+        @inquiry = Inquiry.new(inquiry_params)
 
         if @inquiry.save
           if @inquiry.ham? || Inquiries.send_notifications_for_inquiries_marked_as_spam
@@ -46,6 +46,12 @@ module Refinery
 
       def find_thank_you_page
         @page = Page.where(link_url: '/contact/thank_you').first
+      end
+
+      private
+
+      def inquiry_params
+        params.require(:inquiry).permit(:name, :phone, :message, :email)
       end
 
     end
