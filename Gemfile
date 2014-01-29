@@ -12,8 +12,6 @@ group :test do
   gem 'refinerycms-testing', github: 'refinery/refinerycms'
   gem 'capybara-email', '~> 2.1.2'
   gem 'poltergeist'
-  gem 'pry'
-  gem 'pry-nav'
 end
 
 # Database Configuration
