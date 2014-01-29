@@ -2,39 +2,40 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'refinerycms', '~> 2.1.0'
-gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
+gem 'refinerycms', github: 'refinery/refinerycms'
+gem 'refinerycms-i18n', github: 'refinery/refinerycms-i18n'
+gem 'refinerycms-settings', github: 'refinery/refinerycms-settings'
+
+gem "mime-types", "~> 1.25"
 
 group :test do
-  gem 'refinerycms-testing', :github => 'refinery/refinerycms', :branch => '2-1-stable'
+  gem 'refinerycms-testing', github: 'refinery/refinerycms'
   gem 'capybara-email', '~> 2.1.2'
+  gem 'poltergeist'
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 # Database Configuration
 unless ENV['TRAVIS']
-  gem 'activerecord-jdbcsqlite3-adapter', :platform => :jruby
-  gem 'sqlite3', :platform => :ruby
+  gem 'activerecord-jdbcsqlite3-adapter', platform: :jruby
+  gem 'sqlite3', platform: :ruby
 end
 
 if !ENV['TRAVIS'] || ENV['DB'] == 'mysql'
-  gem 'activerecord-jdbcmysql-adapter', :platform => :jruby
-  gem 'jdbc-mysql', '= 5.1.13', :platform => :jruby
-  gem 'mysql2', :platform => :ruby
+  gem 'activerecord-jdbcmysql-adapter', platform: :jruby
+  gem 'jdbc-mysql', '= 5.1.13', platform: :jruby
+  gem 'mysql2', platform: :ruby
 end
 
 if !ENV['TRAVIS'] || ENV['DB'] == 'postgresql'
-  gem 'activerecord-jdbcpostgresql-adapter', :platform => :jruby
-  gem 'pg', :platform => :ruby
+  gem 'activerecord-jdbcpostgresql-adapter', platform: :jruby
+  gem 'pg', platform: :ruby
 end
-
-gem 'jruby-openssl', :platform => :jruby
 
 # Refinery/rails should pull in the proper versions of these
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-end
+gem 'sass-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
 
 # Load local gems according to Refinery developer preference.
 if File.exist? local_gemfile = File.expand_path('../.gemfile', __FILE__)
