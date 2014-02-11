@@ -17,6 +17,31 @@ module Refinery
         its(:name) { should == "Ugis Ozols" }
         its(:email) { should == "ugis.ozols@refinerycms.com" }
         its(:message) { should == "Hey, I'm testing!" }
+
+        it "validates name length" do 
+            FactoryGirl.build(:inquiry, {
+                name: "a"*255,
+                email: "ugis.ozols@refinerycms.com",
+                message: "This Text Is OK"
+            }).should be_valid
+            FactoryGirl.build(:inquiry, {
+                name: "a"*256,
+                email: "ugis.ozols@refinerycms.com",
+                message: "This Text Is OK"
+            }).should_not be_valid
+        end
+        it "validates email length" do 
+            FactoryGirl.build(:inquiry, {
+                name: "Ugis Ozols", 
+                email: "a"*239 + "@refinerycms.com",
+                message: "This Text Is OK"
+            }).should be_valid
+            FactoryGirl.build(:inquiry, {
+                name: "Ugis Ozols", 
+                email: "a"*240 + "@refinerycms.com",
+                message: "This Text Is OK"
+            }).should_not be_valid
+        end
       end
 
       describe "default scope" do

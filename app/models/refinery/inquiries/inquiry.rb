@@ -11,10 +11,10 @@ module Refinery
                    other_fields:     [:phone],
                    extra_spam_words: %w()
 
-      validates :name, presence: true
+      validates :name, presence: true, length: { maximum: 255 }
       validates :email, format: {
         with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-      }
+      }, length: { maximum: 255 }
       validates :message, presence: true
 
       default_scope { order('created_at DESC') }
