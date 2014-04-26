@@ -1,0 +1,79 @@
+zh-TW:
+  refinery:
+    plugins:
+      refinerycms_inquiries:
+        title: 咨詢
+        description: 提供一個連絡表格及咨詢記錄
+    inquiries:
+      config:
+        from_name: "%{name} [%{site_name}]"
+      inquiries:
+        new:
+          send: 發送消息
+          privacy_policy: 我们珍惜您的私隐
+      admin:
+        inquiries:
+          delete: 永久删除此咨詢
+          inquiry:
+            read_inquiry: 閱讀此咨詢
+            said: 說
+            mark_as_spam: 標記為垃圾郵件
+            mark_as_ham: 移到收件箱
+          submenu:
+            inbox: 收件箱
+            spam: 垃圾郵件
+            update_notified: 更新通知名單
+            edit_confirmation_email: 編輯確認電郵
+          index:
+            no_inquiries: 你還没有收到任何的咨詢。
+            no_spam: 沒有垃圾郵件。
+          show:
+            details: 詳細
+            age: 時間
+            actions: 操作
+            back_to_all_inquiries: 返回所有的咨詢
+            spam: 垃圾郵件
+            spam_yes: '是'
+            inquiry: 咨詢
+            to: 收件人
+            from: 發件人
+            click_to_email: 點擊發送到這個地址
+            phone: 電話
+            date: 日期
+            message: 信息
+        settings:
+          notification_recipients_form:
+            inquiry_settings_value_name: 發送通知到
+            hint: 當收到新的咨詢時，系統將會發一封電郵通知你。
+            example: "輸入你的電郵地址如: jack@work.com, jill@office.com"
+          confirmation_email_form:
+            to: 到
+            from: 從
+            subject: 標題
+            click_to_edit_subject: 點擊這裡編輯標題
+            explanation: 每當有人在網站聯系你，系統發送出一封電郵去確認發送者的身份.
+            below_edit_email_sent: 你可以在下面编輯你要發送去的電郵。
+            the_customer_making_inquiry: 客户正在寫咨詢
+            message: 信息
+            note: "注意: 把你的客户名字在電郵出現的位置以文字 %name% 做替換"
+      inquiry_mailer:
+        notification:
+          greeting: 您好
+          you_recieved_new_inquiry: 你剛從你的網站收到一條新的咨詢.
+          inquiry_starts: --- 咨詢開始處 ---
+          inquiry_ends: --- 咨詢結束處 ---
+          from: 表單
+          email: 電郵
+          phone: 電話
+          message: 信息
+          closing_line: 謹致問候
+          ps: 附言 您所有的咨詢被保存在“咨詢”區域以便你在日後查看。
+  activerecord:
+    models:
+      refinery/inquiries/inquiry: inquiry
+    attributes:
+      refinery/inquiries/inquiry:
+        name: 姓名
+        email: 電郵
+        phone: 連絡電話
+        message: 留言信息
