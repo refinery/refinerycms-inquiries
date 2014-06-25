@@ -7,7 +7,7 @@ pl:
         article: neutral
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} - %{site_name}"
       inquiries:
         new:
           send: Wyślij wiadomość

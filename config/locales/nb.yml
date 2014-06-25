@@ -6,7 +6,7 @@ nb:
         description: Legger til et kontaktskjema og lagrer forespørsler
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} - %{site_name}"
       inquiries:
         new:
           send: Send melding

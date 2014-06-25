@@ -6,7 +6,7 @@ en-GB:
         description: Provides a contact form and stores enquiries
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} - %{site_name}"
       inquiries:
         new:
           send: Send message

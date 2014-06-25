@@ -6,7 +6,7 @@ bg:
         description: Осигурява форма за контакт и съхранение на запитвания
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} - %{site_name}"
       inquiries:
         new:
           send: Изпращане на съобщение

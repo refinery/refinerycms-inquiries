@@ -6,7 +6,7 @@ fr:
         description: Fournit un formulaire de contact et gère les demandes de contacts.
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} - %{site_name}"
       inquiries:
         new:
           send: Envoyer un message
