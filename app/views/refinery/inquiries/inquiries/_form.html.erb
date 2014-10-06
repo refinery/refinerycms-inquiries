@@ -1,7 +1,7 @@
-<%= form_for [refinery, :inquiries, @inquiry] do |f| %>
+<%= form_for [refinery, :inquiries, inquiry] do |f| %>
   <%= render :partial => "/refinery/admin/error_messages",
              :locals => {
-               :object => @inquiry,
+               :object => inquiry,
                :include_object_name => true
              } %>
   <div class="field">

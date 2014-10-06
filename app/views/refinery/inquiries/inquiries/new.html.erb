@@ -2,7 +2,7 @@
   <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
 
   <div class='inquiries'>
-    <%= render "/refinery/inquiries/inquiries/form" %>
+    <%= render "/refinery/inquiries/inquiries/form", inquiry: @inquiry %>
   </div>
 <% end %>
 <%= render "/refinery/content_page" %>
