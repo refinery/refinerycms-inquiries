@@ -8,7 +8,7 @@ lt:
       config:
         from_name: "%{name} [%{site_name}]"
       inquiries:
-        new:
+        form:
           send: Siųsti žinutę
           privacy_policy: Mes vertiname jūsų privatumą
       admin:

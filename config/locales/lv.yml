@@ -8,7 +8,7 @@ lv:
       config:
         from_name: "%{name} [%{site_name}]"
       inquiries:
-        new:
+        form:
           send: Sūtīt ziņu
           privacy_policy: Mēs cienam Jūsu privātumu
       admin:
