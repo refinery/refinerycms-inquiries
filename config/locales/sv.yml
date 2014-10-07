@@ -8,7 +8,7 @@ sv:
       config:
         from_name: "%{name} [%{site_name}]"
       inquiries:
-        new:
+        form:
           send: Skicka meddelande
           privacy_policy: Vi respekterar ditt privatliv
       admin:

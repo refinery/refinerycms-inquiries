@@ -8,7 +8,7 @@ pt-BR:
       config:
         from_name: "%{name} [%{site_name}]"
       inquiries:
-        new:
+        form:
           send: Enviar mensagem
           privacy_policy: "Nós valorizamos sua privacidade"
       admin:

@@ -7,7 +7,7 @@ da:
       config:
         from_name: "%{name} [%{site_name}]"
       inquiries:
-        new:
+        form:
           header_message: "Der er et mindre problem"
           message: "Følgende skal rettes:"
           send: Send besked

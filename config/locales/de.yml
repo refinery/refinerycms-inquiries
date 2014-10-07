@@ -8,7 +8,7 @@ de:
       config:
         from_name: "%{name} [%{site_name}]"
       inquiries:
-        new:
+        form:
           send: Nachricht senden
           privacy_policy: Ihre Privatsphäre ist uns wichtig
       admin:

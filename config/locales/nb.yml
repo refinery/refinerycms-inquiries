@@ -8,7 +8,7 @@ nb:
       config:
         from_name: "%{name} [%{site_name}]"
       inquiries:
-        new:
+        form:
           send: Send melding
           privacy_policy: "Vi respekterer ditt privatliv"
       admin:

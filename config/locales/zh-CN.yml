@@ -8,7 +8,7 @@ zh-CN:
       config:
         from_name: "%{name} [%{site_name}]"
       inquiries:
-        new:
+        form:
           send: 发送消息
           privacy_policy: 我们珍视您的隐私
       admin:
