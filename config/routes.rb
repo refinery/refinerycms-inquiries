@@ -1,14 +1,18 @@
 Refinery::Core::Engine.routes.draw do
+  # Frontend routes
   namespace :inquiries, :path => '' do
-    get '/contact', :to => 'inquiries#new', :as => 'new_inquiry'
+    get Refinery::Inquiries.page_url_new, :to => 'inquiries#new', :as => 'new_inquiry'
 
-    resources :contact,
+    resources :contact, :path => '',
                 :only => :create,
                 :as => :inquiries,
                 :controller => 'inquiries' do
-      get :thank_you, :on => :collection
+      get :thank_you, :path => Refinery::Inquiries.page_url_thank_you, :on => :collection
     end
+  end
 
+  # Admin routes
+  namespace :inquiries, :path => '' do
     namespace :admin, :path => Refinery::Core.backend_route do
       resources :inquiries, :only => [:index, :show, :destroy] do
         get :spam, :on => :collection
