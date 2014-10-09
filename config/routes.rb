@@ -1,7 +1,7 @@
 Refinery::Core::Engine.routes.draw do
   # Frontend routes
-  namespace :inquiries, :path => '' do
-    get Refinery::Inquiries.page_url_new, :to => 'inquiries#new', :as => 'new_inquiry'
+  namespace :inquiries, :path => Refinery::Inquiries.page_url_new do
+    root :to => 'inquiries#new', :as => 'new_inquiry'
 
     resources :contact, :path => '',
                 :only => :create,
