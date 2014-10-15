@@ -3,7 +3,7 @@ require "spec_helper"
 module Refinery
   module Inquiries
     module Admin
-      describe Inquiry do
+      describe Inquiry, :type => :feature do
         refinery_login_with :refinery_user
 
         let!(:inquiry) do
@@ -14,13 +14,13 @@ module Refinery
         end
 
         context "when no" do
-          before(:each) { Refinery::Inquiries::Inquiry.destroy_all }
+          before { Refinery::Inquiries::Inquiry.destroy_all }
 
           context "inquiries" do
             it "shows message" do
               visit refinery.inquiries_admin_inquiries_path
 
-              page.should have_content("You have not received any inquiries yet.")
+              expect(page).to have_content("You have not received any inquiries yet.")
             end
           end
 
@@ -28,24 +28,24 @@ module Refinery
             it "shows message" do
               visit refinery.spam_inquiries_admin_inquiries_path
 
-              page.should have_content("Hooray! You don't have any spam.")
+              expect(page).to have_content("Hooray! You don't have any spam.")
             end
           end
         end
 
         describe "action links" do
-          before(:each) { visit refinery.inquiries_admin_inquiries_path }
+          before { visit refinery.inquiries_admin_inquiries_path }
 
           specify "in the side pane" do
             within "#actions" do
-              page.should have_content("Inbox")
-              page.should have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries']")
-              page.should have_content("Spam")
-              page.should have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries/spam']")
-              page.should have_content("Update who gets notified")
-              page.should have_selector("a[href*='/#{Refinery::Core.backend_route}/inquiries/settings/inquiry_notification_recipients/edit']")
-              page.should have_content("Edit confirmation email")
-              page.should have_selector("a[href*='/#{Refinery::Core.backend_route}/inquiries/settings/inquiry_confirmation_body/edit']")
+              expect(page).to have_content("Inbox")
+              expect(page).to have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries']")
+              expect(page).to have_content("Spam")
+              expect(page).to have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries/spam']")
+              expect(page).to have_content("Update who gets notified")
+              expect(page).to have_selector("a[href*='/#{Refinery::Core.backend_route}/inquiries/settings/inquiry_notification_recipients/edit']")
+              expect(page).to have_content("Edit confirmation email")
+              expect(page).to have_selector("a[href*='/#{Refinery::Core.backend_route}/inquiries/settings/inquiry_confirmation_body/edit']")
             end
           end
         end
@@ -54,7 +54,7 @@ module Refinery
           it "shows inquiry list" do
             visit refinery.inquiries_admin_inquiries_path
 
-            page.should have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
+            expect(page).to have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
           end
         end
 
@@ -64,14 +64,14 @@ module Refinery
 
             click_link "Read the inquiry"
 
-            page.should have_content("From David Jones [dave@refinerycms.com]")
-            page.should have_content("Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
+            expect(page).to have_content("From David Jones [dave@refinerycms.com]")
+            expect(page).to have_content("Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
             within "#actions" do
-              page.should have_content("Age")
-              page.should have_content("Back to all Inquiries")
-              page.should have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries']")
-              page.should have_content("Remove this inquiry forever")
-              page.should have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries/#{inquiry.id}']")
+              expect(page).to have_content("Age")
+              expect(page).to have_content("Back to all Inquiries")
+              expect(page).to have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries']")
+              expect(page).to have_content("Remove this inquiry forever")
+              expect(page).to have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries/#{inquiry.id}']")
             end
           end
         end
@@ -82,8 +82,8 @@ module Refinery
 
             click_link "Remove this inquiry forever"
 
-            page.should have_content("'#{inquiry.name}' was successfully removed.")
-            Refinery::Inquiries::Inquiry.count.should == 0
+            expect(page).to have_content("'#{inquiry.name}' was successfully removed.")
+            expect(Refinery::Inquiries::Inquiry.count).to eq(0)
           end
         end
 
@@ -94,11 +94,11 @@ module Refinery
             click_link "Mark as spam"
 
             within "#actions" do
-              page.should have_content("Spam (1)")
+              expect(page).to have_content("Spam (1)")
               click_link "Spam (1)"
             end
 
-            page.should have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
+            expect(page).to have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
           end
         end
 
@@ -113,7 +113,7 @@ module Refinery
               click_button "submit_button"
             end
 
-            page.should have_content("Notification Recipients was successfully updated.")
+            expect(page).to have_content("Notification Recipients was successfully updated.")
           end
         end
 
@@ -129,7 +129,7 @@ module Refinery
               click_button "Save"
             end
 
-            page.should have_content("Confirmation Body was successfully updated.")
+            expect(page).to have_content("Confirmation Body was successfully updated.")
           end
         end
 

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module Refinery
   module Inquiries
-    describe Setting do
+    describe Setting, :type => :model do
       describe ".notification_recipients=" do
         it "delegates to Refinery::Setting#set" do
           expect(Refinery::Setting).to receive(:set).
