@@ -3,13 +3,13 @@
 end if defined?(::Refinery::User)
 
 if defined?(::Refinery::Page)
-  contact_us_page = Refinery::Page.find_by(:link_url => Refinery::Inquiries.page_url_new)
+  contact_us_page = Refinery::Page.find_by(:link_url => Refinery::Inquiries.page_path_new)
 
   unless contact_us_page
     contact_us_page = ::Refinery::Page.create({
       :title => "Contact",
-      :link_url => Refinery::Inquiries.page_url_new,
-      :menu_match => "^(/inquiries.*)|#{Refinery::Inquiries.page_url_new}$",
+      :link_url => Refinery::Inquiries.page_path_new,
+      :menu_match => "^(/inquiries.*)|#{Refinery::Inquiries.page_path_new}$",
       :deletable => false
     })
     contact_us_page.parts.create({
@@ -24,11 +24,11 @@ if defined?(::Refinery::Page)
     })
   end
 
-  unless Refinery::Page.where(:link_url => Refinery::Inquiries.page_url_thank_you).any?
+  unless Refinery::Page.where(:link_url => Refinery::Inquiries.page_path_thank_you).any?
     thank_you_page = contact_us_page.children.create({
       :title => "Thank You",
-      :link_url => Refinery::Inquiries.page_url_thank_you,
-      :menu_match => "^(/inquiries/thank_you)|#{Refinery::Inquiries.page_url_thank_you}$",
+      :link_url => Refinery::Inquiries.page_path_thank_you,
+      :menu_match => "^(/inquiries/thank_you)|#{Refinery::Inquiries.page_path_thank_you}$",
       :show_in_menu => false,
       :deletable => false
     })
