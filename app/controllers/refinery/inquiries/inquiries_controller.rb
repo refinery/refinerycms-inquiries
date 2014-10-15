@@ -41,11 +41,11 @@ module Refinery
       protected
 
       def find_page
-        @page = Page.where(link_url: Refinery::Inquiries.page_url_new).first
+        @page = Page.find_by(link_url: Refinery::Inquiries.page_url_new)
       end
 
       def find_thank_you_page
-        @page = Page.where(link_url: Refinery::Inquiries.page_url_thank_you).first
+        @page = Page.find_by(link_url: Refinery::Inquiries.page_url_thank_you)
       end
 
       private
