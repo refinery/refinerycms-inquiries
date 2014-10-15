@@ -3,9 +3,14 @@ require "spec_helper"
 module Refinery
   module Inquiries
     describe "inquiries" do
-      before(:each) do
+      before do
         # load in seeds we use in migration
         Refinery::Inquiries::Engine.load_seed
+      end
+
+      it "posts to the correct URL" do
+        visit refinery.inquiries_new_inquiry_path
+        page.should have_selector("form[action='#{refinery.inquiries_inquiries_path}']")
       end
 
       context "when valid data" do
@@ -40,7 +45,7 @@ module Refinery
 
           click_button "Send message"
 
-          page.current_path.should == refinery.inquiries_new_inquiry_path
+          page.current_path.should == refinery.inquiries_inquiries_path
           page.should have_content("There were problems with the following fields")
           page.should have_content(name_error_message)
           page.should have_content(email_error_message)
