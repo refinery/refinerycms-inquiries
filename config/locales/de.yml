@@ -6,7 +6,7 @@ de:
         description: Stellt ein Kontaktformular zur Verfügung und speichert Kontaktanfragen
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} - %{site_name}"
       inquiries:
         form:
           send: Nachricht senden

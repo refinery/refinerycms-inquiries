@@ -6,7 +6,7 @@ lv:
         description: Nodrošina kontaktformu un glabā pieprasījumus
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} - %{site_name}"
       inquiries:
         form:
           send: Sūtīt ziņu

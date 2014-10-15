@@ -6,7 +6,7 @@ sk:
         description: Zabezpečuje kontaktný formulár a uchováva zaslané otázky.
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} - %{site_name}"
       inquiries:
         form:
           send: Odoslať správu

@@ -6,7 +6,7 @@ zh-TW:
         description: 提供一個連絡表格及咨詢記錄
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} - %{site_name}"
       inquiries:
         form:
           send: 發送消息

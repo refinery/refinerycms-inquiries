@@ -6,7 +6,7 @@ nl:
         description: Contactformulier en beheer van vragen
     inquiries:
       config:
-        from_name: "%{name} [%{site_name}]"
+        from_name: "%{name} - %{site_name}"
       inquiries:
         form:
           send: Verstuur uw vraag
