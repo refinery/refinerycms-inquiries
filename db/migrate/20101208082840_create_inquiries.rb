@@ -17,8 +17,9 @@ class CreateInquiries < ActiveRecord::Migration
   def down
      drop_table ::Refinery::Inquiries::Inquiry.table_name
 
-     ::Refinery::Page.delete_all({
-       :link_url => (Refinery::Inquiries.page_path_new || Refinery::Inquiries.page_path_thank_you)
-     }) if defined?(::Refinery::Page)
+     if defined?(::Refinery::Page)
+       ::Refinery::Page.delete_all(:link_url => Refinery::Inquiries.page_path_new)
+       ::Refinery::Page.delete_all(:link_url => Refinery::Inquiries.page_path_thank_you)
+     end
   end
 end
