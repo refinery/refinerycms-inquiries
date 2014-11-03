@@ -6,7 +6,7 @@
 
 Include the latest [gem](http://rubygems.org/gems/refinerycms-inquiries) into your Refinery CMS application's Gemfile:
 
-    gem 'refinerycms-inquiries', '~> 2.0.0'
+    gem 'refinerycms-inquiries', '~> 2.1.0'
 
 Then type the following at command line inside your Refinery CMS application's root directory:
 
