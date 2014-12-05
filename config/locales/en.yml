@@ -77,3 +77,7 @@ en:
         email: Email
         phone: Phone
         message: Message
+
+  routes:
+    contact: contact-us
+    thank_you: thank-you

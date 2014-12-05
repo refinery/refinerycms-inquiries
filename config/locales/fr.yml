@@ -78,3 +78,7 @@ fr:
         email: E-mail
         phone: Téléphone
         message: Message
+
+  routes:
+    contact: nous-joindre
+    thank_you: merci
