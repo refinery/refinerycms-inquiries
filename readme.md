@@ -6,7 +6,9 @@
 
 Include the latest [gem](http://rubygems.org/gems/refinerycms-inquiries) into your Refinery CMS application's Gemfile:
 
-    gem 'refinerycms-inquiries', '~> 2.0.0'
+```ruby
+gem 'refinerycms-inquiries', '~> 3.0.0'
+```
 
 Then type the following at command line inside your Refinery CMS application's root directory:
 
@@ -22,6 +24,17 @@ To install the migrations, run:
 Add pages to the database and you're done:
 
     rake db:seed
+
+#### Optionally include the stylesheet.
+
+Next, you can include the stylesheet that improves the form's display a bit,
+and also adds an asterisk to each `required` label: `Name *` instead of `Name`.
+
+To do this, include it in your `application.css` manifest file and insert:
+
+```css
+//= require refinery/theme
+```
 
 ## About
 

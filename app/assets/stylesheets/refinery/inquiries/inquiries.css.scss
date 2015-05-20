@@ -4,6 +4,9 @@
     label {
       width: 150px;
       float: left;
+      &.required:after {
+        content:" *"
+      }
     }
     input {
       width: 200px;

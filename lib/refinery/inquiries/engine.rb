@@ -5,13 +5,15 @@ module Refinery
 
       isolate_namespace Refinery::Inquiries
 
-      initializer "init plugin" do
+      before_inclusion do
         Refinery::Plugin.register do |plugin|
           plugin.pathname = root
           plugin.name = "refinerycms_inquiries"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.inquiries_admin_inquiries_path }
           plugin.menu_match = %r{refinery/inquiries(/.+?)?$}
         end
+
+        Rails.application.config.assets.precompile += %w(refinery/inquiries/*)
       end
 
       config.after_initialize do
