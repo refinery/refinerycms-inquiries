@@ -33,7 +33,7 @@ and also adds an asterisk to each `required` label: `Name *` instead of `Name`.
 To do this, include it in your `application.css` manifest file and insert:
 
 ```css
-//= require refinery/theme
+//= require refinery/inquiries/inquiries
 ```
 
 ## About
