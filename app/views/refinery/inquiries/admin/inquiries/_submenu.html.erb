@@ -1,8 +1,6 @@
 <div id='actions'>
   <ul>
-    <li>
-      <%= render "/refinery/admin/search", :url => request.path.gsub("//", "/") %>
-    </li>
+    <li><%= render "/refinery/admin/search", :url => request.path.gsub("//", "/") %></li>
     <li <%= "class='selected'" if params[:action] == "index" %>>
       <%= link_to t('.inbox'), refinery.inquiries_admin_inquiries_path, :class => "email_icon" %>
     </li>
@@ -15,13 +13,15 @@
     </li>
     <li>
       <%= link_to t('.update_notified'),
-                    refinery.edit_inquiries_admin_setting_path(:inquiry_notification_recipients, :dialog => true, :height => 300),
-                    :class => "user_comment_icon" %>
+                    refinery.edit_inquiries_admin_setting_path(:inquiry_notification_recipients, dialog: true, height: 300),
+                    class: "user_comment_icon",
+                    id: "update_notified" %>
     </li>
     <li>
       <%= link_to t('.edit_confirmation_email'),
-                  refinery.edit_inquiries_admin_setting_path(:inquiry_confirmation_body, :dialog => true),
-                  :class => "edit_email_icon" %>
+                  refinery.edit_inquiries_admin_setting_path(:inquiry_confirmation_body, dialog: true),
+                  class: "edit_email_icon",
+                  id: "edit_confirmation_email" %>
     </li>
   </ul>
 </div>
