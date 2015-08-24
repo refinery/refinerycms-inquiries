@@ -5,11 +5,13 @@ module Refinery
   module Inquiries
     class Inquiry < Refinery::Core::BaseModel
 
-      filters_spam message_field:    :message,
-                   email_field:      :email,
-                   author_field:     :name,
-                   other_fields:     [:phone],
-                   extra_spam_words: %w()
+      if Inquiries.config.filter_spam
+        filters_spam message_field:    :message,
+                     email_field:      :email,
+                     author_field:     :name,
+                     other_fields:     [:phone],
+                     extra_spam_words: %w()
+      end
 
       validates :name, presence: true, length: { maximum: 255 }
       validates :email, format: {
