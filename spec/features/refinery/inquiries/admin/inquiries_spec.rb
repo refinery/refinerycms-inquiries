@@ -4,7 +4,7 @@ module Refinery
   module Inquiries
     module Admin
       describe Inquiry, :type => :feature do
-        refinery_login_with :refinery_user
+        refinery_login
 
         let!(:inquiry) do
           FactoryGirl.create(:inquiry,
