@@ -9,9 +9,9 @@ module Refinery
 
         helper_method :group_by_date
 
-        before_filter :find_all_ham, :only => [:index]
-        before_filter :find_all_spam, :only => [:spam]
-        before_filter :get_spam_count, :only => [:index, :spam]
+        before_action :find_all_ham, :only => [:index]
+        before_action :find_all_spam, :only => [:spam]
+        before_action :get_spam_count, :only => [:index, :spam]
 
         def index
           @inquiries = @inquiries.with_query(params[:search]) if searching?

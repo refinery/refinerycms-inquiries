@@ -3,8 +3,8 @@ module Refinery
     module Admin
       class SettingsController < Refinery::AdminController
 
-        before_filter :find_setting, :only => [:edit, :update]
-        after_filter :save_subject_for_confirmation,
+        before_action :find_setting, :only => [:edit, :update]
+        after_action :save_subject_for_confirmation,
           :save_message_for_confirmation, :save_notification_recipients, :only => :update
 
         def edit

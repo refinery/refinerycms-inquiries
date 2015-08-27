@@ -2,8 +2,8 @@ module Refinery
   module Inquiries
     class InquiriesController < ::ApplicationController
 
-      before_filter :find_page, only: [:create, :new]
-      before_filter :find_thank_you_page, only: :thank_you
+      before_action :find_page, only: [:create, :new]
+      before_action :find_thank_you_page, only: :thank_you
 
       def thank_you
       end
