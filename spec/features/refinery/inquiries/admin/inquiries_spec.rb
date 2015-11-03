@@ -4,7 +4,7 @@ module Refinery
   module Inquiries
     module Admin
       describe Inquiry, :type => :feature do
-        refinery_login_with :refinery_user
+        refinery_login
 
         let!(:inquiry) do
           FactoryGirl.create(:inquiry,
@@ -105,8 +105,7 @@ module Refinery
         describe "update who gets notified" do
           it "sets receiver", :js => true do
             visit refinery.inquiries_admin_inquiries_path
-
-            click_link "Update who gets notified"
+            find("#update_notified").trigger('click')
 
             within_frame "dialog_iframe" do
               fill_in "setting_value", :with => "phil@refinerycms.com"
@@ -121,7 +120,7 @@ module Refinery
           it "sets message", :js => true do
             visit refinery.inquiries_admin_inquiries_path
 
-            click_link "Edit confirmation email"
+            find("#edit_confirmation_email").trigger('click')
 
             within_frame "dialog_iframe" do
               fill_in "setting[subject[en]]", :with => "subject"

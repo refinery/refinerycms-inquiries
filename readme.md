@@ -2,6 +2,18 @@
 
 ![Refinery Inquiries](http://refinerycms.com/system/images/BAhbBlsHOgZmSSIqMjAxMS8wNS8wMS8wNF81MF8wMV81MDlfaW5xdWlyaWVzLnBuZwY6BkVU/inquiries.png)
 
+## About
+
+__Add a simple contact form to Refinery that notifies you and the customer when an inquiry is made.__
+
+In summary you can:
+
+* Collect and manage inquiries
+* Specify who is notified when a new inquiry comes in
+* Customise an auto responder email that is sent to the person making the inquiry
+
+When inquiries come in, you and the customer are generally notified. As we implemented spam filtering through the [filters_spam plugin](https://github.com/resolve/filters_spam#readme) you will not get notified if an inquiry is marked as 'spam'.  This feature is optional, and can be disabled in `config/initializers/refinery/inquiries.rb` by setting `config.filter_spam = false`.
+
 ### Gem Installation using Bundler (The very best way)
 
 Include the latest [gem](http://rubygems.org/gems/refinerycms-inquiries) into your Refinery CMS application's Gemfile:
@@ -36,19 +48,7 @@ To do this, include it in your `application.css` manifest file and insert:
 //= require refinery/inquiries/inquiries
 ```
 
-## About
-
-__Add a simple contact form to Refinery that notifies you and the customer when an inquiry is made.__
-
-In summary you can:
-
-* Collect and manage inquiries
-* Specify who is notified when a new inquiry comes in
-* Customise an auto responder email that is sent to the person making the inquiry
-
-When inquiries come in, you and the customer are generally notified. As we implemented spam filtering through the [filters_spam plugin](https://github.com/resolve/filters_spam#readme) you will not get notified if an inquiry is marked as 'spam'.
-
-## How do I setup email to be sent from GMail, SendGrid or other service?
+## How do I set up email to be sent from GMail, SendGrid or other service?
 
 Inquiries uses `actionmailer` under the hood so you can refer to [Rails Action Mailer guide](http://guides.rubyonrails.org/action_mailer_basics.html). For example to use GMail see [Action Mailer Configuration for GMail](http://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration-for-gmail) guide.
 
