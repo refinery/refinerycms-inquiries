@@ -1,5 +1,5 @@
 <% content_for :body do %>
-  <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
+  <%= raw @page.content_for(Refinery::Pages.default_parts.first[:slug].to_sym) if Refinery::Pages.default_parts.any? %>
 
   <div class='inquiries'>
     <%= render "/refinery/inquiries/inquiries/form", inquiry: @inquiry %>
