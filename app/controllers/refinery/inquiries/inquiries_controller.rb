@@ -18,14 +18,14 @@ module Refinery
         if @inquiry.save
           if @inquiry.ham? || Inquiries.send_notifications_for_inquiries_marked_as_spam
             begin
-              InquiryMailer.notification(@inquiry, request).deliver
+              InquiryMailer.notification(@inquiry, request).deliver_now
             rescue
               logger.warn "There was an error delivering an inquiry notification.\n#{$!}\n"
             end
 
             if Setting.send_confirmation?
               begin
-                InquiryMailer.confirmation(@inquiry, request).deliver
+                InquiryMailer.confirmation(@inquiry, request).deliver_now
               rescue
                 logger.warn "There was an error delivering an inquiry confirmation:\n#{$!}\n"
               end
@@ -51,9 +51,9 @@ module Refinery
       def inquiry_params
         params.require(:inquiry).permit(permitted_inquiry_params)
       end
-      
+
       private
-      
+
       def permitted_inquiry_params
         [:name, :phone, :message, :email]
       end
