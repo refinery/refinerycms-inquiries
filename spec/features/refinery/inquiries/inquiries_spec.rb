@@ -74,7 +74,7 @@ module Refinery
             visit refinery.inquiries_new_inquiry_path
 
             expect(page).to have_no_content("We value your privacy")
-            expect(page).to have_no_selector("a[href='/pages/privacy-policy']")
+            expect(page).to have_no_selector("a[href='/privacy-policy']")
           end
         end
 
@@ -87,7 +87,7 @@ module Refinery
             visit refinery.inquiries_new_inquiry_path
 
             expect(page).to have_content("We value your privacy")
-            expect(page).to have_selector("a[href='/pages/privacy-policy']")
+            expect(page).to have_selector("a[href='/privacy-policy']")
           end
         end
       end
