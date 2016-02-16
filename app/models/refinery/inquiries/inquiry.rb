@@ -5,7 +5,7 @@ module Refinery
   module Inquiries
     class Inquiry < Refinery::Core::BaseModel
 
-      if Inquiries.config.filter_spam
+      if Inquiries.filter_spam
         filters_spam message_field:    :message,
                      email_field:      :email,
                      author_field:     :name,

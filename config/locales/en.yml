@@ -5,6 +5,8 @@ en:
         title: Inquiries
         description: Provides a contact form and stores inquiries
     inquiries:
+      spam_filter:
+        captcha_invalid: Sorry, we could not verify that you aren't a robot
       config:
         from_name: "%{name} - %{site_name}"
       inquiries:
