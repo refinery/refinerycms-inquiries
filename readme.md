@@ -66,7 +66,7 @@ development:
   recaptcha_secret_key: "This IS your secret key"
 
 production:
-  recaptcha_secret_key: ENV["RECAPTCHA_SECRET_KEY"]
+  recaptcha_secret_key: <%= ENV["RECAPTCHA_SECRET_KEY"] %>
 ```
 
 Note: This expects you to set your secret key via `ENV` in your production environment.
