@@ -16,7 +16,7 @@ module Refinery
             @valid = true
             @inquiry.save
           else
-            @inquiry.errors.add(:base, ::I18n.t(:captcha_invalid, scope: "refinery.inquiries"))
+            @inquiry.errors.add(:base, ::I18n.t(:captcha_invalid, scope: "refinery.inquiries.spam_filter"))
           end
         elsif simple_filter?
           @inquiry.save
