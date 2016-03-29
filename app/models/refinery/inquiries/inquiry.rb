@@ -25,6 +25,9 @@ module Refinery
         include_spam ? limit(number) : ham.limit(number)
       end
 
+      def ham?
+        Inquiries.config.filter_spam ? not(spam?) : true
+      end
     end
   end
 end
