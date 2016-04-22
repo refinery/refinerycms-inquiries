@@ -21,6 +21,9 @@ module Refinery
 
       default_scope { order('created_at DESC') }
 
+      scope :ham, -> { where(spam: false) }
+      scope :spam, -> { where(spam: true) }
+
       def self.latest(number = 7, include_spam = false)
         include_spam ? limit(number) : ham.limit(number)
       end
