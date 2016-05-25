@@ -21,4 +21,7 @@ Refinery::Inquiries.configure do |config|
 
   # Toggle the spam filter
   # config.filter_spam = <%= Refinery::Inquiries.filter_spam.inspect %>
+
+  # Toggle recaptcha support with your recaptcha "Site key"
+  # config.recaptcha_site_key = <%= Refinery::Inquiries.recaptcha_site_key.inspect %>
 end

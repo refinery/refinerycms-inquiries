@@ -4,11 +4,13 @@
                :object => inquiry,
                :include_object_name => true
              } %>
+
   <div class="field">
     <%= f.label :name, :class => 'placeholder-fallback required' %>
     <%= f.text_field :name, :class => 'text', :required => 'required',
       :placeholder => (t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
   </div>
+
   <div class="field">
     <%= f.label :email, :class => 'placeholder-fallback required' %>
     <%= f.email_field :email, :class => 'text email', :required => 'required',
@@ -28,6 +30,16 @@
     <%= f.text_area :message, :rows => 8, :required => 'required',
       :placeholder => (t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
   </div>
+
+  <% if Refinery::Inquiries.recaptcha_site_key.present? %>
+    <% content_for :javascripts do %>
+      <script src='https://www.google.com/recaptcha/api.js'></script>
+    <% end %>
+    <div class='field captcha'>
+      <div class="g-recaptcha" data-sitekey="<%= Refinery::Inquiries.recaptcha_site_key %>"></div>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit t('.send') %>
     <%= link_to t('.privacy_policy'), "/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %>

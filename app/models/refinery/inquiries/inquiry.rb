@@ -5,7 +5,7 @@ module Refinery
   module Inquiries
     class Inquiry < Refinery::Core::BaseModel
 
-      if Inquiries.config.filter_spam
+      if Inquiries.filter_spam
         filters_spam message_field:    :message,
                      email_field:      :email,
                      author_field:     :name,
@@ -20,6 +20,9 @@ module Refinery
       validates :message, presence: true
 
       default_scope { order('created_at DESC') }
+
+      scope :ham, -> { where(spam: false) }
+      scope :spam, -> { where(spam: true) }
 
       def self.latest(number = 7, include_spam = false)
         include_spam ? limit(number) : ham.limit(number)

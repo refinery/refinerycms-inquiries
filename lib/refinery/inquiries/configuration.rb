@@ -8,7 +8,7 @@ module Refinery
     config_accessor :send_notifications_for_inquiries_marked_as_spam
     config_accessor :from_name
     config_accessor :post_path, :page_path_new, :page_path_thank_you
-    config_accessor :filter_spam
+    config_accessor :filter_spam, :recaptcha_site_key
 
     self.show_contact_privacy_link = true
     self.show_phone_number_field = true
@@ -19,5 +19,10 @@ module Refinery
     self.page_path_new = "/contact"
     self.page_path_thank_you = "/contact/thank_you"
     self.filter_spam = true
+    self.recaptcha_site_key = nil
+
+    def self.filter_spam
+      config.filter_spam && config.recaptcha_site_key.blank?
+    end
   end
 end

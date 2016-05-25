@@ -48,6 +48,29 @@ To do this, include it in your `application.css` manifest file and insert:
 //= require refinery/inquiries/inquiries
 ```
 
+## How do I enable reCAPTCHA support?
+
+Note: enabling this feature disables the built in spam filtering.
+
+Just add your reCAPTCHA "Site key" in `config/initializers/refinery/inquiries.rb`:
+
+```ruby
+config.recaptcha_site_key = "do NOT put your secret key here"
+```
+
+Inside `config/secrets.yml`, the file for application secrets in Rails applications,
+place the secret key:
+
+```yml
+development:
+  recaptcha_secret_key: "This IS your secret key"
+
+production:
+  recaptcha_secret_key: <%= ENV["RECAPTCHA_SECRET_KEY"] %>
+```
+
+Note: This expects you to set your secret key via `ENV` in your production environment.
+
 ## How do I set up email to be sent from GMail, SendGrid or other service?
 
 Inquiries uses `actionmailer` under the hood so you can refer to [Rails Action Mailer guide](http://guides.rubyonrails.org/action_mailer_basics.html). For example to use GMail see [Action Mailer Configuration for GMail](http://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration-for-gmail) guide.
@@ -62,7 +85,7 @@ Go into your 'Inquiries' tab in the Refinery admin area and click on "Edit confi
 
 ## Help! How do I send emails from no-reply@domain.com.au instead of no-reply@com.au?
 
-Simply set the following in config/application.rb:
+Simply set the following in `config/application.rb`:
 
 ```ruby
 config.action_dispatch.tld_length = 2
