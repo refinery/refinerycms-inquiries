@@ -5,6 +5,8 @@ fr:
         title: Requêtes
         description: Fournit un formulaire de contact et gère les demandes de contacts.
     inquiries:
+      spam_filter:
+        captcha_invalid: "Désolé, nous ne pouvons pas vérifier que vous n'êtes pas un robot"
       config:
         from_name: "%{name} - %{site_name}"
       inquiries:
