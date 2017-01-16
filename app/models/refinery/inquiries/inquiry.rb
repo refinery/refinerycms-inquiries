@@ -1,5 +1,4 @@
 require 'refinery/core/base_model'
-require 'filters_spam'
 
 module Refinery
   module Inquiries
