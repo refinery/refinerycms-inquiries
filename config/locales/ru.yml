@@ -5,6 +5,8 @@ ru:
         title: Запросы
         description: Предоставляет форму обратной связи и хранит запросы
     inquiries:
+      spam_filter:
+        captcha_invalid: К сожалению, мы не смогли подтвердить, что вы не робот
       config:
         from_name: "%{name} - %{site_name}"
       inquiries:
