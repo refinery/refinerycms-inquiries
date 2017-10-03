@@ -2,12 +2,20 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'refinerycms', ["~> 3.0", ">= 3.0.3"]
-gem 'refinerycms-settings', "~> 3.0"
+git "https://github.com/refinery/refinerycms", branch: "master" do
+  gem "refinerycms"
+
+  group :test do
+    gem "refinerycms-testing"
+  end
+end
+
+group :development do
+  gem 'listen'
+end
 
 group :test do
-  gem 'refinerycms-testing', ["~> 3.0", ">= 3.0.3"]
-  gem 'capybara-email', '~> 2.4.0'
+  gem 'capybara-email', '~> 2.5'
   gem 'poltergeist'
 end
 
@@ -29,8 +37,11 @@ if !ENV['TRAVIS'] || ENV['DB'] == 'postgresql'
 end
 
 # Refinery/rails should pull in the proper versions of these
-gem 'sass-rails'
-gem 'coffee-rails'
+group :assets do
+  gem "sass-rails"
+  gem "coffee-rails"
+  gem "uglifier"
+end
 
 # Load local gems according to Refinery developer preference.
 if File.exist? local_gemfile = File.expand_path('../.gemfile', __FILE__)

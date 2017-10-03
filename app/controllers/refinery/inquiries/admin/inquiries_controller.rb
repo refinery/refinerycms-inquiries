@@ -27,7 +27,7 @@ module Refinery
           find_inquiry
           @inquiry.toggle!(:spam)
 
-          redirect_to :back
+          redirect_back fallback_location: root_path
         end
 
         protected

@@ -16,7 +16,7 @@ module Refinery
           unless request.xhr? or from_dialog?
             redirect_back_or_default(refinery.inquiries_admin_inquiries_path)
           else
-            render text: "<script type='text/javascript'>parent.window.location = '#{refinery.inquiries_admin_inquiries_path}';</script>"
+            render html: "<script type='text/javascript'>parent.window.location = '#{refinery.inquiries_admin_inquiries_path}';</script>".html_safe
           end
         end
 

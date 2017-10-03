@@ -1,4 +1,4 @@
-class CreateInquiries < ActiveRecord::Migration
+class CreateInquiries < ActiveRecord::Migration[4.2]
   def up
     unless ::Refinery::Inquiries::Inquiry.table_exists?
       create_table :refinery_inquiries_inquiries, :force => true do |t|
