@@ -7,6 +7,7 @@ module Refinery
       before do
         FactoryGirl.create(:page, :link_url => Refinery::Inquiries.page_path_new)
 
+        allow(ActionMailer::Base).to receive(:delivery_method).and_return(:test)
         allow(Refinery::Inquiries::Setting).to receive(:notification_recipients)
           .and_return("rspec@refinerycms.com")
 
