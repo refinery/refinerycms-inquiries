@@ -40,6 +40,7 @@ fr:
             to: À
             from: De
             click_to_email: Cliquer ici pour enyoyer un e-mail à cette adresse
+            company: Compagnie
             phone: Téléphone
             date: Date
             message: Message
@@ -67,6 +68,7 @@ fr:
           inquiry_ends: --- Fin des requêtes ---
           from: De
           email: E-mail
+          company: Compagnie
           phone: Téléphone
           message: Message
           closing_line: Cordialement
@@ -78,5 +80,6 @@ fr:
       refinery/inquiries/inquiry:
         name: Nom
         email: E-mail
+        company: Compagnie
         phone: Téléphone
         message: Message
