@@ -7,7 +7,7 @@ module Refinery
         refinery_login
 
         let!(:inquiry) do
-          FactoryGirl.create(:inquiry,
+          FactoryBot.create(:inquiry,
             :name => "David Jones",
             :email => "dave@refinerycms.com",
             :message => "Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")

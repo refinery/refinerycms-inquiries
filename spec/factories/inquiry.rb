@@ -1,6 +1,6 @@
-require "factory_girl"
+require "factory_bot"
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :inquiry, class: "Refinery::Inquiries::Inquiry" do
     name "Refinery"
     email "refinery@example.com"
