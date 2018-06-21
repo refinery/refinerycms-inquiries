@@ -46,7 +46,7 @@
         <%= @inquiry.name %> [<%= mail_to @inquiry.email, @inquiry.email, {:title => t('.click_to_email')} %>]
       </td>
     </tr>
-    <% unless @inquiry.company.blank? %>
+    <% if @inquiry.company.present? %>
       <tr>
         <td>
           <strong><%= t('.company') %></strong>
