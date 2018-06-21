@@ -4,7 +4,7 @@ module Refinery
 
       def confirmation(inquiry, request)
         @inquiry, @request = inquiry, request
-        mail :subject   => Refinery::Inquiries::Setting.confirmation_subject(Globalize.locale),
+        mail :subject   => Refinery::Inquiries::Setting.confirmation_subject(Mobility.locale),
              :to        => inquiry.email,
              :from      => from_info,
              :reply_to  => Refinery::Inquiries::Setting.notification_recipients.split(',').first

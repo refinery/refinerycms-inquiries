@@ -15,7 +15,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara-email', '~> 2.5'
+  gem 'capybara-email', '~> 3.0'
   gem 'poltergeist'
 end
 
