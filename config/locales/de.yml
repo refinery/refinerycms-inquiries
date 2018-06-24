@@ -38,6 +38,7 @@ de:
             to: An
             from: Von
             click_to_email: Klicken, um eine E-Mail an diese Adresse zu schicken
+            company: Firma
             phone: Telefon
             date: Datum
             message: Nachricht
@@ -65,6 +66,7 @@ de:
           inquiry_ends: --- Ende der Kontaktanfrage ---
           from: Von
           email: E-Mail
+          company: Firma
           phone: Telefon
           message: Nachricht
           closing_line: Mit freundlichen Grüßen
@@ -76,5 +78,6 @@ de:
       refinery/inquiries/inquiry:
         name: Name
         email: E-Mail
+        company: Firma
         phone: Telefon
         message: Nachricht

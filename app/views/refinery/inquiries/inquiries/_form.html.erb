@@ -11,6 +11,14 @@
       :placeholder => (t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
   </div>
 
+  <% if Refinery::Inquiries.show_company_field %>
+    <div class="field">
+      <%= f.label :company, :class => 'placeholder-fallback' %>
+      <%= f.text_field :company, :class => 'text company',
+        :placeholder => (t('company', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :email, :class => 'placeholder-fallback required' %>
     <%= f.email_field :email, :class => 'text email', :required => 'required',

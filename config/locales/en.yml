@@ -40,6 +40,7 @@ en:
             to: To
             from: From
             click_to_email: Click to email this address
+            company: Company
             phone: Phone
             date: Date
             message: Message
@@ -65,6 +66,7 @@ en:
           inquiry_starts: --- inquiry starts ---
           inquiry_ends: --- inquiry ends ---
           from: From
+          company: Company
           email: Email
           phone: Phone
           message: Message
@@ -76,6 +78,7 @@ en:
     attributes:
       refinery/inquiries/inquiry:
         name: Name
+        company: Company
         email: Email
         phone: Phone
         message: Message

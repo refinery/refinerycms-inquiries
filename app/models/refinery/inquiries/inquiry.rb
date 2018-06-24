@@ -9,7 +9,7 @@ module Refinery
         filters_spam message_field:    :message,
                      email_field:      :email,
                      author_field:     :name,
-                     other_fields:     [:phone],
+                     other_fields:     [:phone, :company],
                      extra_spam_words: %w()
       end
 

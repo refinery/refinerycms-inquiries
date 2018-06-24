@@ -51,6 +51,7 @@ module Refinery
           expect(page).to have_content(email_error_message)
           expect(page).to have_content(message_error_message)
           expect(page).to have_no_content("Phone can't be blank")
+          expect(page).to have_no_content("Company can't be blank")
 
           expect(Refinery::Inquiries::Inquiry.count).to eq(0)
         end
@@ -142,6 +143,34 @@ module Refinery
 
             expect(page).to have_selector("label", :text => 'Phone')
             expect(page).to have_selector("#inquiry_phone")
+          end
+        end
+      end
+
+      describe "company" do
+        context "when show company setting set to false" do
+          before(:each) do
+            allow(Refinery::Inquiries.config).to receive(:show_company_field).and_return(false)
+          end
+
+          it "won't show company" do
+            visit refinery.inquiries_new_inquiry_path
+
+            expect(page).to have_no_selector("label", :text => 'Company')
+            expect(page).to have_no_selector("#inquiry_company")
+          end
+        end
+
+        context "when show company setting set to true" do
+          before(:each) do
+            allow(Refinery::Inquiries.config).to receive(:show_company_field).and_return(true)
+          end
+
+          it "shows the company" do
+            visit refinery.inquiries_new_inquiry_path
+
+            expect(page).to have_selector("label", :text => 'Company')
+            expect(page).to have_selector("#inquiry_company")
           end
         end
       end

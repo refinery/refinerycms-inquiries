@@ -5,6 +5,9 @@
 <%=raw t('.inquiry_starts') %>
 
 <%=raw t('.from') %>: <%= @inquiry.name %>
+<% if Refinery::Inquiries.show_company_field == true %>
+<%=raw t('.company') %>: <%= @inquiry.company %>
+<% end %>
 <%=raw t('.email') %>: <%= @inquiry.email %>
 <%=raw t('.phone') %>: <%= @inquiry.phone %>
 <%=raw t('.message') %>:

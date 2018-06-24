@@ -41,7 +41,7 @@ module Refinery
       private
 
       def permitted_inquiry_params
-        [:name, :phone, :message, :email]
+        [:name, :company, :phone, :message, :email]
       end
 
       def inquiry_saved_and_validated?
