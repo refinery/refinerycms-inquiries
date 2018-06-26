@@ -18,6 +18,9 @@ module Refinery
         @inquiry = Inquiry.new(inquiry_params)
 
         if inquiry_saved_and_validated?
+          if Refinery::Inquiries.show_flash_notice
+            flash[:notice] = Refinery::Inquiries::Setting.flash_notice
+          end
           redirect_to refinery.thank_you_inquiries_inquiries_path
         else
           render action: 'new'

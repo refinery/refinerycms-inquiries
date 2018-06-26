@@ -4,7 +4,7 @@ module Refinery
       class SettingsController < Refinery::AdminController
 
         before_action :find_setting, :only => [:edit, :update]
-        after_action :save_subject_for_confirmation,
+        after_action :save_subject_for_confirmation, :save_flash_notice,
           :save_message_for_confirmation, :save_notification_recipients, :only => :update
 
         def edit
@@ -50,12 +50,19 @@ module Refinery
           end
         end
 
+        def save_flash_notice
+          if setting_params.include?('notice')
+            Refinery::Inquiries::Setting.flash_notice = setting_params[:notice]
+          end
+        end
+
       private
 
         def setting_params
           params.require(:setting).permit(:value,
             subject: Refinery::I18n.frontend_locales,
-            message: Refinery::I18n.frontend_locales)
+            message: Refinery::I18n.frontend_locales,
+            notice: Refinery::I18n.frontend_locales)
         end
 
       end
