@@ -40,6 +40,22 @@ module Refinery
           end
         end
 
+        def flash_notice(locale='en')
+          find_or_set(:"inquiry_flash_notice_#{locale}",
+            "Thank you very much for your inquiry. We will get back to you shortly.",
+            scoping: "inquiries"
+          )
+        end
+
+        def flash_notice=(locales_notices)
+          locales_notices.each do |locale, notice|
+            set(:"inquiry_flash_notice_#{locale}", {
+              value: notice,
+              scoping: "inquiries"
+            })
+          end
+        end
+
         def notification_recipients
           recipients = ((Role[:refinery].users.first.email rescue nil) if defined?(Role)).to_s
           find_or_set(:inquiry_notification_recipients, recipients, scoping: "inquiries")
