@@ -4,26 +4,27 @@
     <span class="preview"><%= truncate(strip_tags(sanitize(inquiry.message)), :length => 60) -%></span>
   </span>
   <span class='actions'>
-    <%= link_to refinery_icon_tag('delete.png'), 
-                refinery.inquiries_admin_inquiry_path(inquiry),
-                :class => "cancel confirm-delete",
-                :title => t('refinery.inquiries.admin.inquiries.delete'),
-                :data => {
-                  :confirm => t('refinery.admin.delete.message', :title => inquiry.name)
-                },
-                :method => :delete -%>
+    <%= action_icon :delete,
+                    refinery.inquiries_admin_inquiry_path(inquiry),
+                    t('refinery.inquiries.admin.inquiries.delete'),
+                    :class => "cancel confirm-delete",
+                    :data => {
+                        :confirm => t('refinery.admin.delete.message', :title => inquiry.name)
+                    },
+                    :method => :delete -%>
 
-    <%= link_to refinery_icon_tag('zoom.png'), refinery.inquiries_admin_inquiry_path(inquiry),
-                :title => t('.read_inquiry') -%>
+      <%= action_icon :preview,
+                      refinery.inquiries_admin_inquiry_path(inquiry),
+                      t('.read_inquiry') -%>
 
-    <% if inquiry.spam? %>
-      <%= link_to refinery_icon_tag('email.png'),
-                  refinery.toggle_spam_inquiries_admin_inquiry_path(inquiry),
-                  :title => t('.mark_as_ham') -%>
+      <% if inquiry.spam? %>
+      <%= action_icon :email,
+                      refinery.toggle_spam_inquiries_admin_inquiry_path(inquiry),
+                      t('.mark_as_spam') -%>
     <% else %>
-      <%= link_to refinery_icon_tag('bin_closed.png'),
-                  refinery.toggle_spam_inquiries_admin_inquiry_path(inquiry),
-                  :title => t('.mark_as_spam') -%>
+      <%= action_icon :spam,
+                      refinery.toggle_spam_inquiries_admin_inquiry_path(inquiry),
+                      t('.mark_as_spam') -%>
     <% end %>
   </span>
 </li>
