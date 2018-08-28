@@ -13,9 +13,10 @@
                     },
                     :method => :delete -%>
 
-      <%= action_icon :preview,
+      <%= action_icon :show,
                       refinery.inquiries_admin_inquiry_path(inquiry),
-                      t('.read_inquiry') -%>
+                      t('.read_inquiry'),
+                      class: 'preview_icon' -%>
 
       <% if inquiry.spam? %>
       <%= action_icon :email,
