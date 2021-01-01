@@ -59,7 +59,7 @@ lv:
       inquiry_mailer:
         notification:
           greeting: Sveiki
-          you_recieved_new_inquiry: Jūs nupat saņēmāt jaunu pieprasījumu savā mājaslapā.
+          you_received_new_inquiry: Jūs nupat saņēmāt jaunu pieprasījumu savā mājaslapā.
           inquiry_starts: --- pieprasījuma sākums ---
           inquiry_ends: --- pieprasījuma beigas ---
           from: 'No'

@@ -16,7 +16,8 @@ end
 
 group :test do
   gem 'capybara-email', '~> 3.0'
-  gem 'poltergeist'
+  gem 'selenium-webdriver', require: false
+  gem 'puma'
 end
 
 # Database Configuration

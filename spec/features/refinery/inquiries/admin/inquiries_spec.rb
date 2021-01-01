@@ -3,17 +3,20 @@ require "spec_helper"
 module Refinery
   module Inquiries
     module Admin
+
       describe Inquiry, :type => :feature do
         refinery_login
 
-        let!(:inquiry) do
+        let(:inquiry) do
           FactoryBot.create(:inquiry,
-            :name => "David Jones",
-            :email => "dave@refinerycms.com",
-            :message => "Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
+                            :name => "David Jones",
+                            :email => "dave@refinerycms.com",
+                            :message => "Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
         end
 
-        context "when no" do
+        let(:delete_first_inquiry){ -> { find_link("Remove this inquiry forever", match: :first).click } }
+
+        context "when there are no inquiries" do
           before { Refinery::Inquiries::Inquiry.destroy_all }
 
           context "inquiries" do
@@ -50,62 +53,65 @@ module Refinery
           end
         end
 
-        describe "index" do
-          it "shows inquiry list" do
-            visit refinery.inquiries_admin_inquiries_path
+        context "when there are inquiries" do
+          before { inquiry }
 
-            expect(page).to have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
-          end
-        end
-
-        describe "show" do
-          it "shows inquiry details" do
-            visit refinery.inquiries_admin_inquiries_path
-
-            click_link "Read the inquiry"
-
-            expect(page).to have_content("From David Jones [dave@refinerycms.com]")
-            expect(page).to have_content("Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
-            within "#actions" do
-              expect(page).to have_content("Age")
-              expect(page).to have_content("Back to all Inquiries")
-              expect(page).to have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries']")
-              expect(page).to have_content("Remove this inquiry forever")
-              expect(page).to have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries/#{inquiry.id}']")
+          describe "index" do
+            it "shows a list of inquiries" do
+              visit refinery.inquiries_admin_inquiries_path
+              expect(page).to have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
             end
           end
-        end
 
-        describe "destroy" do
-          it "removes inquiry" do
-            visit refinery.inquiries_admin_inquiries_path
+          describe "show" do
+            it "shows inquiry details" do
+              visit refinery.inquiries_admin_inquiries_path
+              find_link("Read the inquiry", match: :first).click
 
-            click_link "Remove this inquiry forever"
-
-            expect(page).to have_content("'#{inquiry.name}' was successfully removed.")
-            expect(Refinery::Inquiries::Inquiry.count).to eq(0)
-          end
-        end
-
-        describe "spam" do
-          it "moves inquiry to spam" do
-            visit refinery.inquiries_admin_inquiries_path
-
-            click_link "Mark as spam"
-
-            within "#actions" do
-              expect(page).to have_content("Spam (1)")
-              click_link "Spam (1)"
+              expect(page).to have_content("From David Jones [dave@refinerycms.com]")
+              expect(page).to have_content("Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
+              within "#actions" do
+                expect(page).to have_content("Age")
+                expect(page).to have_content("Back to all Inquiries")
+                expect(page).to have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries']")
+                expect(page).to have_content("Remove this inquiry forever")
+                expect(page).to have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries/#{inquiry.id}']")
+              end
             end
+          end
 
-            expect(page).to have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
+          describe "destroy" do
+
+
+            it "removes inquiry" do
+              visit refinery.inquiries_admin_inquiries_path
+
+              expect(delete_first_inquiry).to change(Refinery::Inquiries::Inquiry, :count).by(-1)
+              expect(page).to have_content("'#{inquiry.name}' was successfully removed.")
+
+            end
+          end
+
+          describe "spam" do
+            it "moves inquiry to spam" do
+              visit refinery.inquiries_admin_inquiries_path
+
+              find_link("Mark as spam", match: :first).click
+
+              within "#actions" do
+                expect(page).to have_content("Spam (1)")
+                click_link "Spam (1)"
+              end
+
+              expect(page).to have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
+            end
           end
         end
 
         describe "update who gets notified" do
           it "sets receiver", :js => true do
             visit refinery.inquiries_admin_inquiries_path
-            find("#update_notified").trigger('click')
+            find_link("update_notified").click
 
             within_frame "dialog_iframe" do
               fill_in "setting_value", :with => "phil@refinerycms.com"
@@ -120,7 +126,7 @@ module Refinery
           it "sets message", :js => true do
             visit refinery.inquiries_admin_inquiries_path
 
-            find("#edit_confirmation_email").trigger('click')
+            find_link("edit_confirmation_email").click
 
             within_frame "dialog_iframe" do
               fill_in "setting[subject[en]]", :with => "subject"

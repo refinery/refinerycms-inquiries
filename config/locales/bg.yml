@@ -59,7 +59,7 @@ bg:
     inquiry_mailer:
       notification:
         greeting: Здравейте
-        you_recieved_new_inquiry: Току що получихте ново запитване през Вашия уебсайт.
+        you_received_new_inquiry: Току що получихте ново запитване през Вашия уебсайт.
         inquiry_starts: --- Начало на запитването ---
         inquiry_ends: --- Край на запитването ---
         from: От

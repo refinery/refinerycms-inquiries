@@ -61,7 +61,7 @@ de:
       inquiry_mailer:
         notification:
           greeting: Hallo
-          you_recieved_new_inquiry: Sie haben eine neue Kontaktanfrage über Ihre Webseite erhalten.
+          you_received_new_inquiry: Sie haben eine neue Kontaktanfrage über Ihre Webseite erhalten.
           inquiry_starts: --- Anfang der Kontaktanfrage ---
           inquiry_ends: --- Ende der Kontaktanfrage ---
           from: Von
