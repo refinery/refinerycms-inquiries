@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name            = %q{refinerycms-inquiries}
-  s.version         = %q{4.0.0}
+  s.version         = %q{4.1.0}
   s.summary         = %q{Inquiry handling functionality for the Refinery CMS project.}
   s.description     = %q{Inquiry handling functionality extracted from Refinery CMS to allow you to have a contact form and manage inquiries in the Refinery backend.}
   s.homepage        = %q{http://refinerycms.com}
@@ -14,7 +14,8 @@ Gem::Specification.new do |s|
   s.files           = `git ls-files`.split("\n")
   s.test_files      = `git ls-files -- spec/*`.split("\n")
 
-  s.add_dependency  'refinerycms-core',     '~> 4.0'
+  s.add_dependency  'refinerycms-core',     '~> 4.1'
+  s.add_dependency 'rails', '~>6.0.0'
   s.add_dependency  'mobility'
   s.add_dependency  'refinerycms-settings', '~> 4.0'
   s.add_dependency  'filters_spam',         '~> 0.2'

@@ -61,7 +61,7 @@ es:
       inquiry_mailer:
         notification:
           greeting: Hola
-          you_recieved_new_inquiry: Has recibido una nueva consulta en tu web.
+          you_received_new_inquiry: Has recibido una nueva consulta en tu web.
           inquiry_starts: --- comienzo de la consulta ---
           inquiry_ends: --- fin de la consulta ---
           from: De

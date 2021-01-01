@@ -60,7 +60,7 @@ pl:
       inquiry_mailer:
         notification:
           greeting: Cześć
-          you_recieved_new_inquiry: Z Twojej strony ktoś właśnie nowe zapytanie.
+          you_received_new_inquiry: Z Twojej strony ktoś właśnie nowe zapytanie.
           inquiry_starts: --- początek zapytania ---
           inquiry_ends: --- koniec zapytania ---
           from: Od

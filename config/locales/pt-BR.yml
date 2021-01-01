@@ -60,7 +60,7 @@ pt-BR:
       inquiry_mailer:
         notification:
           greeting: Olá
-          you_recieved_new_inquiry: Você recebeu um novo contato pelo website.
+          you_received_new_inquiry: Você recebeu um novo contato pelo website.
           inquiry_starts: --- começo da mensagem ---
           inquiry_ends: --- fim da mensagem ---
           from: De

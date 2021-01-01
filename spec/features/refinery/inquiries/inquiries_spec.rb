@@ -2,7 +2,18 @@ require "spec_helper"
 
 module Refinery
   module Inquiries
+
     describe "inquiries", :type => :feature do
+
+      making_an_inquiry = -> (name, email, message) {
+        ensure_on(refinery.inquiries_new_inquiry_path)
+        fill_in "Name", :with => name
+        fill_in "Email", :with => email
+        fill_in "Message", :with => message
+        click_button "Send message"
+      }
+
+
       before do
         # load in seeds we use in migration
         Refinery::Inquiries::Engine.load_seed
@@ -13,15 +24,10 @@ module Refinery
         expect(page).to have_selector("form[action='#{refinery.inquiries_inquiries_path}']")
       end
 
-      context "when valid data" do
+      context "when given valid data" do
         it "is successful" do
           visit refinery.inquiries_new_inquiry_path
-
-          fill_in "Name", :with => "Ugis Ozols"
-          fill_in "Email", :with => "ugis.ozols@refinerycms.com"
-          fill_in "Message", :with => "Hey, I'm testing!"
-          click_button "Send message"
-
+          expect { making_an_inquiry("Ugis Ozols", "ugis.ozols@refinerycms.com", "Hey, I'm testing!") }.to change(Refinery::Inquiries::Inquiry, :count).by(1)
           expect(page.current_path).to eq(refinery.thank_you_inquiries_inquiries_path)
           expect(page).to have_content("Thank You")
 
@@ -30,147 +36,126 @@ module Refinery
             expect(page).to have_content("Return to the home page")
             expect(page).to have_selector("a[href='/']")
           end
-
-          expect(Refinery::Inquiries::Inquiry.count).to eq(1)
         end
       end
 
-      context "when invalid data" do
-        let(:name_error_message) { "Name can't be blank" }
-        let(:email_error_message) { "Email is invalid" }
-        let(:message_error_message) { "Message can't be blank" }
+      context "when given invalid data" do
 
-        it "is not successful" do
+        it "does not save the inquiry" do
           visit refinery.inquiries_new_inquiry_path
-
-          click_button "Send message"
-
-          expect(page.current_path).to eq(refinery.inquiries_inquiries_path)
-          expect(page).to have_content("There were problems with the following fields")
-          expect(page).to have_content(name_error_message)
-          expect(page).to have_content(email_error_message)
-          expect(page).to have_content(message_error_message)
-          expect(page).to have_no_content("Phone can't be blank")
-          expect(page).to have_no_content("Company can't be blank")
-
-          expect(Refinery::Inquiries::Inquiry.count).to eq(0)
+          expect{ making_an_inquiry('my name 😀 ', 'jun!k@ok', '☄︎☀︎☽ ') }.not_to change(Refinery::Inquiries::Inquiry, :count)
+          expect(page).to have_content("Email is invalid")
         end
 
-        it "displays the error messages in the same order as the fields" do
-          visit refinery.inquiries_new_inquiry_path
-
-          click_button "Send message"
-
-          expect(page).to have_content(/#{name_error_message}.+#{email_error_message}.+#{message_error_message}/m)
-        end
       end
+      describe 'configuration' do
+        describe "privacy" do
+          context "when 'show contact privacy link' setting is false" do
+            before(:each) do
+              allow(Refinery::Inquiries.config).to receive(:show_contact_privacy_link).and_return(false)
+            end
 
-      describe "privacy" do
-        context "when show contact privacy link setting set to false" do
-          before(:each) do
-            allow(Refinery::Inquiries.config).to receive(:show_contact_privacy_link).and_return(false)
+            it "won't show link" do
+              visit refinery.inquiries_new_inquiry_path
+
+              expect(page).to have_no_content("We value your privacy")
+              expect(page).to have_no_selector("a[href='/privacy-policy']")
+            end
           end
 
-          it "won't show link" do
-            visit refinery.inquiries_new_inquiry_path
+          context "when' show contact privacy link' setting is true" do
+            before(:each) do
+              allow(Refinery::Inquiries.config).to receive(:show_contact_privacy_link).and_return(true)
+            end
 
-            expect(page).to have_no_content("We value your privacy")
-            expect(page).to have_no_selector("a[href='/privacy-policy']")
-          end
-        end
+            it "shows the link" do
+              visit refinery.inquiries_new_inquiry_path
 
-        context "when show contact privacy link setting set to true" do
-          before(:each) do
-            allow(Refinery::Inquiries.config).to receive(:show_contact_privacy_link).and_return(true)
-          end
-
-          it "shows the link" do
-            visit refinery.inquiries_new_inquiry_path
-
-            expect(page).to have_content("We value your privacy")
-            expect(page).to have_selector("a[href='/privacy-policy']")
-          end
-        end
-      end
-
-      describe "palceholders" do
-        context "when show placeholders setting set to false" do
-          before(:each) do
-            allow(Refinery::Inquiries.config).to receive(:show_placeholders).and_return(false)
-          end
-
-          it "won't show placeholders" do
-            visit refinery.inquiries_new_inquiry_path
-
-            expect(page).to have_no_selector("input[placeholder]")
+              expect(page).to have_content("We value your privacy")
+              expect(page).to have_selector("a[href='/privacy-policy']")
+            end
           end
         end
 
-        context "when show placeholders setting set to true" do
-          before(:each) do
-            allow(Refinery::Inquiries.config).to receive(:show_placeholders).and_return(true)
+        describe "placeholders" do
+          context "when show placeholders setting set to false" do
+            before(:each) do
+              allow(Refinery::Inquiries.config).to receive(:show_placeholders).and_return(false)
+            end
+
+            it "won't show placeholders" do
+              visit refinery.inquiries_new_inquiry_path
+
+              expect(page).to have_no_selector("input[placeholder]")
+            end
           end
 
-          it "shows the placeholders" do
-            visit refinery.inquiries_new_inquiry_path
+          context "when show placeholders setting set to true" do
+            before(:each) do
+              allow(Refinery::Inquiries.config).to receive(:show_placeholders).and_return(true)
+            end
 
-            expect(page).to have_selector("input[placeholder]")
-          end
-        end
-      end
+            it "shows the placeholders" do
+              visit refinery.inquiries_new_inquiry_path
 
-      describe "phone number" do
-        context "when show phone numbers setting set to false" do
-          before(:each) do
-            allow(Refinery::Inquiries.config).to receive(:show_phone_number_field).and_return(false)
-          end
-
-          it "won't show phone number" do
-            visit refinery.inquiries_new_inquiry_path
-
-            expect(page).to have_no_selector("label", :text => 'Phone')
-            expect(page).to have_no_selector("#inquiry_phone")
-          end
-        end
-
-        context "when show phone numbers setting set to true" do
-          before(:each) do
-            allow(Refinery::Inquiries.config).to receive(:show_phone_number_field).and_return(true)
-          end
-
-          it "shows the phone number" do
-            visit refinery.inquiries_new_inquiry_path
-
-            expect(page).to have_selector("label", :text => 'Phone')
-            expect(page).to have_selector("#inquiry_phone")
-          end
-        end
-      end
-
-      describe "company" do
-        context "when show company setting set to false" do
-          before(:each) do
-            allow(Refinery::Inquiries.config).to receive(:show_company_field).and_return(false)
-          end
-
-          it "won't show company" do
-            visit refinery.inquiries_new_inquiry_path
-
-            expect(page).to have_no_selector("label", :text => 'Company')
-            expect(page).to have_no_selector("#inquiry_company")
+              expect(page).to have_selector("input[placeholder]")
+            end
           end
         end
 
-        context "when show company setting set to true" do
-          before(:each) do
-            allow(Refinery::Inquiries.config).to receive(:show_company_field).and_return(true)
+        describe "phone number" do
+          context "when 'show phone numbers' setting is false" do
+            before(:each) do
+              allow(Refinery::Inquiries.config).to receive(:show_phone_number_field).and_return(false)
+            end
+
+            it "won't have an input field for phone number" do
+              visit refinery.inquiries_new_inquiry_path
+
+              expect(page).to have_no_selector("label", :text => 'Phone')
+              expect(page).to have_no_selector("#inquiry_phone")
+            end
           end
 
-          it "shows the company" do
-            visit refinery.inquiries_new_inquiry_path
+          context "when 'show phone numbers' setting is true" do
+            before(:each) do
+              allow(Refinery::Inquiries.config).to receive(:show_phone_number_field).and_return(true)
+            end
 
-            expect(page).to have_selector("label", :text => 'Company')
-            expect(page).to have_selector("#inquiry_company")
+            it "there is an input field for phone number" do
+              visit refinery.inquiries_new_inquiry_path
+
+              expect(page).to have_selector("label", :text => 'Phone')
+              expect(page).to have_selector("#inquiry_phone")
+            end
+          end
+        end
+
+        describe "company" do
+          context "when 'show company' setting is false" do
+            before(:each) do
+              allow(Refinery::Inquiries.config).to receive(:show_company_field).and_return(false)
+            end
+
+            it "won't show company" do
+              visit refinery.inquiries_new_inquiry_path
+
+              expect(page).to have_no_selector("label", :text => 'Company')
+              expect(page).to have_no_selector("#inquiry_company")
+            end
+          end
+
+          context "when 'show company' setting is true" do
+            before(:each) do
+              allow(Refinery::Inquiries.config).to receive(:show_company_field).and_return(true)
+            end
+
+            it "shows the company" do
+              visit refinery.inquiries_new_inquiry_path
+
+              expect(page).to have_selector("label", :text => 'Company')
+              expect(page).to have_selector("#inquiry_company")
+            end
           end
         end
       end

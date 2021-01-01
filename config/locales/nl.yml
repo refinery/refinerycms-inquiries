@@ -59,7 +59,7 @@ nl:
       inquiry_mailer:
         notification:
           greeting: Hallo
-          you_recieved_new_inquiry: Je hebt een nieuwe vraag ontvangen via je website.
+          you_received_new_inquiry: Je hebt een nieuwe vraag ontvangen via je website.
           inquiry_starts: --- begin van de vraag ---
           inquiry_ends: --- einde van de vraag ---
           from: Van

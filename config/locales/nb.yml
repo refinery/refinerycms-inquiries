@@ -59,7 +59,7 @@ nb:
       inquiry_mailer:
         notification:
           greeting: Hei
-          you_recieved_new_inquiry: Du har mottatt en ny forespørsel på nettsiden din.
+          you_received_new_inquiry: Du har mottatt en ny forespørsel på nettsiden din.
           inquiry_starts: --- Start på forespørsel ---
           inquiry_ends: --- Slutt på forespørsel ---
           from: Fra

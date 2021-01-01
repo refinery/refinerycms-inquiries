@@ -59,7 +59,7 @@ sv:
       inquiry_mailer:
         notification:
           greeting: Hej!
-          you_recieved_new_inquiry: Du har just mottagit en ny förfrågan på din webbplats.
+          you_received_new_inquiry: Du har just mottagit en ny förfrågan på din webbplats.
           inquiry_starts: --- förfrågan börjar ---
           inquiry_ends: --- förfrågan slutar ---
           from: Från
