@@ -1,5 +1,6 @@
 require 'httpclient'
 require 'uri'
+require 'English'
 
 module Refinery
   module Inquiries
@@ -82,7 +83,7 @@ module Refinery
         begin
           InquiryMailer.notification(@inquiry, @request).deliver_now
         rescue
-          Rails.logger.warn "There was an error delivering an inquiry notification.\n#{$!}\n"
+          Rails.logger.warn "There was an error delivering an inquiry notification.\n#{$ERROR_INFO}"
         end
       end
 
@@ -91,7 +92,7 @@ module Refinery
           begin
             InquiryMailer.confirmation(@inquiry, @request).deliver_now
           rescue
-            Rails.logger.warn "There was an error delivering an inquiry confirmation:\n#{$!}\n"
+            Rails.logger.warn "There was an error delivering an inquiry confirmation:\n#{$ERROR_INFO}"
           end
         end
       end
