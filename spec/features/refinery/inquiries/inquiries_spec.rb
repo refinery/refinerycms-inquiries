@@ -4,16 +4,6 @@ module Refinery
   module Inquiries
 
     describe "inquiries", :type => :feature do
-
-      making_an_inquiry = -> (name, email, message) {
-        ensure_on(refinery.inquiries_new_inquiry_path)
-        fill_in "Name", :with => name
-        fill_in "Email", :with => email
-        fill_in "Message", :with => message
-        click_button "Send message"
-      }
-
-
       before do
         # load in seeds we use in migration
         Refinery::Inquiries::Engine.load_seed
@@ -43,11 +33,12 @@ module Refinery
 
         it "does not save the inquiry" do
           visit refinery.inquiries_new_inquiry_path
-          expect{ making_an_inquiry('my name 😀 ', 'jun!k@ok', '☄︎☀︎☽ ') }.not_to change(Refinery::Inquiries::Inquiry, :count)
+          expect { making_an_inquiry('my name 😀 ', 'jun!k@ok', '☄︎☀︎☽ ') }.not_to change(Refinery::Inquiries::Inquiry, :count)
           expect(page).to have_content("Email is invalid")
         end
 
       end
+
       describe 'configuration' do
         describe "privacy" do
           context "when 'show contact privacy link' setting is false" do
@@ -73,6 +64,18 @@ module Refinery
 
               expect(page).to have_content("We value your privacy")
               expect(page).to have_selector("a[href='/privacy-policy']")
+            end
+
+            context 'when privacy_link has been set to another page' do
+              before(:each) do
+                allow(Refinery::Inquiries.config).to receive(:privacy_link).and_return('/corporate/privacy')
+              end
+
+              it "has a link to the configured page" do
+                visit refinery.inquiries_new_inquiry_path
+
+                expect(page).to have_selector("a[href='/corporate/privacy']")
+              end
             end
           end
         end
@@ -162,3 +165,4 @@ module Refinery
     end
   end
 end
+

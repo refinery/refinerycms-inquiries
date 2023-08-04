@@ -14,7 +14,7 @@ module Refinery
                             :message => "Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
         end
 
-        let(:delete_first_inquiry){ -> { find_link("Remove this inquiry forever", match: :first).click } }
+        let(:delete_first_inquiry){ find_link("Remove this inquiry forever", match: :first).click }
 
         context "when there are no inquiries" do
           before { Refinery::Inquiries::Inquiry.destroy_all }
@@ -86,7 +86,7 @@ module Refinery
             it "removes inquiry" do
               visit refinery.inquiries_admin_inquiries_path
 
-              expect(delete_first_inquiry).to change(Refinery::Inquiries::Inquiry, :count).by(-1)
+              expect { delete_first_inquiry }.to change(Refinery::Inquiries::Inquiry, :count).by(-1)
               expect(page).to have_content("'#{inquiry.name}' was successfully removed.")
 
             end
