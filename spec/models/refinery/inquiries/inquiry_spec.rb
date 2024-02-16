@@ -61,6 +61,7 @@ module Refinery
       end
 
       describe "default scope" do
+        before { Refinery::Inquiries::Inquiry.destroy_all }
         it "orders by created_at in desc" do
           inquiry1 = FactoryBot.create(:inquiry, created_at: 1.hour.ago)
           inquiry2 = FactoryBot.create(:inquiry, created_at: 2.hours.ago)

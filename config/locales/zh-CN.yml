@@ -59,7 +59,7 @@ zh-CN:
       inquiry_mailer:
         notification:
           greeting: 您好
-          you_recieved_new_inquiry: 你刚从你的网站收到一条新的咨询.
+          you_received_new_inquiry: 你刚从你的网站收到一条新的咨询.
           inquiry_starts: --- 咨询开始处 ---
           inquiry_ends: --- 咨询结束处 ---
           from: 表单

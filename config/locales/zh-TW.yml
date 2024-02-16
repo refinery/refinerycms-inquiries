@@ -59,7 +59,7 @@ zh-TW:
       inquiry_mailer:
         notification:
           greeting: 您好
-          you_recieved_new_inquiry: 你剛從你的網站收到一條新的咨詢.
+          you_received_new_inquiry: 你剛從你的網站收到一條新的咨詢.
           inquiry_starts: --- 咨詢開始處 ---
           inquiry_ends: --- 咨詢結束處 ---
           from: 表單
