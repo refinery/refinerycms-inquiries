@@ -59,7 +59,7 @@ sl:
       inquiry_mailer:
         notification:
           greeting: Pozdravljeni
-          you_recieved_new_inquiry: Na vaši spletni strani ste prejeli ste novo povpraševanje.
+          you_received_new_inquiry: Na vaši spletni strani ste prejeli ste novo povpraševanje.
           inquiry_starts: --- začetek povpraševanja ---
           inquiry_ends: --- konec povpraševanja ---
           from: Od

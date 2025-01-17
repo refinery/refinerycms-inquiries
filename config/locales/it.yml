@@ -61,7 +61,7 @@ it:
       inquiry_mailer:
         notification:
           greeting: Ciao a tutti
-          you_recieved_new_inquiry: Hai appena ricevuto una nuova richiesta sul tuo sito.
+          you_received_new_inquiry: Hai appena ricevuto una nuova richiesta sul tuo sito.
           inquiry_starts: --- inizio del messaggio ---
           inquiry_ends: --- fine del messaggio ---
           from: Da

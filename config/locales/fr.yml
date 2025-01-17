@@ -63,7 +63,7 @@ fr:
       inquiry_mailer:
         notification:
           greeting: Bonjour
-          you_recieved_new_inquiry: Vous avez reçu une nouvelle requête sur votre site.
+          you_received_new_inquiry: Vous avez reçu une nouvelle requête sur votre site.
           inquiry_starts: --- Début des requêtes ---
           inquiry_ends: --- Fin des requêtes ---
           from: De

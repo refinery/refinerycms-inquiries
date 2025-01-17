@@ -59,7 +59,7 @@ en-GB:
       inquiry_mailer:
         notification:
           greeting: Hi there
-          you_recieved_new_inquiry: You just received a new enquiry on your website.
+          you_received_new_inquiry: You just received a new enquiry on your website.
           inquiry_starts: --- enquiry starts ---
           inquiry_ends: --- enquiry ends ---
           from: From

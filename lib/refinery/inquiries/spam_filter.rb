@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'httpclient'
 require 'uri'
+require 'English'
 
 module Refinery
   module Inquiries
@@ -16,7 +19,7 @@ module Refinery
             @valid = true
             @inquiry.save
           else
-            @inquiry.errors.add(:base, ::I18n.t(:captcha_invalid, scope: "refinery.inquiries.spam_filter"))
+            @inquiry.errors.add(:base, ::I18n.t(:captcha_invalid, scope: 'refinery.inquiries.spam_filter'))
           end
         elsif simple_filter?
           @inquiry.save
@@ -54,18 +57,18 @@ module Refinery
       private
 
       def recaptcha?
-        Inquiries.recaptcha_site_key.present?
+        Inquiries.recaptcha_site_key.present? 
       end
 
-      GOOGLE_SITEVERIFY_URL = "https://www.google.com/recaptcha/api/siteverify".freeze
+      GOOGLE_SITEVERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify'
       def recaptcha_success?
         http = HTTPClient.new
         response = http.get(
           GOOGLE_SITEVERIFY_URL,
-          secret: Rails.application.secrets.recaptcha_secret_key,
-          response: @params["g-recaptcha-response"]
+          secret: Rails.application.credentials[:recaptcha][:secret_key],
+          response: @params['g-recaptcha-response']
         )
-        JSON.parse(response.body)["success"] == true
+        JSON.parse(response.body)['success'] == true
       end
 
       def simple_filter?
@@ -82,7 +85,7 @@ module Refinery
         begin
           InquiryMailer.notification(@inquiry, @request).deliver_now
         rescue
-          Rails.logger.warn "There was an error delivering an inquiry notification.\n#{$!}\n"
+          Rails.logger.warn "There was an error delivering an inquiry notification.\n#{$ERROR_INFO}"
         end
       end
 
@@ -90,8 +93,8 @@ module Refinery
         if Setting.send_confirmation?
           begin
             InquiryMailer.confirmation(@inquiry, @request).deliver_now
-          rescue
-            Rails.logger.warn "There was an error delivering an inquiry confirmation:\n#{$!}\n"
+          rescue StandardError
+            Rails.logger.warn "There was an error delivering an inquiry confirmation:\n#{$ERROR_INFO}\n"
           end
         end
       end

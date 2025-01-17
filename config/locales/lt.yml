@@ -60,7 +60,7 @@ lt:
       inquiry_mailer:
         notification:
           greeting: Sveiki
-          you_recieved_new_inquiry: Jūs katik gavote naują užklausą savo svetainėje.
+          you_received_new_inquiry: Jūs katik gavote naują užklausą savo svetainėje.
           inquiry_starts: --- užklausa prasideda ---
           inquiry_ends: --- užklausa baigiasi ---
           from: Nuo

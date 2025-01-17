@@ -59,7 +59,7 @@ cs:
       inquiry_mailer:
         notification:
           greeting: Ahoj
-          you_recieved_new_inquiry: Právě jsi obdržel nový dotaz na webové stránce.
+          you_received_new_inquiry: Právě jsi obdržel nový dotaz na webové stránce.
           inquiry_starts: --- začátek dotazu ---
           inquiry_ends: --- konec dotazu ---
           from: Od

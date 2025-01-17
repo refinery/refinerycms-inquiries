@@ -61,7 +61,7 @@ ru:
       inquiry_mailer:
         notification:
           greeting: Здравствуйте
-          you_recieved_new_inquiry: Вы только что получили новый запрос со своего сайта
+          you_received_new_inquiry: Вы только что получили новый запрос со своего сайта
           inquiry_starts: --- начало запроса ---
           inquiry_ends: --- конец запроса ---
           from: От

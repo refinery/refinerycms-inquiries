@@ -16,7 +16,12 @@ end
 
 group :test do
   gem 'capybara-email', '~> 3.0'
-  gem 'poltergeist'
+  gem 'generator_spec', '~> 0.9.3'
+  gem 'launchy'
+  gem 'coveralls', require: false
+  gem 'rspec-retry'
+  gem 'falcon'
+  gem 'falcon-capybara'
 end
 
 # Database Configuration
