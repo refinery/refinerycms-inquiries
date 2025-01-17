@@ -1,6 +1,8 @@
 require 'refinerycms-core'
 require 'refinerycms-settings'
 
+require File.expand_path('../inquiries/extensions', __FILE__)
+
 module Refinery
   autoload :InquiriesGenerator, 'generators/refinery/inquiries/inquiries_generator'
 
